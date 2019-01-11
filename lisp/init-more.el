@@ -3,8 +3,7 @@
 ;;; Code:
 
 (add-hook 'after-init-hook 'global-flycheck-mode)
-
-
+(add-hook 'after-init-hook 'yas-global-mode)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 

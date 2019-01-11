@@ -28,6 +28,8 @@
               key-chord
               evil
               evil-leader
+	      yasnippet
+	      diminish
 		      ) "Default packages.")
 
 (setq package-selected-packages my/packages)
