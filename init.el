@@ -10,13 +10,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 
-(diminish 'abbrev-mode "Abv")
-(diminish 'company-mode "Cy")
-(diminish 'undo-tree-mode)
-(diminish 'eldoc-mode)
-(diminish 'which-key-mode)
-
-
 (require 'init-elpa)
 (require 'init-evil)
 (require 'init-base)

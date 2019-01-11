@@ -11,25 +11,25 @@
 (require 'cl)
 
 (defvar my/packages '(
-              monokai-theme
-              expand-region
-              company
-              smex
-              ido-vertical-mode
-              switch-window
-              which-key
-              web-mode
-              js2-mode
-              emmet-mode
-              flycheck
-              youdao-dictionary
-              htmlize
-              powerline
-              key-chord
-              evil
-              evil-leader
-	      yasnippet
-	      diminish
+		      monokai-theme
+		      expand-region
+		      company
+		      smex
+		      ido-vertical-mode
+		      switch-window
+		      which-key
+		      web-mode
+		      js2-mode
+		      emmet-mode
+		      flycheck
+		      youdao-dictionary
+		      htmlize
+		      powerline
+		      key-chord
+		      evil
+		      evil-leader
+	              yasnippet
+		      diminish
 		      ) "Default packages.")
 
 (setq package-selected-packages my/packages)

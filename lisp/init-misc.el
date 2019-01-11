@@ -2,12 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-
-
-
-
-
-
+(diminish 'eldoc-mode)
+(diminish 'undo-tree-mode)
+(diminish 'which-key-mode)
+(diminish 'abbrev-mode "AV")
 
 
 
