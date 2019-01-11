@@ -44,7 +44,7 @@
 
 
 (global-set-key (kbd "C-.") 'set-mark-command)
-
+(require 'iedit)
 
 ;; -----------------------------------------------------------------------------
 ;; Some Basic Modes
