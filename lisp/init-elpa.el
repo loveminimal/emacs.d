@@ -30,6 +30,10 @@
 		      evil-leader
 	              yasnippet
 		      diminish
+		      iedit
+		      yaml-mode
+		      org-pomodoro
+		      pomodoro
 		      ) "Default packages.")
 
 (setq package-selected-packages my/packages)

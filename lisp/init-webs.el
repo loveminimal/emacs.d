@@ -4,6 +4,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.*tml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.*xml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 
 

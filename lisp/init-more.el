@@ -41,6 +41,10 @@
 (which-key-setup-side-window-right-bottom)
 
 
+(require 'pomodoro)
+(pomodoro-add-to-mode-line)
+
+
 
 (provide 'init-more)
 ;;; init-more.el ends here
