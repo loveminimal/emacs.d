@@ -16,7 +16,7 @@
 
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "<SPC>" 'execute-extended-command
+  "<SPC>" 'smex
 
   "bb" 'ido-switch-buffer
   "bj" 'ibuffer
