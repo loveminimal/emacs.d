@@ -1,0 +1,6 @@
+auto-save-list/
+elpa/
+.emacs.desktop
+custom.el
+recentf
+smex-items

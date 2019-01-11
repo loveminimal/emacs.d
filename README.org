@@ -1,0 +1,5 @@
+#+TITLE: All in Emacs
+#+AUTHOR: Jack Liu
+#+DATE: <2019-01-11 Fri 19:42>
+
+All in one, no reason.
