@@ -33,7 +33,11 @@
 		      iedit
 		      yaml-mode
 		      org-pomodoro
+		      org-projectile
+		      ox-gfm
 		      pomodoro
+		      magit
+		      diff-hl
 		      ) "Default packages.")
 
 (setq package-selected-packages my/packages)
