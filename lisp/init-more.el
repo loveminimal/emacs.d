@@ -4,8 +4,10 @@
 
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'after-init-hook 'yas-global-mode)
-(add-hook 'after-init-hook 'diff-hl-mode)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+
+(global-diff-hl-mode)
 
 
 (add-hook 'after-init-hook 'global-company-mode)
