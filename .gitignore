@@ -1,7 +1,9 @@
 auto-save-list/
 elpa/
 url/
-.emacs.desktop
+.emacs.desktop*
+bookmarks
+ido.last
 custom.el
 recentf
 smex-items
