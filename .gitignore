@@ -2,6 +2,7 @@ auto-save-list/
 elpa/
 url/
 .emacs.desktop*
+eshell
 bookmarks
 ido.last
 custom.el
