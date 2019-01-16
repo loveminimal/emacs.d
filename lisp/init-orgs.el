@@ -17,7 +17,7 @@
 
 
 
-(defun md-export ()
+(defun jk/md-export ()
   "Create front-matter of GFM-md.
 Note that it just adapts to a title including most five words."
   (interactive)
@@ -30,6 +30,12 @@ Note that it just adapts to a title including most five words."
   (append-to-file nil t (concat fname ".md"))	 ;; Append the contents of "hello-world.md" to "hello-world.md" again
   (kill-this-buffer))				 ;; Kill the "hello-world.md" generate by GFM plugin to keep you stay in current .org file
 
+
+(defun jk/insert-date ()
+  "Insert current date."
+  (interactive)
+  (insert "#+DATE: ")
+  (insert (current-time-string)))
 
 
 
