@@ -24,9 +24,11 @@
 
 (when (member "Monaco" (font-family-list))
   (set-frame-font "Monaco-11" t t))
-(when (member "Noto Sans Mono" (font-family-list))
-  (set-fontset-font t 'han "Noto Sans Mono"))
+;; (when (member "Noto Sans Mono" (font-family-list))
+;;   (set-fontset-font t 'han "Noto Sans Mono"))
 
+(when (member "楷体" (font-family-list))
+  (set-fontset-font t 'han "楷体"))
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
