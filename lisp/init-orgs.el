@@ -39,7 +39,6 @@ Note that it just adapts to a title including most five words."
   (insert "#+DATE: ")
   (insert (current-time-string))
   (insert "\n\n"))
-(add-hook 'org-mode-hook 'jk/insert-date) ;; Auto insert current date when active org-mode.
 
 
 (provide 'init-orgs)
