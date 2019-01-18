@@ -30,7 +30,8 @@ Note that it just adapts to a title including most five words."
   (org-gfm-export-as-markdown)			 ;; Invoke gfm plugin to open a relative .md buffer
   (replace-string ".." "")			 ;; ! Just for hexo-blog's special img-show format...
   (append-to-file nil t (concat fname ".md"))	 ;; Append the contents of "hello-world.md" to "hello-world.md" again
-  (kill-this-buffer))				 ;; Kill the "hello-world.md" generate by GFM plugin to keep you stay in current .org file
+  (kill-this-buffer)
+  (switch-window-then-maximize)) ;; Kill the "hello-world.md" generate by GFM plugin to keep you stay in current .org file
 
 
 (defun jk/insert-date ()

@@ -30,6 +30,12 @@
 (when (member "楷体" (font-family-list))
   (set-fontset-font t 'han "楷体"))
 
+
+;; (setq line-spacing 1.5)
+;; or if you want to set it globaly
+(setq-default line-spacing 0.1)
+
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq ring-bell-function 'ignore)
