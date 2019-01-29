@@ -25,7 +25,7 @@ Note that it just adapts to a title including most five words."
   (setq fname (car (split-string (buffer-name) "\\."))) ;; if current buffer is "hello-world.org", FNAME will be "hello-world"
   (setq fnamel (split-string fname "-"))		;; Now, fnamel will be ("hello" "world")
   ;; Split the fnamel and join them with <space>, now ftitle will be "hello world"
-  (setq ftitle (concat "---\ntitle: " (car fnamel) " " (car (cdr fnamel)) " " (car (cdr (cdr fnamel))) " " (car (cdr (cdr (cdr fnamel)))) " " (car (cdr (cdr (cdr (cdr fnamel))))) "\n---\n\n"))
+  (setq ftitle (concat "---\ntitle: " (car fnamel) " " (car (cdr fnamel)) " " (car (cdr (cdr fnamel))) " " (car (cdr (cdr (cdr fnamel)))) " " (car (cdr (cdr (cdr (cdr fnamel))))) "\ndate: " (format-time-string "%Y-%m-%d") "\n---\n\n"))
   (write-region ftitle nil (concat fname ".md")) ;; Add ftitle to a file named "hello-world.md"
   (org-gfm-export-as-markdown)			 ;; Invoke gfm plugin to open a relative .md buffer
   (replace-string ".." "")			 ;; ! Just for hexo-blog's special img-show format...
