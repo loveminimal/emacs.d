@@ -7,6 +7,11 @@
       org-tags-column 80)
 
 
+;; (setq org-image-actual-width nil)
+;; (setq org-image-actual-width (/ (display-pixel-width) 3))
+;; (setq org-image-actual-width '(400))
+
+
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 
@@ -38,7 +43,8 @@ Note that it just adapts to a title including most five words."
   "Insert current date."
   (interactive)
   (insert "#+DATE: ")
-  (insert (current-time-string))
+  (org-time-stamp t)
+  ;; (insert (format-time-string "%Y-%m-%d %a %R"))
   (insert "\n\n"))
 
 
