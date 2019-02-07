@@ -23,7 +23,8 @@
   "bk" 'ido-kill-buffer
   
   "ff" 'ido-find-file
-  "fo" 'open-init-file
+  "fi" 'open-init-file
+  "fo" 'org-open-at-point
   "fd" 'delete-this-file
   "fr" 'rename-this-file-and-buffer
   "fj" 'dired-jump
