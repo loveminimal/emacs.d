@@ -19,6 +19,12 @@
 (require 'init-orgs)
 (require 'init-misc)
 
+;; Allow access from emacsclient
+(add-hook 'after-init-hook
+	  (lambda ()
+	    (require 'server)
+	    (unless (server-running-p)
+	      (server-start))))
 
 (when (file-exists-p custom-file)
 	(load custom-file))
