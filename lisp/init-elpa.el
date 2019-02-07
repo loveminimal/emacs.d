@@ -38,6 +38,7 @@
 		      pomodoro
 		      magit
 		      diff-hl
+		      php-mode
 		      ) "Default packages.")
 
 (setq package-selected-packages my/packages)
