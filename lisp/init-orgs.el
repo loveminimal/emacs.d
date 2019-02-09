@@ -7,6 +7,8 @@
       org-tags-column 80)
 
 
+(add-hook 'org-mode-hook 'org-content)
+
 ;; (setq org-image-actual-width nil)
 ;; (setq org-image-actual-width (/ (display-pixel-width) 3))
 ;; (setq org-image-actual-width '(400))
