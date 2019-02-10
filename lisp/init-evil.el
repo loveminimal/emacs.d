@@ -37,6 +37,10 @@
 
   "ll" 'comment-line
 
+  "mj" 'list-bookmarks
+  "ms" 'bookmark-set
+  "mm" 'bookmark-jump
+
   "sa" 'mark-whole-buffer
   
   "tt" 'toggle-truncate-lines
