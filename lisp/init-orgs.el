@@ -28,7 +28,8 @@ Note that it just adapts to a title including most five words."
   (interactive)
   (save-buffer)				;; Save current buffer
   (setq fname (car (split-string (buffer-name) "\\."))) ;; if current buffer is "hello-world.org", FNAME will be "hello-world"
-  (setq fnamed (concat fname ".md"))			;; "hello-world.md"
+  (setq fdir "../_posts/")				;; Set export dir
+  (setq fnamed (concat fdir fname ".md"))			;; "hello-world.md"
   (setq fnamel (split-string fname "-"))		;; Now, fnamel will be ("hello" "world")
   ;; Split the fnamel and join them with <space>, now ftitle will be "hello world"
   (setq ftitle (concat "---\ntitle: "
@@ -37,7 +38,7 @@ Note that it just adapts to a title including most five words."
 		       (car (cdr (cdr fnamel))) " "
 		       (car (cdr (cdr (cdr fnamel)))) " "
 		       (car (cdr (cdr (cdr (cdr fnamel))))) "\n"))
-  (write-region ftitle nil (concat fname ".md")) ;; Add ftitle to a file named "hello-world.md"
+  (write-region ftitle nil fnamed) ;; Add ftitle to a file named "hello-world.md"
   ;; Append date like "data: 2019/02/10 10:47:56" to "hello-world.md"
   (beginning-of-buffer)
   (forward-char 8)
@@ -45,7 +46,7 @@ Note that it just adapts to a title including most five words."
     (setq p1 (point))
     (end-of-line)
     (setq p2 (point))
-    (append-to-file "data: " nil fnamed)
+    (append-to-file "date: " nil fnamed)
     (append-to-file p1 p2 fnamed)
     (append-to-file "\nupdated: " nil fnamed)
     (append-to-file (format-time-string "%Y/%m/%d %T") nil fnamed)
