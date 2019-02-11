@@ -23,23 +23,22 @@
 
 
 (defun jk/md-export ()
-  "Create front-matter of GFM-md.
-Note that it just adapts to a title including most five words."
+  "Export org to markdown which will be added Front-matter."
   (interactive)
-  (save-buffer)				;; Save current buffer
+  (save-buffer)	                                        ;; Save current buffer
   (setq fname (car (split-string (buffer-name) "\\."))) ;; if current buffer is "hello-world.org", FNAME will be "hello-world"
-  (setq fdir "../_posts/")				;; Set export dir
-  (setq fnamed (concat fdir fname ".md"))			;; "hello-world.md"
-  (setq fnamel (split-string fname "-"))		;; Now, fnamel will be ("hello" "world")
-  ;; Split the fnamel and join them with <space>, now ftitle will be "hello world"
+  (setq fdir "../_posts/")				;; Set exported markdown dir
+  (setq fnamed (concat fdir fname ".md"))		;; "hello-world.md"
+  (setq fnamel (split-string fname "-"))		;; Now, FNAMEL will be ("hello" "world")
+  ;; Split the FNAMEL and join them with <space>, now FTITLE will be "hello world"
   (setq ftitle (concat "---\ntitle: "
 		       (car fnamel) " "
 		       (car (cdr fnamel)) " "
 		       (car (cdr (cdr fnamel))) " "
 		       (car (cdr (cdr (cdr fnamel)))) " "
 		       (car (cdr (cdr (cdr (cdr fnamel))))) "\n"))
-  (write-region ftitle nil fnamed) ;; Add ftitle to a file named "hello-world.md"
-  ;; Append date like "data: 2019/02/10 10:47:56" to "hello-world.md"
+  (write-region ftitle nil fnamed) ;; Add FTITLE to a file named "hello-world.md"
+  ;; Append date like "date: 2019/02/10 10:47:56" to "hello-world.md"
   (beginning-of-buffer)
   (forward-char 8)
   (let (p1 p2)
