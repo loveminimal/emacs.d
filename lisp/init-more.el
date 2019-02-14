@@ -59,10 +59,38 @@
 (which-key-setup-side-window-right-bottom)
 
 
+(require-package 'diminish)
+(diminish 'eldoc-mode)
+(diminish 'undo-tree-mode)
+(diminish 'which-key-mode)
+(diminish 'abbrev-mode "AV")
+
+
+;; @Mickey Petersen
+(require-package 'iedit)
+(require 'iedit)
+(defun iedit-dwim (arg)
+  "Starts iedit but uses \\[narrow-to-defun] to limit its scope."
+  (interactive "P")
+  (if arg
+      (iedit-mode)
+    (save-excursion
+      (save-restriction
+        (widen)
+        ;; this function determines the scope of `iedit-start'.
+        (if iedit-mode
+            (iedit-done)
+          ;; `current-word' can of course be replaced by other
+          ;; functions.
+          (narrow-to-defun)
+          (iedit-start (current-word) (point-min) (point-max)))))))
+(global-set-key (kbd "C-;") 'iedit-dwim)
 
 
 
+;; Need no extra configurations
 
+(require-package 'magit)
 (require-package 'youdao-dictionary)
 (require-package 'htmlize)
 
