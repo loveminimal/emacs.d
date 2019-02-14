@@ -2,14 +2,24 @@
 ;;; Commentary:
 ;;; Code:
 
+
+(require-package 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
+
+
+(require-package 'yasnippet)
 (add-hook 'after-init-hook 'yas-global-mode)
+
+
+(require-package 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 
+(require-package 'diff-hl)
 (global-diff-hl-mode)
 
 
+(require-package 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (eval-after-load 'company
   '(progn
@@ -27,6 +37,7 @@
 					 try-expand-dabbrev-from-kill))
 
 
+(require-package 'smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -34,20 +45,26 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 
+(require-package 'ido-vertical-mode)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (setq ido-vertical-show-count t)
 
 
+(require-package 'switch-window)
 (setq switch-window-shortcut-style 'qwerty)
+
+(require-package 'which-key)
 (add-hook 'after-init-hook 'which-key-mode)
 (which-key-setup-side-window-right-bottom)
 
 
-(require 'pomodoro)
-(pomodoro-add-to-mode-line)
 
 
+
+
+(require-package 'youdao-dictionary)
+(require-package 'htmlize)
 
 (provide 'init-more)
 ;;; init-more.el ends here

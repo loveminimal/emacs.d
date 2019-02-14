@@ -2,8 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
+(require-package 'evil)
 (add-hook 'after-init-hook 'evil-mode)
+
+(require-package 'evil-leader)
 (global-evil-leader-mode)
+
+(require-package 'key-chord)
 (key-chord-mode 1)
 
 

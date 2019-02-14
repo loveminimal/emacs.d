@@ -22,6 +22,8 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 
 
+
+(require-package 'ox-gfm)
 (defun jk/md-export ()
   "Export org to markdown which will be added Front-matter."
   (interactive)
