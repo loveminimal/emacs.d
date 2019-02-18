@@ -2,14 +2,25 @@
 ;;; Commentary:
 ;;; Code:
 
-;; -----------------------------------------------------------------------------
-;; Some Basic Settings
-;; -----------------------------------------------------------------------------
 
-(setq inhibit-startup-screen t)
+(setq inhibit-startup-screen t
+      make-backup-files nil
+      auto-save-default nil
+      ring-bell-function 'ignore)
+
+
 (setq-default
-  initial-scratch-message
-  (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
+ initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
+ line-spacing 0.1
+ truncate-lines t)
+
+
+(display-time)
+(fset 'yes-or-no-p 'y-or-n-p)
+(delete-selection-mode t)
+(defalias 'list-buffers 'ibuffer)
+
+
 ;; @Xah_Lee
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
@@ -17,9 +28,11 @@
                  "%b"))))
 
 
-(set-language-environment 'utf-8)
-(set-default-coding-systems 'utf-8)
-(prefer-coding-system 'utf-8)
+(progn
+  "Set coding system."
+  (set-language-environment 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (prefer-coding-system 'utf-8))
 
 
 (when (member "Monaco" (font-family-list))
@@ -31,45 +44,34 @@
   (set-fontset-font t 'han "楷体"))
 
 
-;; (setq line-spacing 1.5)
-;; or if you want to set it globaly
-(setq-default line-spacing 0.1)
-
-
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq ring-bell-function 'ignore)
-(fset 'yes-or-no-p 'y-or-n-p)
-(delete-selection-mode t)
-(defalias 'list-buffers 'ibuffer)
-
-
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'set-scroll-bar-mode)
   (set-scroll-bar-mode nil))
-(display-time)
-(setq-default truncate-lines t)
 
 
 (global-set-key (kbd "C-.") 'set-mark-command)
 
 
+;;;;;; Some Basic Modes
 
-;; -----------------------------------------------------------------------------
-;; Some Basic Modes
-;; -----------------------------------------------------------------------------
-
-(require 'dired-x)
-(setq dired-recursive-deletes 'top)
-(setq dired-recursive-copies 'always)
+(use-package dired
+  :config
+  (require 'dired-x)
+  (setq dired-recursive-deletes 'top)
+  (setq dired-recursive-copies 'always))
 
 
-(add-hook 'after-init-hook 'ido-mode)
-(add-hook 'after-init-hook 'recentf-mode)
-(add-hook 'after-init-hook 'electric-pair-mode)
+(use-package ido-mode
+  :hook after-init)
+
+(use-package recentf-mode
+  :hook after-init)
+
+(use-package electric-pair-mode
+  :hook after-init)
 
 
 (setq desktop-path (list user-emacs-directory)
@@ -77,29 +79,33 @@
 (desktop-save-mode 1)
 
 
-(add-hook 'after-init-hook 'show-paren-mode)
-;; @zilongshanren
-(define-advice show-paren-function (:around (fn) fix-show-paren-function)
-  "Highlight enclosing parens."
-  (cond ((looking-at-p "\\s(") (funcall fn))
-        (t (save-excursion
-             (ignore-errors (backward-up-list))
-             (funcall fn)))))
+(use-package show-paren-mode
+  :hook after-init
+  :init
+  ;; @zilongshanren
+  (define-advice show-paren-function (:around (fn) fix-show-paren-function)
+    "Highlight enclosing parens."
+    (cond ((looking-at-p "\\s(") (funcall fn))
+          (t (save-excursion
+              (ignore-errors (backward-up-list))
+              (funcall fn))))))
 
 
-(clear-abbrev-table global-abbrev-table)
-(define-abbrev-table 'global-abbrev-table
-  '(
-    ("ah"  ";; -----------------------------------------------------------------------------")
-    ("ahh" ";; =============================================================================")
-    ("isme" "#+TITLE: \n#+AUTHOR: Jack Liu\n#+DATE:")))
-(setq-default abbrev-mode t)
-(setq save-abbrevs nil)
+(use-package abbrev
+  :config
+  (clear-abbrev-table global-abbrev-table)
+  (define-abbrev-table 'global-abbrev-table
+    '(
+      ("isme" "#+TITLE: \n#+AUTHOR: Jack Liu\n#+DATE:")
+    ))
+  (setq-default abbrev-mode t)
+  (setq save-abbrevs nil)
+  :diminish)
 
 
-;; -----------------------------------------------------------------------------
-;; Some Basic Functions
-;; -----------------------------------------------------------------------------
+
+;;;;;; Some Basic Functions
+
 
 (defun open-init-file ()
   "Quickly open init file."
@@ -158,6 +164,7 @@
 (global-set-key (kbd "M-C-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -2)))
 (global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
 (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
+
 
 ;; @Xah Lee
 (defun xah-dired-sort ()

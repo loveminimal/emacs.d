@@ -1,4 +1,4 @@
-;;; init.el --- Init entry.
+;;; init.el --- The main entry of Emacs.
 ;;; Commentary:
 ;;; Code:
 
@@ -6,29 +6,24 @@
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(require 'init-time)		;; @purcell
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 
-(require 'init-elpa)
-(require 'init-evil)
-(require 'init-base)
-(require 'init-view)
-(require 'init-more)
-(require 'init-webs)
-(require 'init-orgs)
-(require 'init-misc)
+(require 'init-upkg)
 
-;; Allow access from emacsclient
-(add-hook 'after-init-hook
-	  (lambda ()
-	    (require 'server)
-	    (unless (server-running-p)
-	      (server-start))))
+
+(use-package init-base)
+(use-package init-evil)
+(use-package init-view)
+(use-package init-more)
+(use-package init-orgs)
+(use-package init-webs)
+
+
+
 
 (when (file-exists-p custom-file)
-	(load custom-file))
-
+  (load custom-file))
 
 
 (provide 'init)

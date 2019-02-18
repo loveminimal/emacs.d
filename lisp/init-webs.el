@@ -1,26 +1,26 @@
-;;; init-webs.el --- Web developer configuration.
+;;; init-webs.el --- Configurations of web develop.
 ;;; Commentary:
 ;;; Code:
 
-
-(require-package 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.*tml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.*xml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+(use-package web-mode
+  :ensure t
+  :mode ("\\.*tml\\'" "\\.*xml\\'" "\\.ejs\\'"))
 
 
-(add-to-list 'auto-mode-alist '("\\.wxss\\'" . css-mode))
+(use-package css-mode
+  :mode "\\.wxss\\'")
 
 
-(require-package 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-hook 'js-mode-hook 'js2-minor-mode)
+(use-package js2-mode
+  :ensure t
+  :mode "\\.js\\'"
+  :config
+  (add-hook 'js-mode-hook 'js2-minor-mode))
 
 
-(require-package 'emmet-mode)
-(add-hook 'web-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook 'emmet-mode)
-
+(use-package emmet-mode
+  :ensure t
+  :hook (web-mode css-mode))
 
 
 ;; @zilongshanren
@@ -31,11 +31,6 @@
   (setq web-mode-code-indent-offset 2)   ; web-mode, js code in html file
   )
 (add-hook 'web-mode-hook 'my-web-mode-indent-setup)
-
-
-
-
-
 
 
 

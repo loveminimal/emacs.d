@@ -1,29 +1,25 @@
-;;; init-orgs.el --- Get Things Done.
+;;; init-orgs.el --- Org settings.
 ;;; Commentary:
 ;;; Code:
 
-(setq org-hide-emphasis-markers t
-      org-src-fontify-natively t
-      org-tags-column 80)
+
+(use-package org
+  :init
+  (setq org-hide-emphasis-markers t
+	org-src-fontify-natively t
+	org-tags-column 80)
+  :bind
+  (("C-c l" . org-store-link)
+   ("C-c a" . org-agenda)
+   ("C-c c" . org-capture))
+  :config
+  (add-hook 'org-mode-hook 'org-content))
 
 
-(add-hook 'org-mode-hook 'org-content)
-
-;; (setq org-image-actual-width nil)
-;; (setq org-image-actual-width (/ (display-pixel-width) 3))
-;; (setq org-image-actual-width '(400))
+(use-package ox-gfm
+  :ensure t)
 
 
-(global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
-
-
-;; Capture
-(global-set-key (kbd "C-c c") 'org-capture)
-
-
-
-(require-package 'ox-gfm)
 (defun jk/md-export ()
   "Export org to markdown which will be added Front-matter."
   (interactive)
@@ -59,7 +55,6 @@
   (switch-window-then-maximize)) ;; Kill the "hello-world.md" generate by GFM plugin to keep you stay in current .org file
 
 
-
 (defun jk/insert-date ()
   "Insert current date."
   (interactive)
@@ -67,6 +62,8 @@
   ;; (org-time-stamp t)
   (insert (format-time-string "%Y/%m/%d %T"))
   (insert "\n\n"))
+
+
 
 
 (provide 'init-orgs)
