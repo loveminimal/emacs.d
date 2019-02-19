@@ -38,6 +38,8 @@
     "hf" 'describe-function
     "hk" 'describe-key
     "hv" 'describe-variable
+
+    "ii" 'org-toggle-inline-images
   
     "ll" 'comment-line
   

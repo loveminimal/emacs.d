@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+;; (image-type-available-p 'imagemagick)    ;; t
+(setq org-image-actual-width (/ (display-pixel-width) 3))
+;; (setq org-image-actual-width 800)
+;; it's okay now, to exec command like 'org-toggle-inline-images' but not toggle 'iimage-mode'
 
 (use-package org
   :init
