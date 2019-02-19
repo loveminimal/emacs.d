@@ -62,6 +62,7 @@
 (defun jk/insert-date ()
   "Insert current date."
   (interactive)
+  (beginning-of-buffer)
   (insert "#+DATE: ")
   ;; (org-time-stamp t)
   (insert (format-time-string "%Y/%m/%d %T"))
