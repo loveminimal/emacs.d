@@ -73,8 +73,8 @@
 (use-package electric-pair-mode
   :hook after-init)
 
-(use-package electric-indent-mode
-  :hook after-init)
+;; (use-package electric-indent-mode
+;;   :hook after-init)
 
 
 (setq desktop-path (list user-emacs-directory)
@@ -108,7 +108,6 @@
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)
   :diminish)
-
 
 
 ;;;;;; Some Basic Functions
