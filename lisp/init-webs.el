@@ -13,9 +13,8 @@
 
 (use-package js2-mode
   :ensure t
-  :mode "\\.js\\'"
-  :config
-  (add-hook 'js-mode-hook 'js2-minor-mode))
+  :mode "\\.js\\'")
+
 
 
 (use-package emmet-mode
