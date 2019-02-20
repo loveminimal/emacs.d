@@ -73,6 +73,8 @@
 (use-package electric-pair-mode
   :hook after-init)
 
+(add-hook 'after-init-hook 'global-auto-revert-mode)
+
 ;; (use-package electric-indent-mode
 ;;   :hook after-init)
 
