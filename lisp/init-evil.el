@@ -49,7 +49,10 @@
   
     "sa" 'mark-whole-buffer
     
+    "tw" 'toggle-word-wrap
     "tt" 'toggle-truncate-lines
+    "tm" 'toggle-frame-maximized
+    "tf" 'toggle-frame-fullscreen
     
     "ww" 'switch-window
     "wo" 'switch-window-then-maximize

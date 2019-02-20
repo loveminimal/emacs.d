@@ -48,6 +48,23 @@
 	try-expand-dabbrev-from-kill))
 
 
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+
+;; @purcell
+;; Comments code for make it work in lisp modes, but I no need
+(use-package move-dup
+  :ensure t
+  :bind (([M-up] . md/move-lines-up)
+	 ([M-down] . md/move-lines-down)
+	 ;; ([M-S-up] . md/move-lines-up)
+	 ;; ([M-S-down] . md/move-lines-down)
+	 ([M-S-up] . md/duplicate-down)
+	 ([M-S-down] . md/duplicate-up)))
+
+
 (use-package flycheck
   :ensure t
   :hook (after-init . global-flycheck-mode)
