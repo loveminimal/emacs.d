@@ -73,6 +73,9 @@
 (use-package electric-pair-mode
   :hook after-init)
 
+(use-package electric-indent-mode
+  :hook after-init)
+
 
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600)
@@ -89,6 +92,10 @@
           (t (save-excursion
               (ignore-errors (backward-up-list))
               (funcall fn))))))
+
+
+(when (fboundp 'global-prettify-symbols-mode)
+  (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 
 
 (use-package abbrev
