@@ -23,7 +23,7 @@
     "<SPC>" 'smex
   
     "bb" 'ido-switch-buffer
-    "bj" 'ibuffer
+    "bj" 'ibuffer-sidebar-toggle-sidebar
     "bk" 'ido-kill-buffer
     
     "ff" 'ido-find-file
@@ -31,7 +31,7 @@
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
     "fr" 'rename-this-file-and-buffer
-    "fj" 'dired-jump
+    "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
     "fS" 'save-some-buffers
     
