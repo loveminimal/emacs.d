@@ -71,7 +71,10 @@
   (key-chord-define evil-insert-state-map ",," 'evil-normal-state))
 
 
-
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
 
 
 (provide 'init-evil)
