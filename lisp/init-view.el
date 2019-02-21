@@ -36,10 +36,7 @@
 
 (use-package ibuffer-sidebar
   :ensure t
-  :commands (ibuffer-sidebar-toggle-sidebar)
-  :config
-  (setq ibuffer-sidebar-use-custom-font nil)
-  (setq ibuffer-sidebar-face `(:family "Helvetica" :height 140)))
+  :commands (ibuffer-sidebar-toggle-sidebar))
 
 
 (defun sidebar-toggle ()

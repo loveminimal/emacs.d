@@ -57,6 +57,7 @@
     "wo" 'switch-window-then-maximize
     "wr" 'split-window-right
     "wd" 'split-window-below
+    "wk" 'delete-window
   
     "yy" 'youdao-dictionary-search-at-point+
   
