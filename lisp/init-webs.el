@@ -32,6 +32,8 @@
 (add-hook 'web-mode-hook 'my-web-mode-indent-setup)
 
 
+(use-package php-mode
+  :ensure t)
 
 
 (provide 'init-webs)
