@@ -19,7 +19,7 @@
 
 (use-package emmet-mode
   :ensure t
-  :hook (web-mode css-mode))
+  :hook prog-mode )
 
 
 ;; @zilongshanren
