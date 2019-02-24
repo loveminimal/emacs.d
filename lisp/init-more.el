@@ -3,6 +3,13 @@
 ;;; Code:
 
 
+(use-package xah-fly-keys
+  :ensure t
+  :disabled
+  :init
+  (xah-fly-keys-set-layout "qwerty")
+  (xah-fly-keys 1))
+
 (use-package smex
   :ensure t
   :config (smex-initialize)

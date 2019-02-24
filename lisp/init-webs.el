@@ -19,7 +19,8 @@
 
 (use-package emmet-mode
   :ensure t
-  :hook prog-mode )
+  :hook prog-mode
+  :diminish " Em")
 
 
 ;; @zilongshanren
