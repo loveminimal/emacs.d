@@ -9,8 +9,14 @@
   (load-theme 'monokai t))
 
 
-(add-hook 'after-init-hook
-	(lambda () (load-theme 'spacemacs-dark t)))
+;; Init theme as spacemacs-dark
+(unless (package-installed-p 'spacemacs-theme)
+  (package-refresh-contents)
+  (package-install 'spacemacs-theme))
+
+(when (package-installed-p 'spacemacs-theme)
+  (add-hook 'after-init-hook
+	    (lambda () (load-theme 'spacemacs-dark t))))
 
 
 (use-package powerline

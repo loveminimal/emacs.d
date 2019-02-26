@@ -20,8 +20,44 @@
   (add-hook 'org-mode-hook 'org-content))
 
 
-;; TODO
+;;; GTD -- Personal Management.
+;; Capture, Refile, Archive
 
+;; Setting up capture
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+
+;; Using capture
+;; 'C-c c' (org-capture) - with N prefix to visit the specific target location
+;; 'C-c C-c' (org-capture-finalize) - back to the window before the capture process
+;; 'C-c C-w' (org-capture-refile) - finalize the capture process by refiling the note to a different place
+;; 'C-c C-k' (org-capture-kill) - abort the capture process
+
+;; Capture templates
+;; To use templates for different types of capture items, and for different target locations.
+;; 'C-c c C' - customize the variable 'org-capture-templates'
+
+;; ("KEYS" "DESCRIPTION" TYPE TARGET
+;;   "TEMPLATE")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;; jk-org2md-hexo.el -- A package render org to HEXO's md.
 
 (use-package ox-gfm
   :ensure t)
