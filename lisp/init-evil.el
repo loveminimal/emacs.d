@@ -30,7 +30,7 @@
     "fi" 'open-init-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
-    "fr" 'rename-this-file-and-buffer
+    "fr" 'recentf-open-files
     "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
     "fS" 'save-some-buffers

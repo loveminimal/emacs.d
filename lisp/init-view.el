@@ -4,8 +4,13 @@
 
 (use-package monokai-theme
   :ensure t
+  :disabled
   :config
   (load-theme 'monokai t))
+
+
+(add-hook 'after-init-hook
+	(lambda () (load-theme 'spacemacs-dark t)))
 
 
 (use-package powerline
