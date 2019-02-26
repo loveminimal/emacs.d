@@ -106,6 +106,7 @@
   (define-abbrev-table 'global-abbrev-table
     '(
       ("isme" "#+TITLE: \n#+AUTHOR: Jack Liu\n#+DATE:")
+      ("usp" "use-package")
     ))
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)

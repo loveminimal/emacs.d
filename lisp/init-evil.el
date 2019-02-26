@@ -60,6 +60,9 @@
     "wk" 'delete-window
   
     "yy" 'youdao-dictionary-search-at-point+
+
+    "ps" 'pomodoro-start
+    "pS" 'pomodoro-stop
   
     "qq" 'save-buffers-kill-terminal))
 

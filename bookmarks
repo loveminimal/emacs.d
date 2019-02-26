@@ -1,0 +1,15 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("index.org"
+ (filename . "c:/Users/LiuZengXi/Blog/source/_orgs/index.org")
+ (front-context-string . "he Ten Years]]\n-")
+ (rear-context-string . "years.org][这十年.T")
+ (position . 426))
+("init-base.el"
+ (filename . "~/.emacs.d/lisp/init-base.el")
+ (front-context-string . ";;; init-base.el")
+ (rear-context-string)
+ (position . 1))
+)

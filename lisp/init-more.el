@@ -110,6 +110,11 @@
   :diminish)
 
 
+;; Use `pomodoro-start' to start, and `pomodoro-stop' to stop
+(use-package pomodoro
+  :ensure t
+  :config
+  (pomodoro-add-to-mode-line))
 
 
 
