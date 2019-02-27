@@ -24,9 +24,7 @@
 
     "aa" 'org-agenda
     "cc" 'org-capture
-    "cf" 'org-capture-finalize
-    "ck" 'org-capture-kill
-    "cr" 'org-capture-refile
+    "jj" 'org-todo
     "os" 'org-schedule
     "od" 'org-deadline
 
