@@ -125,10 +125,10 @@
 ;; #+TODO: TODO(t) WAIT(w@/!) | DONE(d!) CANCELED(c@)
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "CALENDAR(c)" "|" "DONE(D)")
-	(sequence "SOMEDAY(s)" "REFER(r)"  "|" "TRASH(T)")
-	(sequence "PROJECT(p)" "|" "DONE(D)" "CANCELLED(C)")
-	(sequence "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(F)")))
+      '((sequence "TODO(t)" "NEXT(n)" "CALENDAR(c@)" "|" "DONE(D!)")
+	(sequence "SOMEDAY(s)" "REFER(r@)"  "|" "TRASH(T)")
+	(sequence "PROJECT(p@)" "|" "DONE(D!)" "CANCELLED(C@)")
+	(sequence "BUG(b@)" "KNOWNCAUSE(k@)" "|" "FIXED(F!)")))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "red")
