@@ -21,10 +21,20 @@
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
     "<SPC>" 'smex
+
+    "aa" 'org-agenda
+    "cc" 'org-capture
+    "cf" 'org-capture-finalize
+    "ck" 'org-capture-kill
+    "cr" 'org-capture-refile
+    "os" 'org-schedule
+    "od" 'org-deadline
+
   
     "bb" 'ido-switch-buffer
     "bj" 'ibuffer-sidebar-toggle-sidebar
     "bk" 'ido-kill-buffer
+
     
     "ff" 'ido-find-file
     "fi" 'open-init-file
