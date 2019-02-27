@@ -23,7 +23,7 @@
 
 (when (package-installed-p 'spacemacs-theme)
   (add-hook 'after-init-hook
-	    (lambda () (load-theme 'spacemacs-light t))))
+	    (lambda () (load-theme 'spacemacs-dark t))))
 
 
 (use-package powerline
