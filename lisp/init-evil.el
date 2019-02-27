@@ -34,6 +34,8 @@
     "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
     "fS" 'save-some-buffers
+
+    "gg" 'magit-status
     
     "hf" 'describe-function
     "hk" 'describe-key
