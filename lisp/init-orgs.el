@@ -20,34 +20,11 @@
 
 ;;; GTD -- Personal Management.
 
-;; Capture, Refile, Archive
-
-;; Setting up capture
-;; (setq org-default-notes-file (concat org-directory "/notes.org"))
-
-;; Using capture
-;; 'C-c c' (org-capture) - with N prefix to visit the specific target location
-;; 'C-c C-c' (org-capture-finalize) - back to the window before the capture process
-;; 'C-c C-w' (org-capture-refile) - finalize the capture process by refiling the note to a different place
-;; 'C-c C-k' (org-capture-kill) - abort the capture process
-
-;; Capture templates
-;; To use templates for different types of capture items, and for different target locations.
-;; 'C-c c C' - customize the variable 'org-capture-templates'
+;; Setting up capture - (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ;; Symbol Syntax
 ;; ("KEYS" "DESCRIPTION" TYPE TARGET
 ;;   "TEMPLATE" [PROPERTIES])
-
-;; An Example
-;; (setq org-capture-templates
-;;       '(("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
-;;          "* TODO %?\n  %i\n  %a")
-;;         ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
-;;          "* %?\nEntered on %U\n  %i\n  %a")))
-;; =>
-;; * TODO
-;;   [[file:LINK TO WHERE YOU INITIATED CAPTURE]]
 
 ;; Template Expansion
 ;; '%'-escapes allow dynamic insertion of content in templates.
@@ -66,10 +43,14 @@
   :config
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
-	'(("t" "todo" entry (file+headline "" "INBOX")	;; "" => `org-default-notes-file'
+	'(
+	  ("t" "todo" entry (file "~/org/inbox.org")
 	   "* TODO %?\n%U\n%a")
-	  ("n" "note" entry (file+headline "" "NOTES")
-	   "* %? :NOTE:\n%U\n%a"))))
+	  ("n" "note" entry (file "")	;; "" => `org-default-notes-file'
+	   "* %? :@note:\n%U\n%a")
+	  ("i" "idea" entry (file "~/org/ideas.org")
+	   "* %? :@idea:\n%U")
+	  )))
 
 ;; Refile and Copy
 ;; 'C-c M-w' (org-copy) - Copying works like refiling but not delete the original note.
