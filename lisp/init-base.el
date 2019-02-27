@@ -36,7 +36,7 @@
 
 
 (when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-11" t t))
+  (set-frame-font "Monaco-12" t t))
 ;; (when (member "Noto Sans Mono" (font-family-list))
 ;;   (set-fontset-font t 'han "Noto Sans Mono"))
 

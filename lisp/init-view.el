@@ -9,6 +9,13 @@
   (load-theme 'monokai t))
 
 
+(use-package solarized-theme
+  :ensure t
+  :disabled
+  :config
+  (load-theme 'solarized-dark t))
+
+
 ;; Init theme as spacemacs-dark
 (unless (package-installed-p 'spacemacs-theme)
   (package-refresh-contents)
@@ -16,7 +23,7 @@
 
 (when (package-installed-p 'spacemacs-theme)
   (add-hook 'after-init-hook
-	    (lambda () (load-theme 'spacemacs-dark t))))
+	    (lambda () (load-theme 'spacemacs-light t))))
 
 
 (use-package powerline
