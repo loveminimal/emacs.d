@@ -7,7 +7,7 @@
 ;; (setq org-image-actual-width 800)
 ;; it's okay now, to exec command like 'org-toggle-inline-images' but not toggle 'iimage-mode'
 
-(use-package org
+ (use-package org
   :init
   (setq org-hide-emphasis-markers t
 	org-src-fontify-natively t
@@ -18,7 +18,7 @@
 
 
 
-;;; GTD -- Personal Management.
+ ;;; GTD -- Personal Management.
 
 ;; Setting up capture - (setq org-default-notes-file (concat org-directory "/notes.org"))
 
@@ -40,15 +40,21 @@
 
 (use-package org-capture
   :bind ("C-c c" . org-capture)
+  :init
+  (setq org-default-notes-file "~/org/notes.org")
+  (defun open-notes-file ()
+    "Quickly open notes."
+    (interactive)
+    (find-file org-default-notes-file))
   :config
-  (setq org-default-notes-file (concat org-directory "/notes.org"))
+  ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
 	'(
-	  ("t" "todo" entry (file "~/org/inbox.org")
-	   "* TODO %?\n%U\n%a")
-	  ("n" "note" entry (file "")	;; "" => `org-default-notes-file'
+	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
-	  ("i" "idea" entry (file "~/org/ideas.org")
+	  ("t" "todo" entry (file+headline "" "INBOX")
+	   "* TODO %?\n%U\n%a")
+	  ("i" "idea" entry (file+headline "" "IDEAS")
 	   "* %? :@idea:\n%U")
 	  )))
 
@@ -56,7 +62,6 @@
 ;; 'C-c M-w' (org-copy) - Copying works like refiling but not delete the original note.
 ;; 'C-c C-w' (org-refile) - Refile the entry or region at point.
 ;; 'C-u C-c C-w' - Use the refile interface to jump to a heading.
-;; ...
 
 
 ;; Archiving
@@ -84,17 +89,6 @@
 ;; Fast Access to TODO States
 ;; You can set up keys for single-letter access to the states.
 
-;; Progress Logging
-;; Org mode can automatically record a timestamp and possibly a note when
-;; you mark a TODO item as DONE, or
-;; each time you change the state of a TODO item.
-
-;; Closing items
-;; (setq org-log-done 'time) - Each time you turn an entry from TODO to DONE,
-;; a line 'CLOSED: [timestamp]' will be inserted just after the headline.
-;; (setq org-log-done 'note) - To record a note along with the timestamp.
-;; '#+STARTUP: logdone' & '#+STARTUP: lognotedone'
-
 ;; Tracking TODO state changes
 ;; '!' - for a timestamp
 ;; '@' - for a note with timestamp
@@ -106,10 +100,10 @@
 ;; #+TODO: TODO(t) WAIT(w@/!) | DONE(d!) CANCELED(c@)
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "CALENDAR(c@)" "|" "DONE(D!)")
+      '((sequence "TODO(t)" "NEXT(n!)" "CALENDAR(c@)" "|" "DONE(D!/!)")
 	(sequence "SOMEDAY(s)" "REFER(r@)"  "|" "TRASH(T)")
-	(sequence "PROJECT(p@)" "|" "DONE(D!)" "CANCELLED(C@)")
-	(sequence "BUG(b@)" "KNOWNCAUSE(k@)" "|" "FIXED(F!)")))
+	(sequence "PROJECT(p@)" "|" "DONE(D!/!)" "CANCELLED(C@/!)")
+	(sequence "BUG(b@)" "KNOWNCAUSE(k@)" "|" "FIXED(F@/!)")))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "red")
@@ -185,7 +179,6 @@
 ;; 'C-c C-d' (org-deadline) - Insert 'DEADLINE' keyword along with a stamp.
 ;; 'C-c C-s' (org-schedule) - Insert 'SCHEDULE' keyword along with a stamp.
 ;; 'C-c / d' (org-check-deadlines) - Create a sparse tree with all deadlines
-;; ...
 
 
 
