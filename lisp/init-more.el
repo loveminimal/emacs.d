@@ -114,7 +114,9 @@
 (use-package pomodoro
   :ensure t
   :config
-  (pomodoro-add-to-mode-line))
+  (pomodoro-add-to-mode-line)
+  (setq play-pomodoro-break-sound nil
+	play-pomodoro-work-sound nil))
 
 
 

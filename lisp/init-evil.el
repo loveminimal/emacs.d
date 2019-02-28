@@ -41,7 +41,7 @@
     "fr" 'recentf-open-files
     "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
-    "fS" 'save-some-buffers
+    "fa" 'save-some-buffers
 
     "gg" 'magit-status
     
