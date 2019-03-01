@@ -18,16 +18,10 @@
 
 
 
- ;;; GTD -- Personal Management.
-
-;; Setting up capture - (setq org-default-notes-file (concat org-directory "/notes.org"))
-
-;; Symbol Syntax
-;; ("KEYS" "DESCRIPTION" TYPE TARGET
-;;   "TEMPLATE" [PROPERTIES])
+;;; GTD -- Personal Management.
 
 ;; Template Expansion
-;; '%'-escapes allow dynamic insertion of content in templates.
+;; %  -escapes allow dynamic insertion of content in templates.
 ;; %t - Timestamp, date only
 ;; %T - Timestamp, with date and time
 ;; %u, %U - Like the above, but inactive timestamps
@@ -38,7 +32,7 @@
 ;; %n - User name (taken from 'user-full-name')
 ;; %? - After completing the template, position cursor here.
 
-(use-package org-capture
+ (use-package org-capture
   :bind ("C-c c" . org-capture)
   :init
   (setq org-default-notes-file "~/org/notes.org")
@@ -53,7 +47,7 @@
 	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
 	  ("t" "todo" entry (file+headline "" "INBOX")
-	   "* TODO %?\n%U\n%a")
+	   "* TODO  %?\n%U\n%a")
 	  ("i" "idea" entry (file+headline "" "IDEAS")
 	   "* %? :@idea:\n%U")
 	  )))
@@ -78,25 +72,12 @@
 
 ;; TODO
 ;; 'C-c C-t' (org-todo) - Rotate the TODO state of the current item
-;; 'S-<RIGHT>/<LEFT>' - Same as above
-;; 'C-c / t' (org-show-todo-tree) - View TODO items in a _sparse tree_.
-;; 'C-c a t' (org-todo-list) - Show the global TODO list.
-;; 'S-M-<RET>' (org-insert-todo-heading) - Insert a new TODO entry below the current one.
-
-;; Extended Use of TODO Keywords
-;; To classify TODO items with _TODO keywords_ (stored in 'org-todo-keywords')
-
-;; Fast Access to TODO States
-;; You can set up keys for single-letter access to the states.
 
 ;; Tracking TODO state changes
 ;; '!' - for a timestamp
 ;; '@' - for a note with timestamp
 ;; '/!' - A timestamp should be recorded when entering/leaving the state
 
-;; (setq org-todo-keywords
-;;       '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
-;; or
 ;; #+TODO: TODO(t) WAIT(w@/!) | DONE(d!) CANCELED(c@)
 
 (setq org-todo-keywords
@@ -132,26 +113,19 @@
 
 ;; Tag searches
 ;; 'C-c / m' or 'C-c \' (org-match-sparse-tree) - Create a sparse tree with all headlines matching a tags/property/TODO search.
-;; with a 'C-u' prefix argument, ignore headlines that are not a TODO line.
 ;; 'C-c a m' (org-tags-view) - Create a global list of tag matches from all agenda file.
-;; 'C-c a M' (org-tags-view) - Same as above but only TODO items.
 
 
 ;; Agenda Views
 ;; 'C-c [' (org-agenda-file-to-front) - Add current file to the list of agenda files.
 ;; 'C-c ]' (org-remove-file) - Remove current file from the list of agenda files.
 ;; 'C-c a' (org-agenda) - It will prompt for a command to execute.
-;; More commands can be added by configuring the variable 'org-agenda-custom-commands'
 ;; If the current buffer is in Org mode and visiting a file, you can also
-;; first press '<' once to indicate that the agenda should be temporarily (until the next use of 'C-c a'),
-;; press '<' twice means to restrict to the current subtree or region (if active).
+;; - press '<' once to indicate that the agenda should be temporarily (until the next use of 'C-c a'),
+;; - press '<' twice means to restrict to the current subtree or region (if active).
 
 ;; The built-in agenda views
-;; weekly/daily agenda
 ;; 'C-c a a' (org-agenda-list) - Compile an agenda for the current week from a list of Org files.
-;; Calendar/Diary integration
-;; In order to include entries from the Emacs diary into Org mode's agenda, you only need:
-;; (setq org-agenda-include-diary t)
 ;; <SPC> <TAB> and <RET> can be used from the agenda buffer to jump to the diary file
 
 (use-package org-agenda
@@ -159,19 +133,7 @@
 
 
 ;; Dates and Times
-;; Creating timestamps
-;; 'C-c .' (org-time-stamp)
-;; 'C-c !' (org-time-stamp-inactive)
-;; 'C-c C-c' - Normalize timestamp, insert/fix day name if missing or wrong
-;; 'C-c <' (org-date-from-calendar)
-;; 'C-c >' (org-goto-calendar)
-;; 'C-c C-o' (org-open-at-point)
-;; 'S-<LEFT>/<RIGHT>' (org-timestamp-down/up-day)
-;; 'S-<UP>/<DOWN>' (org-timestamp-up/down-down)
-;; 'C-c C-y' (org-evaluate-time-range)
 
-;; Deadlines and Scheduling - Both the timestamp and the keyword
-;; have to be positioned immediately after the task they refer to.
 ;; DEADLINE - the task is supposed to be finished on the given date
 ;; SCHEDULED - the task is planned to be started on the given date
 
@@ -192,7 +154,7 @@
 (use-package ox-gfm
   :ensure t)
 
-
+(setq org-export-with-toc nil)
 (defun jk/md-export ()
   "Export org to markdown which will be added Front-matter."
   (interactive)
