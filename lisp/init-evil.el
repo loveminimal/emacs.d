@@ -27,6 +27,7 @@
     "jj" 'org-todo
     "os" 'org-schedule
     "od" 'org-deadline
+    "oo" 'open-notes-file
 
   
     "bb" 'ido-switch-buffer
@@ -38,7 +39,8 @@
     "fi" 'open-init-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
-    "fr" 'recentf-open-files
+    "fe" 'recentf-open-files
+    "fr" 'rename-this-file-and-buffer
     "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
     "fa" 'save-some-buffers
