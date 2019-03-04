@@ -154,7 +154,7 @@
 (use-package ox-gfm
   :ensure t)
 
-(setq org-export-with-toc nil)
+;; (setq org-export-with-toc nil)
 (defun jk/md-export ()
   "Export org to markdown which will be added Front-matter."
   (interactive)
