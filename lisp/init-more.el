@@ -16,6 +16,17 @@
   :bind (("M-x" . smex)
          ("M-X" . smex-major-mode-commands)))
 
+(use-package swiper
+  :ensure t
+  :init
+  (defun sanityinc/swiper-at-point (sym)
+    "@purcell
+Use `swiper' to search for the symbol at point."
+    (interactive (list (thing-at-point 'symbol)))
+    (swiper sym))
+  :bind (("M-s" . sanityinc/swiper-at-point)
+	 ("C-s" . swiper)))
+
 
 (use-package ido-vertical-mode
   :ensure t
