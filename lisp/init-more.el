@@ -130,6 +130,9 @@ Use `swiper' to search for the symbol at point."
 	play-pomodoro-work-sound nil))
 
 
+(use-package command-log-mode
+  :ensure t
+  :hook (after-init . command-log-mode))
 
 
 (provide 'init-more)
