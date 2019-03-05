@@ -19,6 +19,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (defalias 'list-buffers 'ibuffer)
+(setq-default word-wrap t)
 
 
 ;; @Xah_Lee

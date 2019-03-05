@@ -27,7 +27,7 @@
     "jj" 'org-todo
     "os" 'org-schedule
     "od" 'org-deadline
-    "oo" 'open-notes-file
+    "nn" 'open-notes-file
 
   
     "bb" 'ido-switch-buffer
