@@ -70,6 +70,8 @@
     "wr" 'split-window-right
     "wd" 'split-window-below
     "wk" 'delete-window
+    "wh" 'winner-undo
+    "wl" 'winner-redo
   
     "yy" 'youdao-dictionary-search-at-point+
 
