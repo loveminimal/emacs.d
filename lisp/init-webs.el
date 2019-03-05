@@ -19,7 +19,7 @@
 
 (use-package emmet-mode
   :ensure t
-  :hook (web-mode css-mode)
+  :hook (web-mode css-mode html-mode)
   :diminish " Em")
 
 
