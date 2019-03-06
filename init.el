@@ -20,6 +20,9 @@
 (use-package init-webs)
 
 
+(add-hook 'after-init-hook
+	  (lambda () (require 'server)
+	    (unless (server-running-p) (server-start))))
 
 
 (when (file-exists-p custom-file)
