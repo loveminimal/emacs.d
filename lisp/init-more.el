@@ -47,6 +47,11 @@ Use `swiper' to search for the symbol at point."
   :init (setq switch-window-shortcut-style 'qwerty))
 
 
+(use-package window-numbering
+  :ensure t
+  :hook (after-init . window-numbering-mode))
+
+
 (use-package company
   :ensure t
   :hook (after-init . global-company-mode)
@@ -132,7 +137,8 @@ Use `swiper' to search for the symbol at point."
 
 (use-package command-log-mode
   :ensure t
-  :hook (after-init . command-log-mode))
+  :hook (after-init . command-log-mode)
+  :diminish " cl")
 
 
 (provide 'init-more)
