@@ -1,1 +1,19 @@
-All in one, no reason.
+#+DATE: 2019/03/07 23:41:48
+
+** Introduction
+
+ Here is my emacs' tree.
+
+ [[./preview/emacs.png]] 
+
+** Installation
+
+Just clone this repo to you home.
+   
+#+BEGIN_SRC sh
+  git clone https://github.com/loveminimal/emacs.d-me.git ~/.emacs.d
+#+END_SRC
+
+** Summary
+
+Emacs is a magic tool! More you use, more you enjoy : )
