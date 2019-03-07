@@ -144,53 +144,14 @@
 
 
 
-
-
-
-
-
-;;; jk-org2md-hexo.el -- A package render org to HEXO's md.
+;;; org2md.el -- A package render org to HEXO's md.
 
 (use-package ox-gfm
   :ensure t)
 
 ;; (setq org-export-with-toc nil)
-(defun jk/md-export ()
-  "Export org to markdown which will be added Front-matter."
-  (interactive)
-  (save-buffer)	                                        ;; Save current buffer
-  (setq fname (car (split-string (buffer-name) "\\."))) ;; if current buffer is "hello-world.org", FNAME will be "hello-world"
-  (setq fdir "../_posts/")				;; Set exported markdown dir
-  (setq fnamed (concat fdir fname ".md"))		;; "hello-world.md"
-  (setq fnamel (split-string fname "-"))		;; Now, FNAMEL will be ("hello" "world")
-  ;; Split the FNAMEL and join them with <space>, now FTITLE will be "hello world"
-  (setq ftitle (concat "---\ntitle: "
-		       (car fnamel) " "
-		       (car (cdr fnamel)) " "
-		       (car (cdr (cdr fnamel))) " "
-		       (car (cdr (cdr (cdr fnamel)))) " "
-		       (car (cdr (cdr (cdr (cdr fnamel))))) "\n"))
-  (write-region ftitle nil fnamed) ;; Add FTITLE to a file named "hello-world.md"
-  ;; Append date like "date: 2019/02/10 10:47:56" to "hello-world.md"
-  (beginning-of-buffer)
-  (forward-char 8)
-  (let (p1 p2)
-    (setq p1 (point))
-    (end-of-line)
-    (setq p2 (point))
-    (append-to-file "date: " nil fnamed)
-    (append-to-file p1 p2 fnamed)
-    (append-to-file "\nupdated: " nil fnamed)
-    (append-to-file (format-time-string "%Y/%m/%d %T") nil fnamed)
-    (append-to-file "\n---\n\n" nil fnamed))
-  (org-gfm-export-as-markdown)			 ;; Invoke gfm plugin to open a relative .md buffer
-  (replace-string ".." "")			 ;; ! Just for hexo-blog's special img-show format...
-  (append-to-file nil t fnamed)	 ;; Append the contents of "hello-world.md" to "hello-world.md" again
-  (kill-this-buffer)
-  (switch-window-then-maximize)) ;; Kill the "hello-world.md" generate by GFM plugin to keep you stay in current .org file
 
-
-(defun jk/insert-date ()
+(defun org2md-insert-date ()
   "Insert current date."
   (interactive)
   (beginning-of-buffer)
@@ -198,6 +159,45 @@
   ;; (org-time-stamp t)
   (insert (format-time-string "%Y/%m/%d %T"))
   (insert "\n\n"))
+
+
+(defun org2md-export-md ()
+  "Export .org to .md which will be added Front-matter."
+  (interactive)
+  (save-buffer)
+  (let ((filename (car (split-string (buffer-name) "\\.")))
+	(filedir "../_posts/"))
+	
+	(let ((filename-dot-md (concat filedir filename ".md"))
+	      (filename-list (split-string filename "-")))
+	  (let ((file-title (concat "---\ntitle: "
+				  (car filename-list) " "
+				  (car (cdr filename-list)) " "
+				  (car (cdr (cdr filename-list))) " "
+				  (car (cdr (cdr (cdr filename-list)))) " "
+				  (car (cdr (cdr (cdr (cdr filename-list))))) " "
+				  (car (cdr (cdr (cdr (cdr (cdr filename-list)))))) " "
+				  (car (cdr (cdr (cdr (cdr (cdr (cdr filename-list))))))) " "
+				  (car (cdr (cdr (cdr (cdr (cdr (cdr (cdr filename-list)))))))) "\n")))
+	    (write-region file-title nil filename-dot-md)
+	    (beginning-of-buffer)
+	    (forward-char 8)
+	    (let (p1 p2)
+	      (setq p1 (point))
+	      (end-of-line)
+	      (setq p2 (point))
+	      (append-to-file "date: " nil filename-dot-md)
+	      (append-to-file p1 p2 filename-dot-md)
+	      (append-to-file "\nupdated: " nil filename-dot-md)
+	      (append-to-file (format-time-string "%Y/%m/%d %T") nil filename-dot-md)
+	      (append-to-file "\n---\n\n" nil filename-dot-md)
+	      (org-gfm-export-as-markdown)
+	      (replace-string ".." "")
+	      (append-to-file nil t filename-dot-md)
+	      (kill-this-buffer)
+	      (switch-window-then-maximize))))))
+
+
 
 
 
