@@ -35,7 +35,7 @@
  (use-package org-capture
   :bind ("C-c c" . org-capture)
   :init
-  (setq org-default-notes-file "~/gtd/notes.org")
+  (setq org-default-notes-file "~/.gtd/notes.org")
   (defun open-notes-file ()
     "Quickly open notes."
     (interactive)
