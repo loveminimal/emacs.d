@@ -37,6 +37,7 @@
     
     "ff" 'ido-find-file
     "fi" 'open-init-file
+    "fn" 'open-notes-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
     "fe" 'recentf-open-files
@@ -50,6 +51,7 @@
     "hf" 'describe-function
     "hk" 'describe-key
     "hv" 'describe-variable
+    "hp" 'describe-package
 
     "ii" 'org-toggle-inline-images
   
