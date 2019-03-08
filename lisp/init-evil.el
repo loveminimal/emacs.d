@@ -27,7 +27,8 @@
     "jj" 'org-todo
     "os" 'org-schedule
     "od" 'org-deadline
-    "nn" 'open-notes-file
+    "mm" 'org-refile
+    "pp" 'org-priority
 
   
     "bb" 'ido-switch-buffer
@@ -59,7 +60,6 @@
   
     "mj" 'list-bookmarks
     "ms" 'bookmark-set
-    "mm" 'bookmark-jump
   
     "sa" 'mark-whole-buffer
     
