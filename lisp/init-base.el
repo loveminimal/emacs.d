@@ -131,6 +131,12 @@
   (find-file "~/.emacs.d/init.el"))
 
 
+(defun open-notes-file ()
+  "Quickly open note file."
+  (interactive)
+  (find-file "~/.gtd/notes.org"))
+
+
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
 (defun sanityinc/newline-at-end-of-line ()

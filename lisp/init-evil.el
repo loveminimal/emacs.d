@@ -27,7 +27,8 @@
     "jj" 'org-todo
     "os" 'org-schedule
     "od" 'org-deadline
-    "nn" 'open-notes-file
+    "mm" 'org-refile
+    "pp" 'org-priority
 
   
     "bb" 'ido-switch-buffer
@@ -37,6 +38,7 @@
     
     "ff" 'ido-find-file
     "fi" 'open-init-file
+    "fn" 'open-notes-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
     "fe" 'recentf-open-files
@@ -50,6 +52,7 @@
     "hf" 'describe-function
     "hk" 'describe-key
     "hv" 'describe-variable
+    "hp" 'describe-package
 
     "ii" 'org-toggle-inline-images
   
@@ -57,7 +60,6 @@
   
     "mj" 'list-bookmarks
     "ms" 'bookmark-set
-    "mm" 'bookmark-jump
   
     "sa" 'mark-whole-buffer
     

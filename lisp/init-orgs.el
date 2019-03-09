@@ -35,7 +35,7 @@
  (use-package org-capture
   :bind ("C-c c" . org-capture)
   :init
-  (setq org-default-notes-file "~/org/notes.org")
+  (setq org-default-notes-file "~/.gtd/notes.org")
   (defun open-notes-file ()
     "Quickly open notes."
     (interactive)
@@ -44,10 +44,10 @@
   ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
 	'(
-	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
-	   "* %? :@note:\n%U\n%a")
 	  ("t" "todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U\n%a")
+	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
+	   "* %? :@note:\n%U\n%a")
 	  ("i" "idea" entry (file+headline "" "IDEAS")
 	   "* %? :@idea:\n%U")
 	  )))
@@ -154,7 +154,7 @@
 (defun org2md-insert-date ()
   "Insert current date."
   (interactive)
-  (beginning-of-buffer)
+  (goto-char (point-min))
   (insert "#+DATE: ")
   ;; (org-time-stamp t)
   (insert (format-time-string "%Y/%m/%d %T"))
@@ -180,7 +180,7 @@
 				  (car (cdr (cdr (cdr (cdr (cdr (cdr filename-list))))))) " "
 				  (car (cdr (cdr (cdr (cdr (cdr (cdr (cdr filename-list)))))))) "\n")))
 	    (write-region file-title nil filename-dot-md)
-	    (beginning-of-buffer)
+	    (goto-char (point-min))
 	    (forward-char 8)
 	    (let (p1 p2)
 	      (setq p1 (point))
@@ -192,7 +192,8 @@
 	      (append-to-file (format-time-string "%Y/%m/%d %T") nil filename-dot-md)
 	      (append-to-file "\n---\n\n" nil filename-dot-md)
 	      (org-gfm-export-as-markdown)
-	      (replace-string ".." "")
+	      (while (search-forward ".." nil t)
+		(replace-match "" nil t))
 	      (append-to-file nil t filename-dot-md)
 	      (kill-this-buffer)
 	      (switch-window-then-maximize))))))
