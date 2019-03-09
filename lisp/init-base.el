@@ -77,6 +77,9 @@
 (use-package winner-mode
   :hook after-init)
 
+(use-package shell-script-mode
+  :mode ("\\.ps1\\'"))
+
 (add-hook 'after-init-hook 'global-auto-revert-mode)
 
 ;; (use-package electric-indent-mode
