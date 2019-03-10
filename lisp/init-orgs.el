@@ -44,7 +44,7 @@
   ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
 	'(
-	  ("c" "capture-todo" entry (file+headline "" "GTD")
+	  ("c" "capture-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U\n%a")
 	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
