@@ -58,7 +58,7 @@
     "ii" 'org-toggle-inline-images
 
     "ji" 'org2md-insert-date
-    "jk" 'org2md-export-md
+    "jm" 'org2md-export-md
   
     "ll" 'comment-line
   
