@@ -56,6 +56,9 @@
     "hp" 'describe-package
 
     "ii" 'org-toggle-inline-images
+
+    "ji" 'org2md-insert-date
+    "jk" 'org2md-export-md
   
     "ll" 'comment-line
   
