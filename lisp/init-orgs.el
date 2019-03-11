@@ -44,7 +44,7 @@
   ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
 	'(
-	  ("t" "todo" entry (file+headline "" "INBOX")
+	  ("c" "capture-todo" entry (file+headline "" "GTD")
 	   "* TODO  %?\n%U\n%a")
 	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
@@ -82,7 +82,7 @@
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n!)" "CALENDAR(c@)" "|" "DONE(D!/!)")
-	(sequence "SOMEDAY(s)" "REFER(r@)"  "|" "TRASH(T)")
+	(sequence "SOMEDAY(s@)" "REFER(r@)"  "|" "TRASH(T)")
 	(sequence "PROJECT(p@)" "|" "DONE(D!/!)" "CANCELLED(C@/!)")
 	(sequence "BUG(b@)" "KNOWNCAUSE(k@)" "|" "FIXED(F@/!)")))
 
