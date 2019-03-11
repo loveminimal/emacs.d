@@ -137,6 +137,12 @@
   (find-file "~/.gtd/notes.org"))
 
 
+(defun open-index-file ()
+  "Quickly open index file."
+  (interactive)
+  (find-file "~/Blog/source/_orgs/INDEX.org"))
+
+
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
 (defun sanityinc/newline-at-end-of-line ()
