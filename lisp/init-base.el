@@ -85,7 +85,7 @@
 ;; (use-package electric-indent-mode
 ;;   :hook after-init)
 
-(add-hook 'after-init-hook 'global-hl-line-mode)
+;; (add-hook 'after-init-hook 'global-hl-line-mode)
 
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600)
