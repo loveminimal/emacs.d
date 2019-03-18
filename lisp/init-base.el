@@ -137,6 +137,11 @@
   (find-file "~/.gtd/notes.org"))
 
 
+(defun open-bill-file ()
+  "Quickly open bill file."
+  (interactive)
+  (find-file "~/.gtd/bill.org"))
+
 (defun open-index-file ()
   "Quickly open index file."
   (interactive)

@@ -38,6 +38,7 @@
     
     "ff" 'ido-find-file
     "fh" 'open-index-file
+    "fb" 'open-bill-file
     "fi" 'open-init-file
     "fn" 'open-notes-file
     "fo" 'org-open-at-point
