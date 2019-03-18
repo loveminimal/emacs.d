@@ -50,6 +50,8 @@
 	   "* %? :@note:\n%U\n%a")
 	  ("i" "idea" entry (file+headline "" "IDEAS")
 	   "* %? :@idea:\n%U")
+	  ("s" "story of novel" entry (file+headline "" "NOVEL")
+	   "* %? :@novel:\n%U")
 	  )))
 
 ;; Refile and Copy
