@@ -141,5 +141,9 @@ Use `swiper' to search for the symbol at point."
   :diminish " cl")
 
 
+(use-package pdf-tools
+  :ensure t)
+
+
 (provide 'init-more)
 ;;; init-more.el ends here
