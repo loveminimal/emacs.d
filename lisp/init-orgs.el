@@ -204,6 +204,14 @@
 
 
 
+;; (setq org-export-with-toc nil)
+(defun org2md-without-toc ()
+  "Mainly export a chinese doc without toc for JIANSHU."
+  (interactive)
+  (setq org-export-with-toc nil)
+  (org-gfm-export-as-markdown)
+  (delete-other-windows)
+  (setq org-export-with-toc t))
 
 
 

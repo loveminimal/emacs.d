@@ -60,6 +60,7 @@
 
     "ji" 'org2md-insert-date
     "jm" 'org2md-export-md
+    "js" 'org2md-without-toc
   
     "ll" 'comment-line
   
