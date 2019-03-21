@@ -68,6 +68,8 @@
     "ms" 'bookmark-set
   
     "sa" 'mark-whole-buffer
+
+    "ss" 'projectile-ripgrep
     
     "tt" 'toggle-truncate-lines
     "tw" 'toggle-frame-maximized
