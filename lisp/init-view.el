@@ -82,7 +82,8 @@
   ;; (set-face-background 'highlight-indent-guides-even-face "dimgray")
   (set-face-background 'highlight-indent-guides-even-face "blue")
   ;; (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
-  (set-face-foreground 'highlight-indent-guides-character-face "yellow"))
+  (set-face-foreground 'highlight-indent-guides-character-face "yellow")
+  :diminish)
 
 
 (provide 'init-view)
