@@ -22,6 +22,8 @@
   (evil-leader/set-key
     "<SPC>" 'smex
 
+    "//" 'org-sparse-tree
+
     "aa" 'org-agenda
     "cc" 'org-capture
     "jj" 'org-todo
