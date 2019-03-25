@@ -145,7 +145,7 @@
 (defun open-index-file ()
   "Quickly open index file."
   (interactive)
-  (find-file "~/Blog/source/_orgs/INDEX.org"))
+  (find-file "~/Blog/source/_orgs/alpha.org"))
 
 
 ;; @purcell
