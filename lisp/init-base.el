@@ -115,7 +115,7 @@
     '(
       ("isme" "#+TITLE: \n#+AUTHOR: Jack Liu\n#+DATE:")
       ("usp" "use-package")
-      ("js" "JavaScript")
+      ("jss" "JavaScript")
     ))
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)
