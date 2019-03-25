@@ -43,6 +43,7 @@
     "fb" 'open-bill-file
     "fi" 'open-init-file
     "fn" 'open-notes-file
+    "fw" 'open-web-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
     "fe" 'recentf-open-files

@@ -130,12 +130,15 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-
 (defun open-notes-file ()
   "Quickly open note file."
   (interactive)
   (find-file "~/.gtd/notes.org"))
 
+(defun open-web-file ()
+  "Quickly open web file."
+  (interactive)
+  (find-file "~/.gtd/developer-roadmap.org"))
 
 (defun open-bill-file ()
   "Quickly open bill file."
