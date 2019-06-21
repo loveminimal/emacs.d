@@ -11,7 +11,7 @@
 Just clone this repo to you home.
    
 #+BEGIN_SRC sh
-  git clone https://github.com/loveminimal/emacs.d-me.git ~/.emacs.d
+  git clone https://github.com/loveminimal/emacs.d.git ~/.emacs.d
 #+END_SRC
 
 ** Summary
