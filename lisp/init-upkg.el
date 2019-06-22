@@ -10,13 +10,6 @@
 (setq package-user-dir versioned-package-dir))
 
 
-;; (when (>= emacs-major-version 24)
-;;   (require 'package)
-;;   (package-initialize)
-;;   (setq package-archives
-;;     '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;       ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))))
-
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)

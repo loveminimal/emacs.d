@@ -39,11 +39,7 @@
 
     
     "ff" 'ido-find-file
-    "fh" 'open-index-file
-    "fb" 'open-bill-file
     "fi" 'open-init-file
-    "fn" 'open-notes-file
-    "fw" 'open-web-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
     "fe" 'recentf-open-files
@@ -61,10 +57,6 @@
 
     "ii" 'org-toggle-inline-images
 
-    "ji" 'org2md-insert-date
-    "jm" 'org2md-export-md
-    "js" 'org2md-without-toc
-  
     "ll" 'comment-line
   
     "mj" 'list-bookmarks
@@ -88,9 +80,6 @@
   
     "yy" 'youdao-dictionary-search-at-point+
 
-    "ps" 'pomodoro-start
-    "pS" 'pomodoro-stop
-  
     "qq" 'save-buffers-kill-terminal))
 
 

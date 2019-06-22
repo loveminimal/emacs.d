@@ -4,7 +4,6 @@
 
 (use-package monokai-theme
   :ensure t
-  :disabled
   :config
   (load-theme 'monokai t))
 
@@ -17,13 +16,13 @@
 
 
 ;; Init theme as spacemacs-dark
-(unless (package-installed-p 'spacemacs-theme)
-  (package-refresh-contents)
-  (package-install 'spacemacs-theme))
+;; (unless (package-installed-p 'spacemacs-theme)
+;;   (package-refresh-contents)
+;;   (package-install 'spacemacs-theme))
 
-(when (package-installed-p 'spacemacs-theme)
-  (add-hook 'after-init-hook
-	    (lambda () (load-theme 'spacemacs-dark t))))
+;; (when (package-installed-p 'spacemacs-theme)
+;;   (add-hook 'after-init-hook
+;; 	    (lambda () (load-theme 'spacemacs-dark t))))
 
 
 (use-package powerline
@@ -82,7 +81,7 @@
   ;; (set-face-background 'highlight-indent-guides-even-face "dimgray")
   (set-face-background 'highlight-indent-guides-even-face "blue")
   ;; (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
-  (set-face-foreground 'highlight-indent-guides-character-face "yellow")
+  (set-face-foreground 'highlight-indent-guides-character-face "#75715e")
   :diminish)
 
 

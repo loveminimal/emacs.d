@@ -10,16 +10,16 @@
 
 
 (setq-default
- initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
- line-spacing 0.1
- truncate-lines t)
+ initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
+;; line-spacing 0.1
+ truncate-lines t
+ word-wrap t)
 
 
 (display-time)
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (defalias 'list-buffers 'ibuffer)
-(setq-default word-wrap t)
 
 
 ;; @Xah_Lee
@@ -38,11 +38,8 @@
 
 (when (member "Monaco" (font-family-list))
   (set-frame-font "Monaco-12" t t))
-;; (when (member "Noto Sans Mono" (font-family-list))
-;;   (set-fontset-font t 'han "Noto Sans Mono"))
-
-(when (member "楷体" (font-family-list))
-  (set-fontset-font t 'han "楷体"))
+(when (member "Noto Sans Mono" (font-family-list))
+  (set-fontset-font t 'han "Noto Sans Mono"))
 
 
 (when (fboundp 'menu-bar-mode)
@@ -53,6 +50,7 @@
   (set-scroll-bar-mode nil))
 
 
+;; Keybindings without extra configuration
 (global-set-key (kbd "C-.") 'set-mark-command)
 
 
@@ -129,26 +127,6 @@
   "Quickly open init file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-
-(defun open-notes-file ()
-  "Quickly open note file."
-  (interactive)
-  (find-file "~/.gtd/notes.org"))
-
-(defun open-web-file ()
-  "Quickly open web file."
-  (interactive)
-  (find-file "~/.gtd/developer-roadmap.org"))
-
-(defun open-bill-file ()
-  "Quickly open bill file."
-  (interactive)
-  (find-file "~/.gtd/bill.org"))
-
-(defun open-index-file ()
-  "Quickly open index file."
-  (interactive)
-  (find-file "~/Blog/source/_orgs/alpha.org"))
 
 
 ;; @purcell

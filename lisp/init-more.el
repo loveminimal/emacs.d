@@ -3,13 +3,6 @@
 ;;; Code:
 
 
-(use-package xah-fly-keys
-  :ensure t
-  :disabled
-  :init
-  (xah-fly-keys-set-layout "qwerty")
-  (xah-fly-keys 1))
-
 (use-package smex
   :ensure t
   :config (smex-initialize)
@@ -47,11 +40,6 @@ Use `swiper' to search for the symbol at point."
   :init (setq switch-window-shortcut-style 'qwerty))
 
 
-(use-package window-numbering
-  :ensure t
-  :hook (after-init . window-numbering-mode))
-
-
 (use-package company
   :ensure t
   :hook (after-init . global-company-mode)
@@ -80,24 +68,18 @@ Use `swiper' to search for the symbol at point."
 ;; Comments code for make it work in lisp modes, but I no need
 (use-package move-dup
   :ensure t
-  :bind (([M-up] . md/move-lines-up)
-	 ([M-down] . md/move-lines-down)
+  :bind (([M-up] . md-move-lines-up)
+	 ([M-down] . md-move-lines-down)
 	 ;; ([M-S-up] . md/move-lines-up)
 	 ;; ([M-S-down] . md/move-lines-down)
-	 ([M-S-up] . md/duplicate-down)
-	 ([M-S-down] . md/duplicate-up)))
+	 ([M-S-up] . md-duplicate-down)
+	 ([M-S-down] . md-duplicate-up)))
 
 
 (use-package flycheck
   :ensure t
   :hook (after-init . global-flycheck-mode)
   :diminish " FC")
-
-
-(use-package yasnippet
-  :ensure t
-  :disabled
-  :hook (after-init . yas-global-mode))
 
 
 (use-package diff-hl
@@ -126,23 +108,10 @@ Use `swiper' to search for the symbol at point."
   :diminish)
 
 
-;; Use `pomodoro-start' to start, and `pomodoro-stop' to stop
-(use-package pomodoro
-  :ensure t
-  :config
-  (pomodoro-add-to-mode-line)
-  (setq play-pomodoro-break-sound nil
-	play-pomodoro-work-sound nil))
-
-
 (use-package command-log-mode
   :ensure t
   :hook (after-init . command-log-mode)
   :diminish " cl")
-
-
-(use-package pdf-tools
-  :ensure t)
 
 
 (use-package projectile
