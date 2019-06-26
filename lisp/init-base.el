@@ -38,8 +38,8 @@
 
 (when (member "Monaco" (font-family-list))
   (set-frame-font "Monaco-12" t t))
-(when (member "Noto Sans Mono" (font-family-list))
-  (set-fontset-font t 'han "Noto Sans Mono"))
+(when (member "楷体" (font-family-list))
+  (set-fontset-font t 'han "楷体"))
 
 
 (when (fboundp 'menu-bar-mode)
