@@ -11,9 +11,14 @@
 
 (setq-default
  initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
-;; line-spacing 0.1
+ ;; line-spacing 0.1
+
  truncate-lines t
  word-wrap t)
+
+
+;; Permanently force Emacs to indent with spaces, never with TABs
+(setq-default  indent-tabs-mode nil)
 
 
 (display-time)
