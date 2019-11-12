@@ -1,4 +1,4 @@
-;;; init-base.el --- Configurations without extra packages.
+;;; init-base.el --- Basic configurations.
 ;;; Commentary:
 ;;; Code:
 
