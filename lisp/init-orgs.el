@@ -146,6 +146,9 @@
 ;; 'C-c C-s' (org-schedule) - Insert 'SCHEDULE' keyword along with a stamp.
 ;; 'C-c / d' (org-check-deadlines) - Create a sparse tree with all deadlines
 
+(use-package ox-hugo
+  :ensure t
+  :after ox)
 
 
 (provide 'init-orgs)
