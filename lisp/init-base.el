@@ -120,7 +120,7 @@
   (clear-abbrev-table global-abbrev-table)
   (define-abbrev-table 'global-abbrev-table
     '(
-      ("isme" "#+TITLE: \n#+AUTHOR: Jack Liu\n#+DATE:")
+      ("isme" "#+HUGO_BASE_DIR: ~/site\n#+AUTHOR: Jack Liu\n#+TITLE:\n#+DATE:")
       ("usp" "use-package")
       ("jss" "JavaScript")
     ))
