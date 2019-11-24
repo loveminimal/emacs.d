@@ -24,6 +24,8 @@
 
     "//" 'org-sparse-tree
 
+    "oo" 'org-export-dispatch
+
     "aa" 'org-agenda
     "cc" 'org-capture
     "jj" 'org-todo
