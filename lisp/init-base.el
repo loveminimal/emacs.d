@@ -120,7 +120,9 @@
   (clear-abbrev-table global-abbrev-table)
   (define-abbrev-table 'global-abbrev-table
     '(
-      ("isme" "#+HUGO_BASE_DIR: ~/site\n#+AUTHOR: Jack Liu\n#+TITLE:\n#+DATE:")
+      ("isme" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+DATE: \n#+TITLE:")
+      ("ispp" ":PROPERTIES:\n:EXPORT_FILE_NAME: \n:EXPORT_DATE: \n:END:")
+      ("isii" "<img width='50%' src='/images/git.jpg' />")
       ("usp" "use-package")
       ("jss" "JavaScript")
     ))
