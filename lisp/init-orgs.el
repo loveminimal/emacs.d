@@ -150,6 +150,9 @@
   :ensure t
   :after ox)
 
+(use-package org-hugo-auto-export-mode
+  :mode (("\\.org\\'" . org-hugo-auto-export-mode)))
+
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
