@@ -152,6 +152,29 @@
   :after ox)
 
 
+(use-package pomidor
+  :ensure t
+  :bind (("<f12>" . pomidor))
+  :config (setq pomidor-sound-tick nil
+                pomidor-sound-tack nil
+                pomidor-seconds (* 25 60) ;; 25 minutes for the work period
+                pomidor-break-seconds (* 5 60) ;; 5 minutes break time
+                )
+  :hook (pomidor-mode . (lambda ()
+                          (display-line-numbers-mode -1) ; Emacs 26.1+
+                          (setq left-fringe-width 0 right-fringe-width 0)
+                          (setq left-margin-width 2 right-margin-width 0)
+                          ;; force fringe update
+                          (set-window-buffer nil (current-buffer)))))
+
+;; If your Emacs cannot play sounds you can provide your own function to do it
+;; (setq pomidor-play-sound-file
+;;       (lambda (file)
+;;         (start-process "my-pomidor-play-sound"
+;;                        nil
+;;                        "mplayer"
+;;                        file)))
+
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
