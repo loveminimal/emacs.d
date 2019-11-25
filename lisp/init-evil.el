@@ -49,6 +49,7 @@
     
     "ff" 'ido-find-file
     "fi" 'open-init-file
+    "fp" 'open-plan-file
     "fn" 'open-notes-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file

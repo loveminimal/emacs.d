@@ -140,6 +140,12 @@
   (find-file "~/.emacs.d/init.el"))
 
 
+(defun open-plan-file ()
+  "Quickly open plan file."
+  (interactive)
+  (find-file "~/site/org/gtd.org"))
+
+
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
 (defun sanityinc/newline-at-end-of-line ()
