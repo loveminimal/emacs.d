@@ -32,9 +32,16 @@
     "os" 'org-schedule
     "od" 'org-deadline
     "mm" 'org-refile
-    "pp" 'org-priority
+    ;; "pp" 'org-priority
 
+
+    "pp" 'pomidor
+    "ps" 'pomidor-stop
+    "pq" 'pomidor-quit
+    "pr" 'pomidor-reset
+    "pb" 'pomidor-break
   
+
     "bb" 'ido-switch-buffer
     "bj" 'ibuffer-sidebar-toggle-sidebar
     "bk" 'ido-kill-buffer
