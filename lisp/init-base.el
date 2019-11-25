@@ -120,11 +120,11 @@
   (clear-abbrev-table global-abbrev-table)
   (define-abbrev-table 'global-abbrev-table
     '(
-      ;; ("isme" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+HUGO_CATEGORIES: \n#+HUGO_TAGS: \n#+DATE: \n#+TITLE:")
-      ("isme" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+HUGO_CATEGORIES: \n#+DATE: \n#+TITLE:")
-      ;; ("isme" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+DATE: \n#+TITLE:")
+      ("ismect" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+HUGO_CATEGORIES: \n#+HUGO_TAGS: \n#+DATE: \n#+TITLE:")
+      ("ismec" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+HUGO_CATEGORIES: \n#+DATE: \n#+TITLE:")
+      ("isme" "#+HUGO_BASE_DIR: ~/site\n#+HUGO_SECTION: posts\n#+HUGO_WEIGHT: auto\n#+HUGO_AUTO_SET_LASTMOD: t\n#+AUTHOR: Jack Liu\n#+DATE: \n#+TITLE:")
       ("ispp" ":PROPERTIES:\n:EXPORT_FILE_NAME: \n:EXPORT_DATE: \n:END:")
-      ("isii" "<img width='50%' src='/images/' />")
+      ("isii" "<img width='50%' src='/images/'>")
       ("usp" "use-package")
       ("jss" "JavaScript")
     ))

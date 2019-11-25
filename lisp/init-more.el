@@ -136,5 +136,17 @@ Use `swiper' to search for the symbol at point."
   :ensure t)
 
 
+(use-package yasnippet
+  :ensure t
+  :hook (after-init . yas-global-mode)
+  :config
+  (setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"                 ;; personal snippets
+        "/path/to/some/collection/"           ;; foo-mode and bar-mode snippet collection
+        "/path/to/yasnippet/yasmate/snippets" ;; the yasmate collection
+        )))
+
+
+
 (provide 'init-more)
 ;;; init-more.el ends here
