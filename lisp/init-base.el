@@ -46,7 +46,7 @@
 
 
 (when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-12" t t))
+  (set-frame-font "Monaco-11" t t))
 (when (member "楷体" (font-family-list))
   (set-fontset-font t 'han "楷体"))
 
