@@ -135,6 +135,11 @@
 
 ;;;;;; Some Basic Functions
 
+(defun open-work-file ()
+  "Just can be run in work env."
+  (interactive)
+  (find-file "z:/info/info.org"))
+
 
 (defun open-init-file ()
   "Quickly open init file."
