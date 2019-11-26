@@ -9,5 +9,11 @@
 #+AUTHOR: Jack Liu
 #+HUGO_CATEGORIES: $2
 #+HUGO_TAGS: $3
-#+DATE: $4
-#+TITLE: $5
+#+DATE: `(current-time-string)`
+#+TITLE: ${4:`(car (split-string (file-name-nondirectory buffer-file-name) "\\."))`}
+
+`(capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\.")))`
+
+`(let list (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")
+      (join list " "))`
+

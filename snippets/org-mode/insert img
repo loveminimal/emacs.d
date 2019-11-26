@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: insert img 
+# key: ii
+# --
+<img src="/images/$1" width="$2%" />
+
+
