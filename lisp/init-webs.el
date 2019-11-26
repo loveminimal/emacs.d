@@ -16,6 +16,10 @@
   :mode "\\.js\\'")
 
 
+(use-package vue-mode
+  :ensure t
+  :mode ("\\.vue\\'"))
+
 
 (use-package emmet-mode
   :ensure t
