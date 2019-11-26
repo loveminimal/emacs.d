@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: insert hugo formatter
+# key: ihf
+# --
+#+HUGO_BASE_DIR: ~/site
+#+HUGO_SECTION: ${1:posts}
+#+HUGO_WEIGHT: auto
+#+HUGO_AUTO_SET_LASTMOD: t
+#+AUTHOR: Jack Liu
+#+HUGO_CATEGORIES: $2
+#+HUGO_TAGS: $3
+#+DATE: $4
+#+TITLE: $5
