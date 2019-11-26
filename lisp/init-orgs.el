@@ -151,6 +151,8 @@
   :ensure t
   :after ox)
 
+(use-package org-hugo-auto-export-mode
+  :hook (org-mode))
 
 (use-package pomidor
   :ensure t
