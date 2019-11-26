@@ -10,11 +10,12 @@
 #+HUGO_CATEGORIES: $2
 #+HUGO_TAGS: $3
 #+DATE: `(current-time-string)`
-#+TITLE: ${4:`(concat "" (car (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")) " "
-           (car (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))) " "
-           (car (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))) " "
-           (car (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))) " "
-           (car (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))))) " "
-           (car (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))))) " "
-           (car (cdr (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))))))) " "
-           (car (cdr (cdr (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))))))) " ")`}
+#+TITLE: ${4:`(concat ""
+                      (car (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")) " "
+                      (car (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))) " "
+                      (car (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))) " "
+                      (car (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))) " "
+                      (car (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))))) " "
+                      (car (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))))) " "
+                      (car (cdr (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))))))) " "
+                      (car (cdr (cdr (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))))))) " ")`}
