@@ -6,16 +6,8 @@
 #+HUGO_SECTION: ${1:posts}
 #+HUGO_WEIGHT: auto
 #+HUGO_AUTO_SET_LASTMOD: t
-#+AUTHOR: Jack Liu
-#+HUGO_CATEGORIES: $2
-#+HUGO_TAGS: $3
+#+AUTHOR: ${2:Jack Liu}
+#+HUGO_CATEGORIES: $3
+#+HUGO_TAGS: $4
 #+DATE: `(current-time-string)`
-#+TITLE: ${4:`(concat ""
-                      (car (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")) " "
-                      (car (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))) " "
-                      (car (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))) " "
-                      (car (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))) " "
-                      (car (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))))) " "
-                      (car (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))))) " "
-                      (car (cdr (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-")))))))) " "
-                      (car (cdr (cdr (cdr (cdr (cdr (cdr (cdr (split-string (capitalize (car (split-string (file-name-nondirectory buffer-file-name) "\\."))) "\\-"))))))))) " ")`}
+#+TITLE: ${5:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
