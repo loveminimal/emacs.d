@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: insert hugo child formatter
+# key: ihfc
+# --
+:PROPERTIES:
+:EXPORT_DATE: `(current-time-string)`
+:EXPORT_FILE_NAME: $1
+:END:
+
+$2

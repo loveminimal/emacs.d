@@ -11,3 +11,5 @@
 #+HUGO_TAGS: $4
 #+DATE: `(current-time-string)`
 #+TITLE: ${5:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
+
+$6

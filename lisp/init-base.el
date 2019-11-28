@@ -150,7 +150,7 @@
 (defun open-plan-file ()
   "Quickly open plan file."
   (interactive)
-  (find-file "~/site/org/gtd.org"))
+  (find-file "~/site/org/plan.org"))
 
 
 ;; @purcell
