@@ -9,7 +9,7 @@
 
  (use-package org
   :init
-  (setq org-hide-emphasis-markers t
+  (setq org-hide-emphasis-markers nil
 	org-src-fontify-natively t
 	org-tags-column 80)
   :bind ("C-c l" . org-store-link)

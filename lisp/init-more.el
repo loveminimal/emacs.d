@@ -142,8 +142,8 @@ Use `swiper' to search for the symbol at point."
   :config
   (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"                 ;; personal snippets
-        "/path/to/some/collection/"           ;; foo-mode and bar-mode snippet collection
-        "/path/to/yasnippet/yasmate/snippets" ;; the yasmate collection
+        ;; "/path/to/some/collection/"           ;; foo-mode and bar-mode snippet collection
+        ;; "/path/to/yasnippet/yasmate/snippets" ;; the yasmate collection
         )))
 
 
