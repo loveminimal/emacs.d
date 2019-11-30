@@ -9,7 +9,7 @@
 #+AUTHOR: ${2:Jack Liu}
 #+HUGO_CATEGORIES: $3
 #+HUGO_TAGS: $4
-#+DATE: `(current-time-string)`
-#+TITLE: ${5:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
+#+DATE: $5
+#+TITLE: ${6:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
 
-$6
+$7
