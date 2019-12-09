@@ -181,6 +181,14 @@
 (use-package htmlize
   :ensure t)
 
+  
+(use-package simple-httpd
+  :disabled
+  :ensure t
+  :config
+  (setq httpd-root "~/site/static")
+  (httpd-start))
+
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
