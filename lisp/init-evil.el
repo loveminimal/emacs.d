@@ -50,11 +50,13 @@
     "ff" 'ido-find-file
     "fi" 'open-init-file
     "fp" 'open-plan-file
+    "fw" 'open-wiki-file
     "fn" 'open-notes-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
-    "fe" 'recentf-open-files
+    "fe" 'org-export-dispatch
     "fr" 'rename-this-file-and-buffer
+    "fR" 'recentf-open-files
     "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
     "fa" 'save-some-buffers

@@ -178,5 +178,9 @@
 ;;                        file)))
 
 
+(use-package htmlize
+  :ensure t)
+
+
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
