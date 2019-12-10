@@ -46,7 +46,7 @@
 
 
 (when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-11" t t))
+  (set-frame-font "consolas-12" t t))
 (when (member "楷体" (font-family-list))
   (set-fontset-font t 'han "楷体"))
 
@@ -152,6 +152,12 @@
   "Quickly open wiki file."
   (interactive)
   (find-file "~/site/static/wiki.org"))
+
+
+(defun open-cactus-file ()
+  "Quickly open cactus file."
+  (interactive)
+  (find-file "~/site/static/cactus.org"))
 
 
 ;; @purcell
