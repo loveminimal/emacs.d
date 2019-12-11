@@ -154,12 +154,6 @@
   (find-file "~/site/static/wiki.org"))
 
 
-(defun open-cactus-file ()
-  "Quickly open cactus file."
-  (interactive)
-  (find-file "~/site/static/cactus.org"))
-
-
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
 (defun sanityinc/newline-at-end-of-line ()

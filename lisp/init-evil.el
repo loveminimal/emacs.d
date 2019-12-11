@@ -51,7 +51,6 @@
     "fi" 'open-init-file
     "fp" 'open-plan-file
     "fw" 'open-wiki-file
-    "fc" 'open-cactus-file
     "fn" 'open-notes-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
