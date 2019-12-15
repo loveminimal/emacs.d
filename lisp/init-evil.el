@@ -32,14 +32,9 @@
     "os" 'org-schedule
     "od" 'org-deadline
     "mm" 'org-refile
-    ;; "pp" 'org-priority
+    "pp" 'org-priority
 
 
-    "pp" 'pomidor
-    "ps" 'pomidor-stop
-    "pq" 'pomidor-quit
-    "pr" 'pomidor-reset
-    "pb" 'pomidor-break
   
 
     "bb" 'ido-switch-buffer
@@ -49,15 +44,11 @@
     
     "ff" 'ido-find-file
     "fi" 'open-init-file
-    "fp" 'open-plan-file
-    "fw" 'open-wiki-file
-    "fc" 'open-cactus-file
     "fn" 'open-notes-file
     "fo" 'org-open-at-point
     "fd" 'delete-this-file
-    "fe" 'org-export-dispatch
     "fr" 'rename-this-file-and-buffer
-    "fR" 'recentf-open-files
+    "fe" 'recentf-open-files
     "fj" 'dired-sidebar-toggle-sidebar
     "fs" 'save-buffer
     "fa" 'save-some-buffers

@@ -149,13 +149,15 @@
 
 (use-package ox-hugo
   :ensure t
+  :disabled
   :after ox)
 
-(use-package org-hugo-auto-export-mode
-  :hook (org-mode))
+;; (use-package org-hugo-auto-export-mode
+;;   :hook (org-mode))
 
 (use-package pomidor
   :ensure t
+  :disabled
   :bind (("<f12>" . pomidor))
   :config (setq pomidor-sound-tick nil
                 pomidor-sound-tack nil
@@ -190,9 +192,12 @@
   (httpd-start))
 
 
-(use-package ox-html
-  :config
-  (setq org-html-doctype "html5"))
+;; (use-package ox-html
+;;   :config
+;;   (setq
+;;    org-html-doctype "html5"
+;;    ;; org-export-default-language "ch"
+;;    user-full-name "Jack Liu"))
 
 
 (use-package ox-publish
@@ -210,15 +215,16 @@
           :headline-levels 4
           :section-numbers t
           :with-toc t
+          :with-author "Jack Liu"
           :table-of-contents t
+          :html-doctype "html5"
           :html-head "<link rel=\"stylesheet\" href=\"../css/style.css\" type=\"text/css\" />"
           ;; :html-preamble t
-
           )
           ;; static assets
           ("images"
           :base-directory "~/site/images/"
-          :base-extension "jpg\\|gif\\|png"
+          :base-extension "jpg\\|gif\\|png\\|svg"
           :publishing-directory "~/site/public/images/"
           :recursive t
           :publishing-function org-publish-attachment
@@ -227,6 +233,11 @@
           ))))
 
 
+(defun save-and-publish nil
+    "Save current buffer and publish."
+  (interactive)
+  (save-buffer)
+  (org-publish-current-file))
 
 
 

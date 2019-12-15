@@ -142,24 +142,6 @@
   (find-file "~/.emacs.d/init.el"))
 
 
-(defun open-plan-file ()
-  "Quickly open plan file."
-  (interactive)
-  (find-file "~/site/org/plan.org"))
-
-
-(defun open-wiki-file ()
-  "Quickly open wiki file."
-  (interactive)
-  (find-file "~/site/static/wiki.org"))
-
-
-(defun open-cactus-file ()
-  "Quickly open wiki file."
-  (interactive)
-  (find-file "~/site/static/cactus.org"))
-
-
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
 (defun sanityinc/newline-at-end-of-line ()
