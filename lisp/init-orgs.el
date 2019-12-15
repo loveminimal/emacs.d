@@ -190,5 +190,45 @@
   (httpd-start))
 
 
+(use-package ox-html
+  :config
+  (setq org-html-doctype "html5"))
+
+
+(use-package ox-publish
+  :config
+  
+  (setq org-publish-project-alist
+        '(("orgfiles"
+          :base-directory "~/site/org/"  ;; local dir
+          :base-extension "org"
+          ;; :publishing-directory "/ssh:jack@192.112.245.112:~/site/public/"
+          :publishing-directory "~/site/public/"
+          :recursive t
+          :publishing-function org-html-publish-to-html
+          ;; :exclude "PrivatePage.org"     ;; regexp
+          :headline-levels 4
+          :section-numbers t
+          :with-toc t
+          :table-of-contents t
+          :html-head "<link rel=\"stylesheet\" href=\"../css/style.css\" type=\"text/css\" />"
+          ;; :html-preamble t
+
+          )
+          ;; static assets
+          ("images"
+          :base-directory "~/site/images/"
+          :base-extension "jpg\\|gif\\|png"
+          :publishing-directory "~/site/public/images/"
+          :recursive t
+          :publishing-function org-publish-attachment
+          )
+          ("website" :components ("orgfiles" "images")
+          ))))
+
+
+
+
+
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
