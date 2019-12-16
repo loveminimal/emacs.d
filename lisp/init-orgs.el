@@ -192,12 +192,12 @@
   (httpd-start))
 
 
-;; (use-package ox-html
-;;   :config
-;;   (setq
-;;    org-html-doctype "html5"
-;;    ;; org-export-default-language "ch"
-;;    user-full-name "Jack Liu"))
+(use-package ox-html
+  :config
+  (setq
+   ;; org-html-doctype "html5"
+   ;; org-export-default-language "ch"
+   user-full-name "Jack Liu"))
 
 
 (use-package ox-publish
@@ -213,13 +213,13 @@
           :publishing-function org-html-publish-to-html
           ;; :exclude "PrivatePage.org"     ;; regexp
           :headline-levels 4
-          :section-numbers t
+          :section-numbers nil
           :with-toc t
-          :with-author "Jack Liu"
+          ;; :with-author "Jack Liu"
           :table-of-contents t
           :html-doctype "html5"
-          :html-head "<link rel=\"stylesheet\" href=\"../css/style.css\" type=\"text/css\" />"
-          ;; :html-preamble t
+          ;; :html-head "<link rel=\"stylesheet\" href=\"../css/style.css\" type=\"text/css\" />"
+          ;; :html-preamble nil
           )
           ;; static assets
           ("images"
