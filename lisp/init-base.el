@@ -136,6 +136,12 @@
   (find-file "z:/info/info.org"))
 
 
+(defun open-home-file ()
+  "Quickly open index file."
+  (interactive)
+  (find-file "~/site/org/index.org"))
+
+
 (defun open-init-file ()
   "Quickly open init file."
   (interactive)
