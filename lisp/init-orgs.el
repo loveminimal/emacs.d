@@ -222,28 +222,28 @@
           ;; :html-preamble nil
           )
           ;; static assets
-          ;; ("js"
-          ;; :base-directory "~/site/js/"
-          ;; :base-extension "css"
-          ;; :publishing-directory "~/site/public/js/"
-          ;; :recursive t
-          ;; :publishing-function org-publish-attachment
-          ;; )
-          ;; ("css"
-          ;; :base-directory "~/site/css/"
-          ;; :base-extension "css"
-          ;; :publishing-directory "~/site/public/css/"
-          ;; :recursive t
-          ;; :publishing-function org-publish-attachment
-          ;; )
-          ;; ("images"
-          ;; :base-directory "~/site/images/"
-          ;; :base-extension "jpg\\|gif\\|png\\|svg"
-          ;; :publishing-directory "~/site/public/images/"
-          ;; :recursive t
-          ;; :publishing-function org-publish-attachment
-          ;; )
-          ("website" :components ("orgfiles" "images")
+          ("js"
+          :base-directory "~/site/js/"
+          :base-extension "js"
+          :publishing-directory "~/site/public/js/"
+          :recursive t
+          :publishing-function org-publish-attachment
+          )
+          ("css"
+          :base-directory "~/site/css/"
+          :base-extension "css"
+          :publishing-directory "~/site/public/css/"
+          :recursive t
+          :publishing-function org-publish-attachment
+          )
+          ("images"
+          :base-directory "~/site/images/"
+          :base-extension "jpg\\|gif\\|png\\|svg"
+          :publishing-directory "~/site/public/images/"
+          :recursive t
+          :publishing-function org-publish-attachment
+          )
+          ("website" :components ("orgfiles" "js" "css" "images")
           ))))
 
 
