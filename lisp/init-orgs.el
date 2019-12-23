@@ -149,7 +149,6 @@
 
 (use-package ox-hugo
   :ensure t
-  :disabled
   :after ox)
 
 ;; (use-package org-hugo-auto-export-mode
