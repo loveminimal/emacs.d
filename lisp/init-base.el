@@ -142,6 +142,18 @@
   (find-file "~/site/org/index.org"))
 
 
+(defun open-wiki-file ()
+  "Quickly open wiki file."
+  (interactive)
+  (find-file "~/site/static/wiki.org"))
+
+
+(defun open-cactus-file ()
+  "Quickly open cactus file."
+  (interactive)
+  (find-file "~/site/static/cactus.org"))
+
+
 (defun open-init-file ()
   "Quickly open init file."
   (interactive)
