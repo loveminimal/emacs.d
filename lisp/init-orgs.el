@@ -207,7 +207,10 @@
 (progn
   "Settings of `org-export'."
   (setq org-export-in-background t
-        org-html-head-include-default-style nil))
+        ;; Hide html built-in style and script.
+        org-html-htmlize-output-type nil
+        org-html-head-include-default-style nil
+        org-html-head-include-scripts nil))
 
 
 (use-package ox-publish
@@ -302,10 +305,10 @@
            ;; :html-mathjax-options	org-html-mathjax-options
            ;; :html-mathjax-template	org-html-mathjax-template
            ;; :html-metadata-timestamp-format	org-html-metadata-timestamp-format
-           ;; :html-postamble-format	org-html-postamble-format
-           ;; :html-postamble	org-html-postamble
+           ;; :html-postamble-format t ;; org-html-postamble-format
+           ;; :html-postamble t ;; org-html-postamble
            ;; :html-preamble-format	org-html-preamble-format
-           ;; :html-preamble	org-html-preamble
+           ;; :html-preamble nil ;; org-html-preamble
            ;; :html-self-link-headlines	org-html-self-link-headlines
            ;; :html-table-align-individual-field	de{org-html-table-align-individual-fields
            ;; :html-table-attributes	org-html-table-default-attributes
