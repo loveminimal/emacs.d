@@ -208,9 +208,10 @@
   "Settings of `org-export'."
   (setq org-export-in-background t
         ;; Hide html built-in style and script.
-        org-html-htmlize-output-type nil
+        org-html-htmlize-output-type 'inline-css
         org-html-head-include-default-style nil
-        org-html-head-include-scripts nil))
+        org-html-head-include-scripts nil
+        ))
 
 
 (use-package ox-publish
