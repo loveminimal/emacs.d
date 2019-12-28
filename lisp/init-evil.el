@@ -32,7 +32,9 @@
     "os" 'org-schedule
     "od" 'org-deadline
     "mm" 'org-refile
-    "pp" 'org-priority
+
+    "pp" 'save-and-publish-project
+    "pf" 'save-and-publish-file
 
 
   
@@ -48,7 +50,8 @@
     "fw" 'open-wiki-file
     "fc" 'open-cactus-file
     "fn" 'open-notes-file
-    "fo" 'org-open-at-point
+    "fo" 'org-open-at-point-and-delete-other-windows
+    "fO" 'org-open-at-point
     "fd" 'delete-this-file
     "fr" 'rename-this-file-and-buffer
     "fe" 'recentf-open-files

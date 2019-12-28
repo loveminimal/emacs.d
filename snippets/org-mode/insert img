@@ -2,6 +2,4 @@
 # name: insert img 
 # key: ii
 # --
-<img src="/images/$1" width="${2:60}%" />
-
-
+<img src="/images/$1" width="${2:6}0%" />

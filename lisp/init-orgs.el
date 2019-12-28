@@ -365,13 +365,25 @@
            ))))
 
 
-(defun save-and-publish nil
-    "Save current buffer and publish."
+(defun save-and-publish-project ()
+    "Save all buffers and publish."
   (interactive)
   (save-some-buffers t)
   (org-publish-current-project t))
 
 
+(defun save-and-publish-file ()
+    "Save current buffer and publish."
+  (interactive)
+  (save-buffer t)
+  (org-publish-current-file t))
+
+
+(defun org-open-at-point-and-delete-other-windows ()
+    "Open link file and just keep the goal file."
+  (interactive)
+  (org-open-at-point)
+  (delete-other-windows))
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
