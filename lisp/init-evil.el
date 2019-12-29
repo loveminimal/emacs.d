@@ -75,7 +75,9 @@
   
     "sa" 'mark-whole-buffer
 
-    "ss" 'projectile-ripgrep
+    "ss" 'swiper
+    "SS" 'sanityinc/swiper-at-point
+    "sp" 'projectile-ripgrep
     
     "tt" 'toggle-truncate-lines
     "tw" 'toggle-frame-maximized
