@@ -31,6 +31,7 @@
     "jj" 'org-todo
     "os" 'org-schedule
     "od" 'org-deadline
+    "op" 'org-priority
     "mm" 'org-refile
 
     "pp" 'save-and-publish-project

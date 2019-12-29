@@ -262,7 +262,7 @@
            ;; :with-footnotes	org-export-with-footnotes
            ;; :with-latex	org-export-with-latex
            ;; :with-planning	org-export-with-planning
-           ;; :with-priority	org-export-with-priority
+           :with-priority t ;; org-export-with-priority ;
            ;; :with-properties	org-export-with-properties
            ;; :with-special-strings	org-export-with-special-strings
            ;; :with-sub-superscript	org-export-with-sub-superscripts
