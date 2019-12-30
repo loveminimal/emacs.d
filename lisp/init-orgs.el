@@ -189,14 +189,6 @@
   )
 
   
-(use-package simple-httpd
-  :disabled
-  :ensure t
-  :config
-  (setq httpd-root "~/site/static")
-  (httpd-start))
-
-
 (use-package ox-html
   :config
   (setq
@@ -377,6 +369,12 @@
   (interactive)
   (save-buffer t)
   (org-publish-current-file t))
+
+
+(use-package simple-httpd
+  :ensure t
+  :config
+  (setq httpd-root "~/site/public"))
 
 
 (defun org-open-at-point-and-delete-other-windows ()
