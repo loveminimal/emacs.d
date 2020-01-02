@@ -17,9 +17,9 @@
   (add-hook 'org-mode-hook 'org-content))
 
 
-(use-package ox-md)
+ (use-package ox-md)
 
-;;; GTD -- Personal Management.
+ ;;; GTD -- Personal Management.
 
 ;; Template Expansion
 ;; %  -escapes allow dynamic insertion of content in templates.
@@ -369,6 +369,18 @@
   (interactive)
   (save-buffer t)
   (org-publish-current-file t))
+
+
+(define-minor-mode auto-save-and-publish-file-mode
+  "Toggle auto save and publish current file."
+  :global nil
+  :lighter ""
+  (if auto-save-and-publish-file-mode
+      ;; When the mode is enabled
+      (progn
+        (add-hook 'after-save-hook #'save-and-publish-file :append :local))
+    ;; When the mode is disabled
+    (remove-hook 'after-save-hook #'save-and-publish-file :local)))
 
 
 (use-package simple-httpd
