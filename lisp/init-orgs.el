@@ -348,7 +348,7 @@
            )
           ("images"
            :base-directory "~/site/images/"
-           :base-extension "jpg\\|gif\\|png\\|svg"
+           :base-extension "jpg\\|gif\\|png\\|svg\\|gif"
            :publishing-directory "~/site/public/images/"
            :recursive t
            :publishing-function org-publish-attachment
