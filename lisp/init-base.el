@@ -126,6 +126,7 @@
       ("rrr" "→")
       ("ddd" "↓")
       ("lll" "←")
+      ("ccc" "#+CAPTION:")
     ))
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)
