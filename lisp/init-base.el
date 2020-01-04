@@ -60,7 +60,7 @@
 
 
 ;; Keybindings without extra configuration
-(global-set-key (kbd "C-.") 'set-mark-command)
+(global-set-key (kbd "C-c C-'") 'set-mark-command)
 
 
 ;;;;;; Some Basic Modes
@@ -122,6 +122,10 @@
     '(
       ("usp" "use-package")
       ("jss" "JavaScript")
+      ("uuu" "↑")
+      ("rrr" "→")
+      ("ddd" "↓")
+      ("lll" "←")
     ))
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)
