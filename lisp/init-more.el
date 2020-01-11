@@ -175,7 +175,7 @@ Use `swiper' to search for the symbol at point."
   )
 
 ;; Toggle input method globally
-(global-set-key (kbd "C-c C-j") 'toggle-input-method)
+(global-set-key (kbd "C-h C-j") 'toggle-input-method)
 
 
 (provide 'init-more)
