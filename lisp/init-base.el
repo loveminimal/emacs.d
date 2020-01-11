@@ -45,10 +45,10 @@
   (prefer-coding-system 'utf-8))
 
 
-(when (member "consolas" (font-family-list))
+(when (member "Consolas" (font-family-list))
   (set-frame-font "consolas-11.5" t t))
-(when (member "KaiTi" (font-family-list))
-  (set-fontset-font t 'han "KaiTi-13.5"))
+(when (member "楷体" (font-family-list))
+  (set-fontset-font t 'han "楷体-13.5"))
 
 
 (when (fboundp 'menu-bar-mode)
