@@ -80,6 +80,8 @@
     "ss" 'swiper
     "SS" 'sanityinc/swiper-at-point
     "sp" 'projectile-ripgrep
+    "sf" 'isearch-forward
+    "sb" 'isearch-backward
     
     "tt" 'toggle-truncate-lines
     "tw" 'toggle-frame-maximized

@@ -172,10 +172,18 @@ Use `swiper' to search for the symbol at point."
   ;; Auto load pyim when Emacs startup
   ;; (add-hook 'emacs-startup-hook
   ;;           #'(lambda () (pyim-restart-1 t)))
+  (pyim-isearch-mode 1)
   )
 
 ;; Toggle input method globally
 (global-set-key (kbd "C-h C-j") 'toggle-input-method)
+
+
+(use-package cnfonts
+  :ensure t
+  :config
+  (cnfonts-enable))
+
 
 
 (provide 'init-more)
