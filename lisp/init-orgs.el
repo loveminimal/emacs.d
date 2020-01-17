@@ -47,7 +47,7 @@
   (setq org-capture-templates
 	'(
 	  ("d" "diary" entry (file+headline "~/site/org/diary.org" "日记")
-	   "* %t\n\n%?"
+	   "* %t\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U")
