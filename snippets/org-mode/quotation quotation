@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: quotation quotation
+# key: qq
+# --
+
+“$1”$2
