@@ -386,6 +386,10 @@
     (remove-hook 'after-save-hook #'save-and-publish-file :local)))
 
 
+(use-package auto-save-and-publish-file-mode
+  :hook (org-mode))
+
+
 (use-package simple-httpd
   :ensure t
   :config
