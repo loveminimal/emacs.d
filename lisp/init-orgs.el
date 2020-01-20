@@ -397,6 +397,15 @@
   (setq httpd-root "~/site/public"))
 
 
+(defun preview-current-buffer-in-browser ()
+  "Open current buffer as html."
+  (interactive)
+  (let ((fileurl (concat "http://127.0.0.1:8080/" (file-name-base (buffer-name)) ".html")))
+    (save-and-publish-file)
+    (httpd-start)
+    (browse-url fileurl)))
+
+
 (defun org-open-at-point-and-delete-other-windows ()
     "Open link file and just keep the goal file."
   (interactive)
