@@ -37,6 +37,7 @@
 
     "pp" 'save-and-publish-project
     "pf" 'save-and-publish-file
+    "ps" 'preview-current-buffer-in-browser
 
 
   
