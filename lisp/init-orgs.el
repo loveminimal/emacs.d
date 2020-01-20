@@ -49,14 +49,15 @@
 	  ("d" "diary" entry (file+headline "~/site/org/diary.org" "日记")
 	   "* %t\n\n%?\n\n-----"
            :empty-lines 1)
+	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
+	   "* %T\n\n%?\n\n-----"
+           :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U")
 	  ("c" "capture-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U\n%a")
 	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
-	  ("i" "idea" entry (file+headline "" "IDEAS")
-	   "* %? :@idea:\n%U")
 	  ("s" "story of novel" entry (file+headline "" "NOVEL")
 	   "* %? :@novel:\n%U")
 	  )))
