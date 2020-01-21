@@ -52,14 +52,15 @@
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %T\n\n%?\n\n-----"
            :empty-lines 1)
+	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
+	   "*  %?\n%U"
+           :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U")
 	  ("c" "capture-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U\n%a")
 	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
-	  ("s" "story of novel" entry (file+headline "" "NOVEL")
-	   "* %? :@novel:\n%U")
 	  )))
 
 ;; Refile and Copy
