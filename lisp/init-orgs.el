@@ -55,6 +55,9 @@
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
            :empty-lines 1)
+	  ("f" "fragment" entry (file+headline "~/site/org/fragment.org" "FRAGMENT")
+	   "*  %?\n%U"
+           :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U")
 	  ("c" "capture-todo" entry (file+headline "" "INBOX")
