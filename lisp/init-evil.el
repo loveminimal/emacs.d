@@ -56,6 +56,7 @@
     "fo" 'org-open-at-point-and-delete-other-windows
     "fO" 'org-open-at-point
     "fd" 'delete-this-file
+    "fD" 'delete-org-and-html
     "fr" 'rename-this-file-and-buffer
     "fe" 'recentf-open-files
     "fj" 'dired-sidebar-toggle-sidebar

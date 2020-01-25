@@ -11,6 +11,7 @@
   :init
   (setq org-hide-emphasis-markers nil
 	org-src-fontify-natively t
+        org-hide-block-startup t
 	org-tags-column 80)
   :bind ("C-c l" . org-store-link)
   :config
@@ -408,6 +409,15 @@
     (save-and-publish-file)
     (httpd-start)
     (browse-url fileurl)))
+
+
+(defun delete-org-and-html ()
+  "Delete the relative html when it exists."
+  (interactive)
+  (let ((fileurl (concat "~/site/public/" (file-name-base (buffer-name)) ".html")))
+    (if (file-exists-p fileurl)
+        (delete-file fileurl))
+    (delete-this-file)))
 
 
 (defun org-open-at-point-and-delete-other-windows ()
