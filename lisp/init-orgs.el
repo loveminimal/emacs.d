@@ -56,7 +56,7 @@
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
            :empty-lines 1)
-	  ("f" "fragment" entry (file+headline "~/site/org/fragment.org" "FRAGMENT")
+	  ("w" "wiki" entry (file+headline "~/site/org/wiki.org" "WIKI")
 	   "*  %?\n%U"
            :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
@@ -120,11 +120,17 @@
 ;; 'C-c C-c' (org-set-tags-command) - Same as above when the cursor is in a headline.
 
 (setq org-tag-alist
-      '((:startgroup . nil)
-	("@work" . ?w)
-	("@life" . ?l)
-	(:endgroup . nil)
-	("@misc" . ?m)))
+      '(
+        (:startgroup . code)
+	("@git" . ?g)
+	("@java" . ?v)
+	("@python" . ?p)
+	("@os" . ?s)
+	("@web" . ?w)
+	(:endgroup . code)
+
+	("@misc" . ?m)
+        ))
 
 ;; Tag searches
 ;; 'C-c / m' or 'C-c \' (org-match-sparse-tree) - Create a sparse tree with all headlines matching a tags/property/TODO search.
@@ -238,6 +244,7 @@
 
            ;; ; Publishing action
            :publishing-function org-html-publish-to-html
+
            ;; :htmlized-source
 
 
