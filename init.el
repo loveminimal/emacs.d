@@ -12,11 +12,16 @@
 (require 'init-upkg)
 
 
+(use-package init-abbr)                 ;; Module it
+
 (use-package init-base)
 (use-package init-evil)
 (use-package init-view)
 (use-package init-more)
+
 (use-package init-orgs)
+(use-package init-site)
+
 (use-package init-webs)
 
 

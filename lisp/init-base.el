@@ -46,7 +46,7 @@
 
 
 (when (member "Consolas" (font-family-list))
-  (set-frame-font "consolas-11.5" t t))
+  (set-frame-font "consolas-12.5" t t))
 (when (member "楷体" (font-family-list))
   (set-fontset-font t 'han "楷体-13.5"))
 
@@ -111,34 +111,8 @@
               (funcall fn))))))
 
 
-(when (fboundp 'global-prettify-symbols-mode)
-  (add-hook 'after-init-hook 'global-prettify-symbols-mode))
-
-
-(use-package abbrev
-  :config
-  (clear-abbrev-table global-abbrev-table)
-  (define-abbrev-table 'global-abbrev-table
-    '(
-      ("usp" "use-package")
-      ("jss" "JavaScript")
-      ("ccc" "#+CAPTION:")
-      ("uuu" "↑")
-      ("rrr" "→")
-      ("ddd" "↓")
-      ("lll" "←")
-      ("bgqi" "☰")
-      ("bgku" "☷")
-      ("bgli" "☲")
-      ("bgka" "☵")
-      ("bgdu" "☱")
-      ("bgxu" "☴")
-      ("bgzh" "☳")
-      ("bgge" "☶")
-    ))
-  (setq-default abbrev-mode t)
-  (setq save-abbrevs nil)
-  :diminish)
+;; (when (fboundp 'global-prettify-symbols-mode)
+;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 
 
 ;;;;;; Some Basic Functions
@@ -171,6 +145,13 @@
   "Quickly open init file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+
+
+(defun org-open-at-point-and-delete-other-windows ()
+    "Open link file and just keep the goal file."
+  (interactive)
+  (org-open-at-point)
+  (delete-other-windows))
 
 
 ;; @purcell

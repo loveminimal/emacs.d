@@ -3,6 +3,7 @@
 # key: iil
 # --
 #+BEGIN_EXPORT html
-<img src="$1" width="${2:6}0%" />
+<img src="$1" width="${2:60}%" />
 #+END_EXPORT
 
+$3
