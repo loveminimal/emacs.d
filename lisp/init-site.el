@@ -231,7 +231,9 @@
   (let ((fileurl (concat "~/site/public/" (file-name-base (buffer-name)) ".html")))
     (if (file-exists-p fileurl)
         (delete-file fileurl))
-    (delete-this-file)))
+    (delete-file (buffer-file-name))
+    (kill-this-buffer)
+    (message "Delete org and the relative html done.")))
 
 
 (defun copy-style-and-js ()
@@ -241,12 +243,12 @@
         (mainjs "~/site/public/js/main.js"))
     (if (file-exists-p stylecss)
         (progn
-          (delete-file stylecss t)
+          (delete-file stylecss)
           (copy-file "~/site/css/style.css" stylecss))
       (copy-file "~/site/css/style.css" stylecss))
     (if (file-exists-p mainjs)
         (progn
-          (delete-file mainjs t)
+          (delete-file mainjs)
           (copy-file "~/site/js/main.js" mainjs))
       (copy-file "~/site/js/main.js" mainjs))
     (message "Copy style and js file done.")))
