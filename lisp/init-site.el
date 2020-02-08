@@ -234,6 +234,24 @@
     (delete-this-file)))
 
 
+(defun copy-style-and-js ()
+  "Just copy style and js to public directory."
+  (interactive)
+  (let ((stylecss "~/site/public/css/style.css")
+        (mainjs "~/site/public/js/main.js"))
+    (if (file-exists-p stylecss)
+        (progn
+          (delete-file stylecss t)
+          (copy-file "~/site/css/style.css" stylecss))
+      (copy-file "~/site/css/style.css" stylecss))
+    (if (file-exists-p mainjs)
+        (progn
+          (delete-file mainjs t)
+          (copy-file "~/site/js/main.js" mainjs))
+      (copy-file "~/site/js/main.js" mainjs))
+    (message "Copy style and js file done.")))
+
+
 
 (provide 'init-site)
 ;;; init-site.el ends here
