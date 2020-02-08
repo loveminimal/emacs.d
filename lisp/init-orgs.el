@@ -99,7 +99,8 @@
       '((sequence "TODO(t)" "NEXT(n!)" "CALENDAR(c@)" "|" "DONE(D!/!)")
 	(sequence "SOMEDAY(s@)" "REFER(r@)"  "|" "TRASH(T)")
 	(sequence "PROJECT(p@)" "|" "DONE(D!/!)" "CANCELLED(C@/!)")
-	(sequence "BUG(b@)" "KNOWNCAUSE(k@)" "|" "FIXED(F@/!)")))
+	(sequence "BUG(b@)" "KNOWNCAUSE(k@)" "|" "FIXED(F@/!)")
+        (sequence "ANCHOR(a)" "|" "DONE(D)")))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "red")
