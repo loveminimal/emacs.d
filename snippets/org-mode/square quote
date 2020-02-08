@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: square quote
+# key: kk
+# --
+
+「$1」 $2
