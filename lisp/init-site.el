@@ -176,15 +176,33 @@
            :recursive t
            :publishing-function org-publish-attachment
            )
-          ("website" :components ("orgfiles" "js" "css" "images")
-           ))))
+          ("assets"
+           :base-directory "~/site/assets/"
+           :base-extension "mp3"
+           :publishing-directory "~/site/public/assets/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
+          
+          ("website" :components ("orgfiles" "js" "css" "images"))
+          ("statics" :components ("js" "css" "images" "assets"))
+          )))
 
 
-(defun save-and-publish-project ()
+(defun save-and-publish-website()
     "Save all buffers and publish."
   (interactive)
-  (save-some-buffers t)
-  (org-publish-current-project t))
+  (when (yes-or-no-p "Really save and publish current project?")
+    (save-some-buffers t)
+    (org-publish-project "website" t)
+    (message "Site published done.")))
+
+
+(defun save-and-publish-statics ()
+  "Just copy statics like js, css, and image file .etc."
+  (interactive)
+  (org-publish-project "statics" t)
+  (message "Copy statics done."))
 
 
 (defun save-and-publish-file ()
@@ -192,6 +210,20 @@
   (interactive)
   (save-buffer t)
   (org-publish-current-file t))
+
+
+(defun delete-org-and-html ()
+  "Delete the relative html when it exists."
+  (interactive)
+  (when (yes-or-no-p "Really delete current org and the relative html?")
+
+    (let ((fileurl (concat "~/site/public/" (file-name-base (buffer-name)) ".html")))
+      (if (file-exists-p fileurl)
+          (delete-file fileurl))
+      (delete-file (buffer-file-name))
+      (kill-this-buffer)
+      (message "Delete org and the relative html done."))))
+
 
 
 (define-minor-mode auto-save-and-publish-file-mode
@@ -223,35 +255,6 @@
     (save-and-publish-file)
     (unless (httpd-running-p) (httpd-start))
     (browse-url fileurl)))
-
-
-(defun delete-org-and-html ()
-  "Delete the relative html when it exists."
-  (interactive)
-  (let ((fileurl (concat "~/site/public/" (file-name-base (buffer-name)) ".html")))
-    (if (file-exists-p fileurl)
-        (delete-file fileurl))
-    (delete-file (buffer-file-name))
-    (kill-this-buffer)
-    (message "Delete org and the relative html done.")))
-
-
-(defun copy-style-and-js ()
-  "Just copy style and js to public directory."
-  (interactive)
-  (let ((stylecss "~/site/public/css/style.css")
-        (mainjs "~/site/public/js/main.js"))
-    (if (file-exists-p stylecss)
-        (progn
-          (delete-file stylecss)
-          (copy-file "~/site/css/style.css" stylecss))
-      (copy-file "~/site/css/style.css" stylecss))
-    (if (file-exists-p mainjs)
-        (progn
-          (delete-file mainjs)
-          (copy-file "~/site/js/main.js" mainjs))
-      (copy-file "~/site/js/main.js" mainjs))
-    (message "Copy style and js file done.")))
 
 
 

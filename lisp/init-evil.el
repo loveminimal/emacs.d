@@ -35,11 +35,11 @@
     "of" 'org-footnote-action
     "mm" 'org-refile
 
-    "pp" 'save-and-publish-project
+    "pw" 'save-and-publish-website
     "pf" 'save-and-publish-file
-    "ps" 'preview-current-buffer-in-browser
-
-
+    "ps" 'save-and-publish-statics
+    "pb" 'preview-current-buffer-in-browser
+    "pd" 'delete-org-and-html
   
 
     "bb" 'ido-switch-buffer
@@ -56,7 +56,6 @@
     "fo" 'org-open-at-point-and-delete-other-windows
     "fO" 'org-open-at-point
     "fd" 'delete-this-file
-    "fD" 'delete-org-and-html
     "fr" 'rename-this-file-and-buffer
     "fe" 'recentf-open-files
     "fj" 'dired-sidebar-toggle-sidebar
