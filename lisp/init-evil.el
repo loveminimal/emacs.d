@@ -40,6 +40,7 @@
     "ps" 'save-and-publish-statics
     "pb" 'preview-current-buffer-in-browser
     "pd" 'delete-org-and-html
+    "pD" 'just-delete-relative-html
   
 
     "bb" 'ido-switch-buffer

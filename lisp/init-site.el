@@ -213,7 +213,7 @@
 
 
 (defun delete-org-and-html ()
-  "Delete the relative html when it exists."
+  "Delete current org and the relative html when it exists."
   (interactive)
   (when (yes-or-no-p "Really delete current org and the relative html?")
 
@@ -224,6 +224,19 @@
       (kill-this-buffer)
       (message "Delete org and the relative html done."))))
 
+
+(defun just-delete-relative-html ()
+  "Just delete the relative html when it exists."
+  (interactive)
+  (when (yes-or-no-p "Really delete the relative html?")
+
+    (let ((fileurl (concat "~/site/public/" (file-name-base (buffer-name)) ".html")))
+      (if (file-exists-p fileurl)
+          (progn
+            (delete-file fileurl)
+            (message "Delete the relative html done.")
+            )
+        (message "None relative html.")))))
 
 
 (define-minor-mode auto-save-and-publish-file-mode
