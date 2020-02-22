@@ -29,6 +29,7 @@
     "aa" 'org-agenda
     "cc" 'org-capture
     "jj" 'org-todo
+    "jt" 'org-set-tags-command
     "os" 'org-schedule
     "od" 'org-deadline
     "op" 'org-priority

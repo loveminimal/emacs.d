@@ -34,7 +34,7 @@
 ;; %n - User name (taken from 'user-full-name')
 ;; %? - After completing the template, position cursor here.
 
- (use-package org-capture
+(use-package org-capture
   :bind ("C-c c" . org-capture)
   :init
   ;; (setq org-default-notes-file "~/.gtd/notes.org")
@@ -46,22 +46,41 @@
   :config
   ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
+        ;; Capital char means that with ANCHOR.
 	'(
 	  ("d" "diary" entry (file+headline "~/site/org/diary.org" "日记")
 	   "* %t\n\n%?\n\n-----"
            :empty-lines 1)
+	  ("D" "DIARY" entry (file+headline "~/site/org/diary.org" "日记")
+	   "* %t\n%a\n\n%?\n\n-----"
+           :empty-lines 1)
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %T\n\n%?\n\n-----"
+           :empty-lines 1)
+	  ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
+	   "* %T\n%a\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
            :empty-lines 1)
+	  ("S" "STORY" entry (file+headline "~/site/org/story.org" "故事")
+	   "*  %?\n%U\n%a"
+           :empty-lines 1)
 	  ("w" "wiki" entry (file+headline "~/site/org/wiki.org" "WIKI")
 	   "*  %?\n%U"
            :empty-lines 1)
+	  ("W" "WIKI" entry (file+headline "~/site/org/wiki.org" "WIKI")
+	   "*  %?\n%U\n%a"
+           :empty-lines 1)
+          ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "INBOX")
+	   "* TODO  %?\n%T"
+           :empty-lines 1)
+          ("C" "CAPTURE-EVERYTHING" entry (file+headline "~/site/org/gtd.org" "INBOX")
+	   "* TODO  %?\n%T\n%a"
+           :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U")
-	  ("c" "capture-todo" entry (file+headline "" "INBOX")
+	  ("g" "grab-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U\n%a")
 	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
 	   "* %? :@note:\n%U\n%a")
@@ -122,14 +141,11 @@
 
 (setq org-tag-alist
       '(
-        (:startgroup . code)
-	("@git" . ?g)
-	("@java" . ?v)
-	("@python" . ?p)
-	("@os" . ?s)
-	("@web" . ?w)
-	(:endgroup . code)
-
+        (:startgroup . gtd)
+        ("@work" . ?w)
+        ("@life" . ?l)
+        (:endgroup . gtd)
+        
 	("@misc" . ?m)
         ))
 
