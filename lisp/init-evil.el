@@ -28,13 +28,13 @@
 
     "aa" 'org-agenda
     "cc" 'org-capture
-    "jj" 'org-todo
-    "jt" 'org-set-tags-command
+    "oj" 'org-todo
+    "ot" 'org-set-tags-command
     "os" 'org-schedule
     "od" 'org-deadline
     "op" 'org-priority
     "of" 'org-footnote-action
-    "mm" 'org-refile
+    "or" 'org-refile
 
     "pw" 'save-and-publish-website
     "pf" 'save-and-publish-file
