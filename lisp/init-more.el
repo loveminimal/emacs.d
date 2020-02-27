@@ -106,7 +106,7 @@ Use `swiper' to search for the symbol at point."
 
 (use-package expand-region
   :ensure t
-  :bind ("C-'" . er/expand-region))
+  :bind ("C-=" . er/expand-region))
 
 
 (use-package undo-tree
