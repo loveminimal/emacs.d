@@ -8,6 +8,7 @@
       auto-save-default nil
       ring-bell-function 'ignore)
 
+(set-background-color "honeydew")
 
 (setq-default
  initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
