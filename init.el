@@ -6,6 +6,7 @@
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(setq macro-file (expand-file-name "macro.el" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 
@@ -29,6 +30,9 @@
 	  (lambda () (require 'server)
 	    (unless (server-running-p) (server-start))))
 
+
+(when (file-exists-p macro-file)
+  (load macro-file))
 
 (when (file-exists-p custom-file)
   (load custom-file))
