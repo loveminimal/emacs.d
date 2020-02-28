@@ -6,14 +6,14 @@
 
 (use-package monokai-theme
   :ensure t
-  :disabled
+  ;; :disabled
   :config
   (load-theme 'monokai t))
 
 
 (use-package solarized-theme
   :ensure t
-  ;; :disabled
+  :disabled
   :config
   ;; (load-theme 'solarized-dark t)
   (load-theme 'solarized-light t)
