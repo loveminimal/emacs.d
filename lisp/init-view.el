@@ -28,6 +28,7 @@
 
 (use-package powerline
   :ensure t
+  :disabled
   :config
   ;; (powerline-default-theme)
   ;; (powerline-center-theme)
