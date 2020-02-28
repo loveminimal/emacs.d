@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(load-theme 'tsdh-light t)
+
 (use-package monokai-theme
   :ensure t
   :disabled
