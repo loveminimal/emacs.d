@@ -55,10 +55,10 @@
 	   "* %t\n%a\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
-	   "* %T\n\n%?\n\n-----"
+	   "* %U\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
-	   "* %T\n%a\n\n%?\n\n-----"
+	   "* %U\n%a\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
@@ -73,10 +73,10 @@
 	   "*  %?\n%U\n%a"
            :empty-lines 1)
           ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "INBOX")
-	   "* TODO  %?\n%T"
+	   "* TODO  %?\n%U"
            :empty-lines 1)
           ("C" "CAPTURE-EVERYTHING" entry (file+headline "~/site/org/gtd.org" "INBOX")
-	   "* TODO  %?\n%T\n%a"
+	   "* TODO  %?\n%U\n%a"
            :empty-lines 1)
 	  ("j" "just-todo" entry (file+headline "" "INBOX")
 	   "* TODO  %?\n%U")

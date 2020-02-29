@@ -36,6 +36,12 @@
     "of" 'org-footnote-action
     "or" 'org-refile
 
+    "ms" 'kmacro-start-macro
+    "mS" 'kmacro-end-macro
+    "me" 'kmacro-end-and-call-macro
+    "mn" 'name-last-kbd-macro
+    "mi" 'insert-kbd-macro
+
     "pw" 'save-and-publish-website
     "pf" 'save-and-publish-file
     "ps" 'save-and-publish-statics
@@ -75,8 +81,8 @@
 
     "ll" 'comment-line
   
-    "mj" 'list-bookmarks
-    "ms" 'bookmark-set
+    ;; "mj" 'list-bookmarks
+    ;; "ms" 'bookmark-set
   
     "sa" 'mark-whole-buffer
 
