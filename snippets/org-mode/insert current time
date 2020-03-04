@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: insert current time 
+# key: ic
+# --
+
+`(format-time-string "%Y-%m-%d %a %H:%M" (current-time))`
