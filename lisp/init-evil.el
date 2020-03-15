@@ -79,6 +79,8 @@
 
     "ii" 'org-toggle-inline-images
 
+    "jj" 'org-cycle
+
     "ll" 'comment-line
   
     ;; "mj" 'list-bookmarks
