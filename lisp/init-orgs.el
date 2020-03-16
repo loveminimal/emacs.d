@@ -78,12 +78,6 @@
           ("C" "CAPTURE-EVERYTHING" entry (file+headline "~/site/org/gtd.org" "INBOX")
 	   "* TODO  %?\n%U\n%a"
            :empty-lines 1)
-	  ("j" "just-todo" entry (file+headline "" "INBOX")
-	   "* TODO  %?\n%U")
-	  ("g" "grab-todo" entry (file+headline "" "INBOX")
-	   "* TODO  %?\n%U\n%a")
-	  ("n" "note" entry (file+headline "" "NOTES")	;; "" => `org-default-notes-file'
-	   "* %? :@note:\n%U\n%a")
 	  )))
 
 ;; Refile and Copy
