@@ -57,9 +57,6 @@
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n\n%?\n\n-----"
            :empty-lines 1)
-	  ("j" "joke" entry (file+headline "~/site/org/joke.org" "Just a Joke")
-	   "* %U\n\n%?\n\n-----"
-           :empty-lines 1)
 	  ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n%a\n\n%?\n\n-----"
            :empty-lines 1)
