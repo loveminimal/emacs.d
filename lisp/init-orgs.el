@@ -49,10 +49,10 @@
         ;; Capital char means that with ANCHOR.
 	'(
 	  ("d" "diary" entry (file+headline "~/site/org/diary.org" "日记")
-	   "* %t\n\n%?\n\n-----"
+	   "* %u\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("D" "DIARY" entry (file+headline "~/site/org/diary.org" "日记")
-	   "* %t\n%a\n\n%?\n\n-----"
+	   "* %u\n%a\n\n%?\n\n-----"
            :empty-lines 1)
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n\n%?\n\n-----"
