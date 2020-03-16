@@ -3,7 +3,11 @@
 # key: ii
 # --
 #+BEGIN_EXPORT html
-<img src="/images/$1" width="${2:60}%" />
+<img
+    src="/images/$1"
+    width="${2:60}%"
+    style="$3"
+/>
 #+END_EXPORT
 
-$3
+$4
