@@ -60,6 +60,9 @@
 	  ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n%a\n\n%?\n\n-----"
            :empty-lines 1)
+	  ("j" "joker" entry (file+headline "~/site/org/joker.org" "JOKER")
+	   "* %U\n\n%?\n\n-----"
+           :empty-lines 1)
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
            :empty-lines 1)
