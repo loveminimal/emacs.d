@@ -37,8 +37,8 @@
     "or" 'org-refile
 
     "ms" 'kmacro-start-macro
-    "mS" 'kmacro-end-macro
-    "me" 'kmacro-end-and-call-macro
+    "me" 'kmacro-end-macro
+    "mx" 'kmacro-end-and-call-macro
     "mn" 'name-last-kbd-macro
     "mi" 'insert-kbd-macro
 
