@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: word wide
+# key: ww
+# --
+
+~$1~ $2
