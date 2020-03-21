@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: insert message board
-# key: imb
-# --
-
-#+BEGIN_EXPORT html
-    <div id="comments"></div>
-#+END_EXPORT

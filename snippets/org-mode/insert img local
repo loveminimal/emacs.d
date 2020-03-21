@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: insert img 
-# key: ii
+# name: insert img local
+# key: iil
 # --
 #+BEGIN_EXPORT html
 <img

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: insert img link 
-# key: iil
+# name: insert img online
+# key: iio
 # --
 #+BEGIN_EXPORT html
 <img
