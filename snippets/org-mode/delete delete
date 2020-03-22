@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: delete delete
+# key: dd
+# --
+
++$1+ $2
