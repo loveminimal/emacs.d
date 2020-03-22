@@ -12,7 +12,9 @@
 
 ;;; Code:
 
-
+;; Delete current post in cursor of INDEX page.
+(fset 'mc/delete-this-post
+   " fo pdydd")
 
 
 

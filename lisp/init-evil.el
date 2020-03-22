@@ -42,6 +42,8 @@
     "mn" 'name-last-kbd-macro
     "mi" 'insert-kbd-macro
 
+    "mmd" 'mc/delete-this-post
+
     "pw" 'save-and-publish-website
     "pf" 'save-and-publish-file
     "ps" 'save-and-publish-statics
