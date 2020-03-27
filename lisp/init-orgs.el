@@ -50,18 +50,23 @@
 	'(
 	  ("d" "diary" entry (file+headline "~/site/org/diary.org" "日记")
 	   "* %u\n\n%?\n\n-----"
+           :prepend 1
            :empty-lines 1)
 	  ("D" "DIARY" entry (file+headline "~/site/org/diary.org" "日记")
 	   "* %u\n%a\n\n%?\n\n-----"
+           :prepend 1
            :empty-lines 1)
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n\n%?\n\n-----"
+           :prepend 1
            :empty-lines 1)
 	  ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n%a\n\n%?\n\n-----"
+           :prepend 1
            :empty-lines 1)
 	  ("j" "joker" entry (file+headline "~/site/org/joker.org" "JOKER")
 	   "* %U\n\n%?\n\n-----"
+           :prepend 1
            :empty-lines 1)
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
