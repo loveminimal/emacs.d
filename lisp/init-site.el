@@ -183,9 +183,16 @@
            :recursive t
            :publishing-function org-publish-attachment
            )
+          ("webfonts"
+           :base-directory "~/site/webfonts/"
+           :base-extension "eot\\|svg\\|ttf\\|woff\\|woff2"
+           :publishing-directory "~/site/public/webfonts/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
           
-          ("website" :components ("orgfiles" "js" "css" "images"))
-          ("statics" :components ("js" "css" "images" "assets"))
+          ("website" :components ("orgfiles" "js" "css" "images" "assets" "webfonts"))
+          ("statics" :components ("js" "css" "images" "assets" "webfonts"))
           )))
 
 
