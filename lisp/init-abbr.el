@@ -8,6 +8,8 @@
   (clear-abbrev-table global-abbrev-table)
   (define-abbrev-table 'global-abbrev-table
     '(
+      ("emr" "✔")
+      ("emw" "✘")
       ("usp" "use-package")
       ("jss" "JavaScript")
       ("ccc" "#+CAPTION:")
@@ -17,7 +19,6 @@
       ("lll" "←")
       ("uud" "↑↓")
       ("ddu" "↓↑")
-      ("xxx" "★")
       ("bgqi" "☰")
       ("bgku" "☷")
       ("bgli" "☲")
