@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: source block with number
+# key: <sn
+# --
+
+#+BEGIN_SRC -n $0
+
+#+END_SRC
