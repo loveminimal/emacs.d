@@ -3,6 +3,6 @@
 # key: <sn
 # --
 
-#+BEGIN_SRC -n $0
+#+BEGIN_SRC $0 -n
 
 #+END_SRC
