@@ -70,15 +70,19 @@
            :empty-lines 1)
 	  ("s" "story" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U"
+           :prepend 1
            :empty-lines 1)
 	  ("S" "STORY" entry (file+headline "~/site/org/story.org" "故事")
 	   "*  %?\n%U\n%a"
+           :prepend 1
            :empty-lines 1)
 	  ("w" "wiki" entry (file+headline "~/site/org/wiki.org" "WIKI")
 	   "*  %?\n%U"
+           :prepend 1
            :empty-lines 1)
 	  ("W" "WIKI" entry (file+headline "~/site/org/wiki.org" "WIKI")
 	   "*  %?\n%U\n%a"
+           :prepend 1
            :empty-lines 1)
           ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "INBOX")
 	   "* TODO  %?\n%U"
