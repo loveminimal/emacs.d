@@ -6,10 +6,9 @@
 
 (use-package monokai-theme
   :ensure t
-  ;; :disabled
+  :disabled
   :config
   (load-theme 'monokai t))
-
 
 (use-package solarized-theme
   :ensure t
@@ -18,7 +17,6 @@
   ;; (load-theme 'solarized-dark t)
   (load-theme 'solarized-light t)
   )
-
 
 ;; Init theme as spacemacs-dark
 ;; (unless (package-installed-p 'spacemacs-theme)
@@ -29,7 +27,6 @@
 ;;   (add-hook 'after-init-hook
 ;; 	    (lambda () (load-theme 'spacemacs-dark t))))
 
-
 (use-package powerline
   :ensure t
   :disabled
@@ -37,7 +34,6 @@
   ;; (powerline-default-theme)
   ;; (powerline-center-theme)
   (powerline-center-evil-theme))
-
 
 (use-package dired-sidebar
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
@@ -56,18 +52,15 @@
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
 
-
 (use-package ibuffer-sidebar
   :ensure t
   :commands (ibuffer-sidebar-toggle-sidebar))
-
 
 (defun sidebar-toggle ()
   "Toggle both `dired-sidebar' and `ibuffer-sidebar'."
   (interactive)
   (dired-sidebar-toggle-sidebar)
   (ibuffer-sidebar-toggle-sidebar))
-
 
 (use-package highlight-indent-guides
   :ensure t
@@ -90,7 +83,6 @@
   ;; (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
   (set-face-foreground 'highlight-indent-guides-character-face "#75715e")
   :diminish)
-
 
 (provide 'init-view)
 ;;; init-view.el ends here

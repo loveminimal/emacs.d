@@ -2,13 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (setq inhibit-startup-screen t
       make-backup-files nil
       auto-save-default nil
       ring-bell-function 'ignore)
 
 ;; (set-background-color "honeydew")
+(global-hl-line-mode 1)
 
 (setq-default
  initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
@@ -16,14 +16,11 @@
  truncate-lines t
  word-wrap t)
 
-
 ;; Permanently force Emacs to indent with spaces, never with TABs
 (setq-default  indent-tabs-mode nil)
 
-
 ;; turn on mouse in console mode
 (xterm-mouse-mode t)
-
 
 (display-time)
 (setq display-time-24hr-format t)
@@ -31,20 +28,17 @@
 (delete-selection-mode t)
 (defalias 'list-buffers 'ibuffer)
 
-
 ;; @Xah_Lee
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
-
 (progn
   "Set coding system."
   (set-language-environment 'utf-8)
   (set-default-coding-systems 'utf-8)
   (prefer-coding-system 'utf-8))
-
 
 (when (member "Consolas" (font-family-list))
   (set-frame-font "consolas-12.5" t t))
@@ -54,7 +48,6 @@
 ;; (set-default-font "DejaVu Sans Mono 11")
 ;; (set-default-font "WenQuanYi Micro Hei Mono 11")
 
-
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode)
@@ -62,10 +55,8 @@
 (when (fboundp 'set-scroll-bar-mode)
   (set-scroll-bar-mode nil))
 
-
 ;; Keybindings without extra configuration
 (global-set-key (kbd "C-c C-'") 'set-mark-command)
-
 
 ;;;;;; Some Basic Modes
 
@@ -74,7 +65,6 @@
   (require 'dired-x)
   (setq dired-recursive-deletes 'top)
   (setq dired-recursive-copies 'always))
-
 
 (use-package ido-mode
   :hook after-init)
@@ -102,7 +92,6 @@
       desktop-auto-save-timeout 600)
 (desktop-save-mode 1)
 
-
 (use-package show-paren-mode
   :hook after-init
   :init
@@ -114,49 +103,36 @@
               (ignore-errors (backward-up-list))
               (funcall fn))))))
 
-
 ;; (when (fboundp 'global-prettify-symbols-mode)
 ;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 
-
 ;;;;;; Some Basic Functions
-
-(defun open-work-file ()
-  "Just can be run in work env."
-  (interactive)
-  (find-file "z:/info/info.org"))
-
 
 (defun open-home-file ()
   "Quickly open index file."
   (interactive)
   (find-file "~/site/org/index.org"))
 
-
-(defun open-wiki-file ()
+(defun open-gtd-file ()
   "Quickly open wiki file."
   (interactive)
-  (find-file "~/site/static/wiki.org"))
-
-
-(defun open-cactus-file ()
-  "Quickly open cactus file."
-  (interactive)
-  (find-file "~/site/static/cactus.org"))
-
+  (find-file "~/site/org/gtd.org"))
 
 (defun open-init-file ()
   "Quickly open init file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
+(defun open-base-file ()
+  "Quickly open init file."
+  (interactive)
+  (find-file "~/.emacs.d/lisp/init-base.el"))
 
 (defun org-open-at-point-and-delete-other-windows ()
     "Open link file and just keep the goal file."
   (interactive)
   (org-open-at-point)
   (delete-other-windows))
-
 
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -166,7 +142,6 @@
   (move-end-of-line 1)
   (newline-and-indent))
 (global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
-
 
 ;; @purcell
 (defun delete-this-file ()
@@ -178,7 +153,6 @@
                              (file-name-nondirectory buffer-file-name)))
     (delete-file (buffer-file-name))
     (kill-this-buffer)))
-
 
 ;; @purcell
 (defun rename-this-file-and-buffer (new-name)
@@ -193,7 +167,6 @@
         (rename-file filename new-name 1))
       (set-visited-file-name new-name)
       (rename-buffer new-name))))
-
 
 ;; @purcell
 (defun sanityinc/adjust-opacity (frame incr)
@@ -210,7 +183,57 @@
 (global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
 (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
+;; @Xah_Lee
+(defun xah-clean-whitespace ()
+  "Delete trailing whitespace, and replace repeated blank lines to just 1.
+Only space and tab is considered whitespace here.
+Works on whole buffer or text selection, respects `narrow-to-region'.
 
+URL `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
+Version 2017-09-22"
+  (interactive)
+  (let ($begin $end)
+    (if (region-active-p)
+        (setq $begin (region-beginning) $end (region-end))
+      (setq $begin (point-min) $end (point-max)))
+    (save-excursion
+      (save-restriction
+        (narrow-to-region $begin $end)
+        (progn
+          (goto-char (point-min))
+          (while (re-search-forward "[ \t]+\n" nil "move")
+            (replace-match "\n")))
+        (progn
+          (goto-char (point-min))
+          (while (re-search-forward "\n\n\n+" nil "move")
+            (replace-match "\n\n")))
+        (progn
+          (goto-char (point-max))
+          (while (equal (char-before) 32) ; char 32 is space
+            (delete-char -1))))
+      (message "white space cleaned"))))
+
+(add-hook 'before-save-hook 'xah-clean-whitespace)
+
+;; @Xah_Lee
+(defun xah-clean-empty-lines ()
+  "Replace repeated blank lines to just 1.
+Works on whole buffer or text selection, respects `narrow-to-region'.
+
+URL `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
+Version 2017-09-22"
+  (interactive)
+  (let ($begin $end)
+    (if (region-active-p)
+        (setq $begin (region-beginning) $end (region-end))
+      (setq $begin (point-min) $end (point-max)))
+    (save-excursion
+      (save-restriction
+        (narrow-to-region $begin $end)
+        (progn
+          (goto-char (point-min))
+          (while (re-search-forward "\n\n\n+" nil "move")
+            (replace-match "\n\n")))))))
 
 (provide 'init-base)
 ;;; init-base.el ends here

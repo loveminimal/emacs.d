@@ -17,7 +17,6 @@
   :config
   (add-hook 'org-mode-hook 'org-content))
 
-
  (use-package ox-md)
 
  ;;; GTD -- Personal Management.
@@ -84,10 +83,10 @@
 	   "*  %?\n%U\n%a"
            :prepend 1
            :empty-lines 1)
-          ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "INBOX")
+          ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "IBX")
 	   "* TODO  %?\n%U"
            :empty-lines 1)
-          ("C" "CAPTURE-EVERYTHING" entry (file+headline "~/site/org/gtd.org" "INBOX")
+          ("C" "CAPTURE-EVERYTHING" entry (file+headline "~/site/org/gtd.org" "IBX")
 	   "* TODO  %?\n%U\n%a"
            :empty-lines 1)
 	  )))
@@ -96,7 +95,6 @@
 ;; 'C-c M-w' (org-copy) - Copying works like refiling but not delete the original note.
 ;; 'C-c C-w' (org-refile) - Refile the entry or region at point.
 ;; 'C-u C-c C-w' - Use the refile interface to jump to a heading.
-
 
 ;; Archiving
 ;; 'C-c C-x C-a' (org-archive-subtree-default)
@@ -107,8 +105,6 @@
 ;; the name derived by appending '_archive' to the current file name.
 ;; or
 ;; #+ARCHIVE: %s_done::
-
-
 
 ;; TODO
 ;; 'C-c C-t' (org-todo) - Rotate the TODO state of the current item
@@ -140,7 +136,6 @@
 	("KNOWNCAUSE" . "yellow")
 	("FIXED" . "grey")))
 
-
 ;; TAGS
 ;; 'C-c C-q' (org-set-tags-command) - Enter new tags for the current headline
 ;; 'C-c C-c' (org-set-tags-command) - Same as above when the cursor is in a headline.
@@ -151,14 +146,13 @@
         ("@work" . ?w)
         ("@life" . ?l)
         (:endgroup . gtd)
-        
+
 	("@misc" . ?m)
         ))
 
 ;; Tag searches
 ;; 'C-c / m' or 'C-c \' (org-match-sparse-tree) - Create a sparse tree with all headlines matching a tags/property/TODO search.
 ;; 'C-c a m' (org-tags-view) - Create a global list of tag matches from all agenda file.
-
 
 ;; Agenda Views
 ;; 'C-c [' (org-agenda-file-to-front) - Add current file to the list of agenda files.
@@ -174,7 +168,6 @@
 
 (use-package org-agenda
   :bind ("C-c a" . org-agenda))
-
 
 ;; Dates and Times
 
@@ -194,8 +187,6 @@
 (use-package org-hugo-auto-export-mode
   :disabled
   :hook (org-mode))
-
-
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here

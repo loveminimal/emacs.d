@@ -2,21 +2,18 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (use-package htmlize
   :ensure t
   ;; :config
   ;; (setq htmlize-output-type 'font)
   )
 
-  
 (use-package ox-html
   :config
   (setq
    ;; org-html-doctype "html5"
    ;; org-export-default-language "ch"
    user-full-name "Jack Liu"))
-
 
 (progn
   "Settings of `org-export'."
@@ -27,14 +24,13 @@
         org-html-head-include-scripts nil
         ))
 
-
 (use-package ox-publish
   :config
-  
+
   ;; org-publish-project-alist
   ;; ("project-name" :property value :property value ...)
   ;; ("project-name" :components ("project-name" "project-name" ...))
-  
+
   (setq org-publish-project-alist
         '(("orgfiles"
            ;; ; Sources and destinations for files.
@@ -53,7 +49,6 @@
            :publishing-function org-html-publish-to-html
 
            ;; :htmlized-source
-
 
            ;; ;;; Options for the exporters
 
@@ -88,8 +83,7 @@
            ;; :with-title	org-export-with-title
            :with-toc t ;; org-export-with-toc
            ;; :with-todo-keywords	org-export-with-todo-keywords
- 
- 
+
            ;; ; HTML specific properties
            ;; :html-allow-name-attribute-in-anchors	org-html-allow-name-attribute-in-anchors
            ;; :html-checkbox-type	org-html-checkbox-type
@@ -142,13 +136,11 @@
            ;; :html-viewport	org-html-viewport
            ;; :html-wrap-src-lines	org-html-wrap-src-lines
            ;; :html-xml-declaration	org-html-xml-declaration
- 
- 
+
            ;; ; Markdown specific properties
            ;; :md-footnote-format	org-md-footnote-format
            ;; :md-footnotes-section	org-md-footnotes-section
            ;; :md-headline-style	org-md-headline-style
-
 
            ;; ; Other options
            :table-of-contents t
@@ -190,11 +182,10 @@
            :recursive t
            :publishing-function org-publish-attachment
            )
-          
+
           ("website" :components ("orgfiles" "js" "css" "images" "assets" "webfonts"))
           ("statics" :components ("js" "css" "images" "assets" "webfonts"))
           )))
-
 
 (defun save-and-publish-website()
     "Save all buffers and publish."
@@ -204,20 +195,17 @@
     (org-publish-project "website" t)
     (message "Site published done.")))
 
-
 (defun save-and-publish-statics ()
   "Just copy statics like js, css, and image file .etc."
   (interactive)
   (org-publish-project "statics" t)
   (message "Copy statics done."))
 
-
 (defun save-and-publish-file ()
     "Save current buffer and publish."
   (interactive)
   (save-buffer t)
   (org-publish-current-file t))
-
 
 (defun delete-org-and-html ()
   "Delete current org and the relative html when it exists."
@@ -230,7 +218,6 @@
       (delete-file (buffer-file-name))
       (kill-this-buffer)
       (message "Delete org and the relative html done."))))
-
 
 (defun just-delete-relative-html ()
   "Just delete the relative html when it exists."
@@ -245,7 +232,6 @@
             )
         (message "None relative html.")))))
 
-
 (define-minor-mode auto-save-and-publish-file-mode
   "Toggle auto save and publish current file."
   :global nil
@@ -257,16 +243,13 @@
     ;; When the mode is disabled
     (remove-hook 'after-save-hook #'save-and-publish-file :local)))
 
-
 (use-package auto-save-and-publish-file-mode
   :hook (org-mode))
-
 
 (use-package simple-httpd
   :ensure t
   :config
   (setq httpd-root "~/site/public"))
-
 
 (defun preview-current-buffer-in-browser ()
   "Open current buffer as html."
@@ -275,8 +258,6 @@
     (save-and-publish-file)
     (unless (httpd-running-p) (httpd-start))
     (browse-url fileurl)))
-
-
 
 (provide 'init-site)
 ;;; init-site.el ends here

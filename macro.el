@@ -16,10 +16,5 @@
 (fset 'mc/delete-this-post
    " fo pdydd")
 
-
-
-
-
-
 (provide 'macro)
 ;;; macro.el ends here

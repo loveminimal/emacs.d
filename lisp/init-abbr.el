@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (use-package abbrev
   :config
   (clear-abbrev-table global-abbrev-table)
@@ -31,7 +30,6 @@
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)
   :diminish)
-
 
 (provide 'init-abbr)
 ;;; init-abbr.el ends here
