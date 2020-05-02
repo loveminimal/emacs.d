@@ -8,7 +8,7 @@
       ring-bell-function 'ignore)
 
 ;; (set-background-color "honeydew")
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 (setq-default
  initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
