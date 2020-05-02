@@ -6,7 +6,7 @@
 
 (use-package monokai-theme
   :ensure t
-  :disabled
+  ;; :disabled
   :config
   (load-theme 'monokai t))
 
