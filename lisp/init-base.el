@@ -42,6 +42,8 @@
 
 (when (member "Consolas" (font-family-list))
   (set-frame-font "consolas-12.5" t t))
+(when (member "Monaco" (font-family-list))
+  (set-frame-font "Monaco-11.5" t t))
 (when (member "楷体" (font-family-list))
   (set-fontset-font t 'han "楷体-13.5"))
 
