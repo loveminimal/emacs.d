@@ -46,6 +46,8 @@
   (set-frame-font "Monaco-11.5" t t))
 (when (member "楷体" (font-family-list))
   (set-fontset-font t 'han "楷体-13.5"))
+(when (member "Symbola" (font-family-list))
+  (set-fontset-font t 'unicode "Symbola" nil 'prepend))
 
 ;; (set-default-font "DejaVu Sans Mono 11")
 ;; (set-default-font "WenQuanYi Micro Hei Mono 11")
