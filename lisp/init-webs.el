@@ -6,16 +6,12 @@
   :ensure t
   :mode ("\\.*tml\\'" "\\.*xml\\'" "\\.ejs\\'"))
 
-(use-package css-mode
-  :mode "\\.wxss\\'")
-
-(use-package js2-mode
-  :ensure t
-  :mode "\\.js\\'")
-
 (use-package vue-mode
   :ensure t
-  :mode ("\\.vue\\'"))
+  :mode ("\\.vue\\'")
+  :config
+  ;; 0, 1, or 2, representing (respectively) none, low, and high coloring
+  (setq mmm-submode-decoration-level 0))
 
 (use-package emmet-mode
   :ensure t
@@ -30,9 +26,6 @@
   (setq web-mode-code-indent-offset 4)   ; web-mode, js code in html file
   )
 (add-hook 'web-mode-hook 'my-web-mode-indent-setup)
-
-(use-package php-mode
-  :ensure t)
 
 (provide 'init-webs)
 ;;; init-webs.el ends here
