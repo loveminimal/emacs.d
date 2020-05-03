@@ -10,7 +10,7 @@
       ring-bell-function 'ignore)
 
 ;; (set-background-color "honeydew")
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 (column-number-mode 1)
 
 (setq-default
