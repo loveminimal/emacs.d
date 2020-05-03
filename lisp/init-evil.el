@@ -57,6 +57,7 @@
     "fp" 'projectile-find-file
     "fP" 'projectile-find-dir
     "fi" 'open-init-file
+    "fc" 'open-config-file
     "fb" 'open-base-file
     "fh" 'open-home-file
     "fg" 'open-gtd-file

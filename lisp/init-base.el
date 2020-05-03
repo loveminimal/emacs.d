@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+;;;;;; Some better settings.
+
 (setq inhibit-startup-screen t
       make-backup-files nil
       auto-save-default nil
@@ -23,7 +25,7 @@
 (xterm-mouse-mode t)
 
 (display-time)
-(setq display-time-24hr-format t)
+(defvar display-time-24hr-format t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (defalias 'list-buffers 'ibuffer)
@@ -64,48 +66,29 @@
 
 ;;;;;; Some Basic Modes
 
-(use-package dired
-  :config
-  (require 'dired-x)
-  (setq dired-recursive-deletes 'top)
-  (setq dired-recursive-copies 'always))
+(require 'dired-x)
+(setq dired-recursive-deletes 'top)
+(setq dired-recursive-copies 'always)
 
-(use-package ido-mode
-  :hook after-init)
-
-(use-package recentf-mode
-  :hook after-init)
-
-(use-package electric-pair-mode
-  :hook after-init)
-
-(use-package winner-mode
-  :hook after-init)
-
-(use-package shell-script-mode
-  :mode ("\\.ps1\\'"))
-
+(add-hook 'after-init-hook 'ido-mode)
+(add-hook 'after-init-hook 'recentf-mode)
+(add-hook 'after-init-hook 'electric-pair-mode)
+(add-hook 'after-init-hook 'winner-mode)
 (add-hook 'after-init-hook 'global-auto-revert-mode)
+;; (add-hook 'after-init-hook 'electric-indent-mode')
 
-;; (use-package electric-indent-mode
-;;   :hook after-init)
-
-;; (add-hook 'after-init-hook 'global-hl-line-mode)
-
-(setq desktop-path (list user-emacs-directory)
-      desktop-auto-save-timeout 600)
+(defvar desktop-path (list user-emacs-directory))
+(defvar desktop-auto-save-timeout 600)
 (desktop-save-mode 1)
 
-(use-package show-paren-mode
-  :hook after-init
-  :init
-  ;; @zilongshanren
-  (define-advice show-paren-function (:around (fn) fix-show-paren-function)
-    "Highlight enclosing parens."
-    (cond ((looking-at-p "\\s(") (funcall fn))
-          (t (save-excursion
-              (ignore-errors (backward-up-list))
-              (funcall fn))))))
+(add-hook 'after-init-hook 'show-paren-mode)
+;; @zilongshanren
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+        (t (save-excursion
+            (ignore-errors (backward-up-list))
+            (funcall fn)))))
 
 ;; (when (fboundp 'global-prettify-symbols-mode)
 ;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
@@ -127,10 +110,15 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
+(defun open-config-file (file-name)
+  "Quickly open a config file which name is `FILE-NAME'."
+  (interactive "sWhich config: ")
+  (find-file (concat "~/.emacs.d/lisp/init-" file-name ".el")))
+
 (defun open-base-file ()
   "Quickly open init file."
   (interactive)
-  (find-file "~/.emacs.d/lisp/init-base.el"))
+  (open-config-file "base"))
 
 (defun org-open-at-point-and-delete-other-windows ()
     "Open link file and just keep the goal file."

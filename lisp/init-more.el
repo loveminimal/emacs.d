@@ -7,7 +7,6 @@
   :mode (("README\\.md\\'" . gfm-mode)
 	 ("\\.md\\'" . markdown-mode)
 	 ("\\.markdown\\'" . markdown-mode))
-  ;; :hook (after-init . markdown-mode)
   :init (setq markdown-command "multimarkdown"))
 
 (use-package smex
@@ -127,10 +126,6 @@ Use `swiper' to search for the symbol at point."
         )))
 
 ;; @tumashu
-;; pyim-create-Nchar-word-at-point → add N ch-chars into personal lib
-;; pyim-translate-trigger-char → input "你好世界", then input "5v", then add "你好世界" into lib
-;; pyim-create-word-from-selection → add selected word into lib
-;; pyin-delete-word → delete current selected word of lib
 (use-package pyim
   :ensure t
   :config
@@ -141,16 +136,7 @@ Use `swiper' to search for the symbol at point."
 
   (setq default-input-method "pyim")
   (setq pyim-default-scheme 'quanpin)   ;; Use QuanPin
-  (setq pyim-page-length 9) ;; Set amounts of the candidate words
-
-  ;; Manage dicts manually
-  ;; (setq pyim-dicts
-  ;;     '((:name "dict1" :file "/path/to/pyim-dict1.pyim")
-  ;;       (:name "dict2" :file "/path/to/pyim-dict2.pyim")))
-
-  ;; Auto load pyim when Emacs startup
-  ;; (add-hook 'emacs-startup-hook
-  ;;           #'(lambda () (pyim-restart-1 t)))
+  (setq pyim-page-length 9)             ;; Set amounts of the candidate words
   )
 
 ;; Toggle input method globally
