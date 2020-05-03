@@ -57,3 +57,4 @@ site-lisp/package/
 .cache/
 /forge-database.sqlite
 /pyim
+/projectile.cache

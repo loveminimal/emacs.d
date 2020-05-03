@@ -54,6 +54,8 @@
     "bk" 'ido-kill-buffer
 
     "ff" 'ido-find-file
+    "fp" 'projectile-find-file
+    "fP" 'projectile-find-dir
     "fi" 'open-init-file
     "fb" 'open-base-file
     "fh" 'open-home-file
