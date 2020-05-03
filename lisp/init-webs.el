@@ -4,10 +4,11 @@
 
 (use-package web-mode
   :ensure t
-  :mode ("\\.*tml\\'" "\\.*xml\\'" "\\.ejs\\'"))
+  :mode ("\\.*tml\\'" "\\.*xml\\'" "\\.ejs\\'" "\\.vue\\'"))
 
 (use-package vue-mode
   :ensure t
+  :disabled
   :mode ("\\.vue\\'")
   :config
   ;; 0, 1, or 2, representing (respectively) none, low, and high coloring
