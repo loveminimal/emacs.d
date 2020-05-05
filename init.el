@@ -8,6 +8,10 @@
 (defvar macro-file (expand-file-name "macro.el" user-emacs-directory) "A file to record macros.")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(defvar *is-mac* (eq system-type 'darwin))
+(defvar *is-win* (eq system-type 'window-nt))
+(defvar *is-nux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)))
+
 (require 'init-upkg)
 
 (use-package init-abbr)
