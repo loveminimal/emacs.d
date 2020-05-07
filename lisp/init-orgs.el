@@ -107,6 +107,7 @@
 
 (setq org-todo-keyword-faces
       '(("TODO" . "red")
+	("WAIT" . "green")
 	("NEXT" . "green")
 	("DONE" . "grey")
 	("SOMEDAY" . "yellow")
