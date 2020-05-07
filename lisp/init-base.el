@@ -57,14 +57,13 @@
 
 (if *is-nux*
     (progn
-      ;; (when (member "Monaco" (font-family-list))
-      ;;   (set-frame-font "Monaco-11.5" t t))
-      (when (member "Droid Sans Mono" (font-family-list))
-        (set-frame-font "Droid Sans Mono-13.5" t t))
+      (when (member "Hack" (font-family-list))
+        (set-frame-font "Hack-11.5" t ))
       (when (member "WenQuanYi Micro Hei Mono" (font-family-list))
-        (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-16.5"))
-      (when (member "Symbola" (font-family-list))
-        (set-fontset-font t 'unicode "Symbola" nil 'prepend))
+        (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5"))
+      ;; ====== Sans Mono Font ======
+      ;; (set-frame-font "Source Code Pro-11.5" t t)
+      ;; (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5")
       ))
 
 ;; (set-default-font "DejaVu Sans Mono 11")
