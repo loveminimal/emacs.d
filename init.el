@@ -25,6 +25,7 @@
 (use-package init-site)
 
 (use-package init-webs)
+(use-package init-misc)
 
 (add-hook 'after-init-hook
 	  (lambda () (require 'server)
