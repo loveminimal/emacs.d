@@ -128,6 +128,7 @@ Use `swiper' to search for the symbol at point."
 ;; @tumashu
 (use-package pyim
   :ensure t
+  :disabled
   :config
   ;; Active BaseDict
   (use-package pyim-basedict
@@ -138,6 +139,11 @@ Use `swiper' to search for the symbol at point."
   (setq pyim-default-scheme 'quanpin)   ;; Use QuanPin
   (setq pyim-page-length 9)             ;; Set amounts of the candidate words
   )
+
+(use-package rime
+  :ensure t
+  :custom
+  (default-input-method "rime"))
 
 ;; Toggle input method globally
 (global-set-key (kbd "C-h C-j") 'toggle-input-method)

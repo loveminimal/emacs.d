@@ -1,0 +1,135 @@
+__build_info:
+  rime_version: 1.5.3
+  timestamps:
+    default: 1584190865
+    default.custom: 1589108610
+    key_bindings: 1584190865
+    key_bindings.custom: 0
+    numbers.custom: 0
+    numbers.schema: 1589108610
+    punctuation: 1584190865
+    punctuation.custom: 0
+engine:
+  processors:
+    - key_binder
+    - punctuator
+    - selector
+    - express_editor
+  segmentors:
+    - punct_segmentor
+  translators:
+    - punct_translator
+key_binder:
+  bindings:
+    - {accept: semicolon, send: c, when: has_menu}
+    - {accept: apostrophe, send: e, when: has_menu}
+menu:
+  alternative_select_keys: acegi
+  page_size: 4
+punctuator:
+  full_shape:
+    "!": "壹"
+    "#": "叁"
+    "$": ["肆", "￥"]
+    "%": ["伍", "百分之"]
+    "&": "柒"
+    "(": "玖"
+    ")": "零"
+    "*": "捌"
+    .: "点"
+    0: "〇"
+    1: "一"
+    2: "二"
+    3: "三"
+    4: "四"
+    5: "五"
+    6: "六"
+    7: "七"
+    8: "八"
+    9: "九"
+    ">": "点"
+    "@": "贰"
+    B: "佰"
+    D: "第"
+    F: "分"
+    H: "号"
+    J: "角"
+    N: "年"
+    Q: "仟"
+    R: "日"
+    S: "拾"
+    W: "万"
+    X: "星期"
+    Y: ["元", "月", "亿"]
+    Z: ["整", "之"]
+    "^": "陆"
+    b: "百"
+    d: "第"
+    f: "分"
+    h: "号"
+    j: "角"
+    n: "年"
+    q: "千"
+    r: "日"
+    s: "十"
+    w: "万"
+    x: "星期"
+    y: ["元", "月", "亿"]
+    z: ["整", "之"]
+  half_shape:
+    "!": "一"
+    "#": "三"
+    "$": ["四", "￥"]
+    "%": ["五", "百分之"]
+    "&": "七"
+    "(": "九"
+    ")": "〇"
+    "*": "八"
+    .: "点"
+    0: "零"
+    1: "壹"
+    2: "贰"
+    3: "叁"
+    4: "肆"
+    5: "伍"
+    6: "陆"
+    7: "柒"
+    8: "捌"
+    9: "玖"
+    ">": "点"
+    "@": "二"
+    B: "百"
+    D: "第"
+    F: "分"
+    H: "号"
+    J: "角"
+    N: "年"
+    Q: "千"
+    R: "日"
+    S: "十"
+    W: "万"
+    X: "星期"
+    Y: ["元", "月", "亿"]
+    Z: ["整", "之"]
+    "^": "六"
+    b: "佰"
+    d: "第"
+    f: "分"
+    h: "号"
+    j: "角"
+    n: "年"
+    q: "仟"
+    r: "日"
+    s: "拾"
+    w: "万"
+    x: "星期"
+    y: ["元", "月", "亿"]
+    z: ["整", "之"]
+schema:
+  description: "快捷输入大写数字"
+  name: "大写数字"
+  schema_id: numbers
+  version: 1.2
+switches:
+  - name: full_shape
+    states: ["壹贰叁", "一二三"]
