@@ -142,6 +142,7 @@ Use `swiper' to search for the symbol at point."
 
 (use-package rime
   :ensure t
+  :disabled
   :custom
   (default-input-method "rime"))
 
