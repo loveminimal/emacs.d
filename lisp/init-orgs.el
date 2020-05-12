@@ -19,6 +19,9 @@
 
 (use-package ox-md)
 
+;; Store new notes at the beginning of a file or entry.
+(setq org-reverse-note-order t)
+
 ;;;;;; GTD -- Personal Management.
 
 ;; Template Expansion
