@@ -2,6 +2,11 @@
 /server
 /transient
 /bookmarks
+/pyim
+/projectile.cache
+/rime
+
+.lsp-session-v1
 
 # @purcell
 /url/cache
@@ -56,7 +61,3 @@ site-lisp/package/
 /magithub
 .cache/
 /forge-database.sqlite
-/pyim
-/projectile.cache
-
-.lsp-session-v1
