@@ -9,6 +9,10 @@
 	 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+(use-package iedit
+  :ensure t
+  )
+
 (use-package smex
   :ensure t
   :config (smex-initialize)
