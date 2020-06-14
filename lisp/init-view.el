@@ -2,30 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; (load-theme 'tsdh-light t)
-
-(use-package doom-themes
-  :ensure t
-  :disabled
-  :config
-
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ;; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ;; if nil, italics is universally disabled
-  (load-theme 'doom-one t)
-
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
-  ;; or for treemacs users
-  (defvar doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-  (doom-themes-treemacs-config)
-
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
-
 (use-package monokai-theme
   :ensure t
   ;; :disabled
@@ -83,28 +59,6 @@
   (interactive)
   (dired-sidebar-toggle-sidebar)
   (ibuffer-sidebar-toggle-sidebar))
-
-(use-package highlight-indent-guides
-  :ensure t
-  :disabled
-  :hook (prog-mode . highlight-indent-guides-mode)
-  :config
-  (setq highlight-indent-guides-method 'character) ;; 'fill , 'column, 'character
-  (setq highlight-indent-guides-character ?\|)	   ;; customize specific character
-  ;; By default, this mode dynamically choose colors that look acceptable with the loaded theme
-  ;; the percentages can be tweaked to make the colors more intense or subtle.
-  (setq highlight-indent-guides-auto-odd-face-perc 15)
-  (setq highlight-indent-guides-auto-even-face-perc 15)
-  (setq highlight-indent-guides-auto-character-face-perc 20)
-  ;; Or to set the colors manually, disable this feature and customize the faces directly
-  (setq highlight-indent-guides-auto-enabled nil)
-  ;; (set-face-background 'highlight-indent-guides-odd-face "darkgray")
-  (set-face-background 'highlight-indent-guides-odd-face "green")
-  ;; (set-face-background 'highlight-indent-guides-even-face "dimgray")
-  (set-face-background 'highlight-indent-guides-even-face "blue")
-  ;; (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
-  (set-face-foreground 'highlight-indent-guides-character-face "#75715e")
-  :diminish)
 
 (provide 'init-view)
 ;;; init-view.el ends here
