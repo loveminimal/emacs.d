@@ -154,6 +154,13 @@
            :recursive t
            :publishing-function org-publish-attachment
            )
+          ("conf"
+           :base-directory "~/site/"
+           :base-extension "js"
+           :publishing-directory "~/site/public/"
+           :recursive nil
+           :publishing-function org-publish-attachment
+           )
           ("css"
            :base-directory "~/site/css/"
            :base-extension "css"
@@ -183,8 +190,8 @@
            :publishing-function org-publish-attachment
            )
 
-          ("website" :components ("orgfiles" "js" "css" "images" "assets" "webfonts"))
-          ("statics" :components ("js" "css" "images" "assets" "webfonts"))
+          ("website" :components ("conf" "orgfiles" "js" "css" "images" "assets" "webfonts"))
+          ("statics" :components ("conf" "js" "css" "images" "assets" "webfonts"))
           )))
 
 (defun save-and-publish-website()
