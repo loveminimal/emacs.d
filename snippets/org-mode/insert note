@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: insert note
+# key: in
+# --
+
+#+BEGIN_EXPORT html
+<note>
+$0
+</note>
+#+END_EXPORT
