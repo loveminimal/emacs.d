@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: insert paragraph label
+# key: pp
+# --
+
+<p>$1</p>$2
