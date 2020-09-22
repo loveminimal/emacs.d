@@ -7,6 +7,8 @@
   (clear-abbrev-table global-abbrev-table)
   (define-abbrev-table 'global-abbrev-table
     '(
+      ("sout" "System.out.println")
+
       ("emr" "✔")
       ("emw" "✘")
       ("usp" "use-package")
