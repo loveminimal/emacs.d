@@ -8,6 +8,7 @@
   (define-abbrev-table 'global-abbrev-table
     '(
       ("sout" "System.out.println")
+      ("jmain" "public static void main(String[] args) ")
 
       ("emr" "✔")
       ("emw" "✘")
