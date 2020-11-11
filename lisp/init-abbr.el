@@ -10,8 +10,12 @@
       ("sout" "System.out.println")
       ("jm" "public static void main(String[] args) ")
 
+      ("fml" "float: right; margin-left:")
+      ("fmr" "float: left; margin-right:")
+
       ("emr" "✔")
       ("emw" "✘")
+
       ("usp" "use-package")
       ("jss" "JavaScript")
       ("ccc" "#+CAPTION:")
