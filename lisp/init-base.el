@@ -13,6 +13,7 @@
 ;; (global-hl-line-mode 1)
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
+(setq system-time-locale "C")
 
 (setq-default
  initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
