@@ -54,18 +54,18 @@
 	   "* %u\n\n%?\n\n"
            :prepend 1
            :empty-lines 1)
-	  ("D" "DIARY" entry (file+headline "~/site/org/diary.org" "日记")
-	   "* %u\n%a\n\n%?\n\n"
-           :prepend 1
-           :empty-lines 1)
+	  ;; ("D" "DIARY" entry (file+headline "~/site/org/diary.org" "日记")
+	  ;;  "* %u\n%a\n\n%?\n\n"
+          ;;  :prepend 1
+          ;;  :empty-lines 1)
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n\n%?\n\n"
            :prepend 1
            :empty-lines 1)
-	  ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
-	   "* %U\n%a\n\n%?\n\n"
-           :prepend 1
-           :empty-lines 1)
+	  ;; ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
+	  ;;  "* %U\n%a\n\n%?\n\n"
+          ;;  :prepend 1
+          ;;  :empty-lines 1)
 	  ("j" "joker" entry (file+headline "~/site/org/joker.org" "JOKER")
 	   "* %U\n\n%?\n\n"
            :prepend 1
@@ -74,18 +74,18 @@
 	   "*  %?\n%U"
            :prepend 1
            :empty-lines 1)
-	  ("S" "STORY" entry (file+headline "~/site/org/story.org" "故事")
-	   "*  %?\n%U\n%a"
-           :prepend 1
-           :empty-lines 1)
+	  ;; ("S" "STORY" entry (file+headline "~/site/org/story.org" "故事")
+	  ;;  "*  %?\n%U\n%a"
+          ;;  :prepend 1
+          ;;  :empty-lines 1)
 	  ("w" "wiki" entry (file+headline "~/site/org/wiki.org" "WIKI")
 	   "*  %?\n%U"
            :prepend 1
            :empty-lines 1)
-	  ("W" "WIKI" entry (file+headline "~/site/org/wiki.org" "WIKI")
-	   "*  %?\n%U\n%a"
-           :prepend 1
-           :empty-lines 1)
+	  ;; ("W" "WIKI" entry (file+headline "~/site/org/wiki.org" "WIKI")
+	  ;;  "*  %?\n%U\n%a"
+          ;;  :prepend 1
+          ;;  :empty-lines 1)
           ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "IBX")
 	   "* TODO  %?\n%U"
            :empty-lines 1)
