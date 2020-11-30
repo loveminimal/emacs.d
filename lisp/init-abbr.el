@@ -10,8 +10,8 @@
       ("sout" "System.out.println")
       ("jm" "public static void main(String[] args) ")
 
-      ("fml" "float: right; margin-left:")
-      ("fmr" "float: left; margin-right:")
+      ("frm" "float: right; margin-left:")
+      ("flm" "float: left; margin-right:")
 
       ("emr" "✔")
       ("emw" "✘")
