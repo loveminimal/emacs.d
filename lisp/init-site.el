@@ -12,7 +12,7 @@
   :config
   (setq
    ;; org-html-doctype "html5"
-   org-export-default-language "ch"
+   org-export-default-language "zh"
    user-full-name "Jack Liu"))
 
 (progn
