@@ -147,10 +147,10 @@
            ;; :style "<link rel=\"stylesheet\" href=\"../other/mystyle.css\" type=\"text/css\" />"
            )
           ;; static assets
-          ("js"
-           :base-directory "~/site/js/"
-           :base-extension "js"
-           :publishing-directory "~/site/public/js/"
+          ("jscss"
+           :base-directory "~/site/dist/"
+           :base-extension "js\\|css"
+           :publishing-directory "~/site/public/dist/"
            :recursive t
            :publishing-function org-publish-attachment
            )
@@ -159,13 +159,6 @@
            :base-extension "js"
            :publishing-directory "~/site/public/"
            :recursive nil
-           :publishing-function org-publish-attachment
-           )
-          ("css"
-           :base-directory "~/site/css/"
-           :base-extension "css"
-           :publishing-directory "~/site/public/css/"
-           :recursive t
            :publishing-function org-publish-attachment
            )
           ("images"
@@ -190,8 +183,8 @@
            :publishing-function org-publish-attachment
            )
 
-          ("website" :components ("conf" "orgfiles" "js" "css" "images" "assets" "webfonts"))
-          ("statics" :components ("conf" "js" "css" "images" "assets" "webfonts"))
+          ("website" :components ("conf" "orgfiles" "jscss" "images" "assets" "webfonts"))
+          ("statics" :components ("conf" "jscss" "images" "assets" "webfonts"))
           )))
 
 (defun save-and-publish-website()
