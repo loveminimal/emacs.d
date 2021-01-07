@@ -8,8 +8,14 @@
   ;; (setq htmlize-output-type 'font)
   )
 
-(use-package ox-html
-  :config
+;; (use-package ox-html
+;;   :config
+;;   (setq
+;;    ;; org-html-doctype "html5"
+;;    org-export-default-language "zh"
+;;    user-full-name "Jack Liu"))
+
+(eval-after-load 'ox-html
   (setq
    ;; org-html-doctype "html5"
    org-export-default-language "zh"
