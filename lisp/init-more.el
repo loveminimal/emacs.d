@@ -97,8 +97,8 @@ Use `swiper' to search for the symbol at point."
   :ensure t
   :bind ("C-=" . er/expand-region))
 
-(use-package undo-tree
-  :diminish)
+;; (use-package undo-tree
+;;   :diminish)
 
 (use-package eldoc
   :diminish)
