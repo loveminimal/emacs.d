@@ -154,23 +154,23 @@
 
 ;; @purcell
 (defun delete-this-file ()
-  "Delete the current file, and kill the buffer."
+  "delete the current file, and kill the buffer."
   (interactive)
   (unless (buffer-file-name)
-    (error "No file is currently being edited"))
-  (when (yes-or-no-p (format "Really delete '%s'?"
+    (error "no file is currently being edited"))
+  (when (yes-or-no-p (format "really delete '%s'?"
                              (file-name-nondirectory buffer-file-name)))
     (delete-file (buffer-file-name))
     (kill-this-buffer)))
 
 ;; @purcell
 (defun rename-this-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME."
-  (interactive "sNew name: ")
+  "renames both current buffer and file it's visiting to new-name."
+  (interactive "snew name: ")
   (let ((name (buffer-name))
         (filename (buffer-file-name)))
     (unless filename
-      (error "Buffer '%s' is not visiting a file!" name))
+      (error "buffer '%s' is not visiting a file!" name))
     (progn
       (when (file-exists-p filename)
         (rename-file filename new-name 1))
@@ -179,27 +179,27 @@
 
 ;; @purcell
 (defun sanityinc/adjust-opacity (frame incr)
-  "Adjust the background opacity of FRAME by increment INCR."
+  "adjust the background opacity of frame by increment incr."
   (unless (display-graphic-p frame)
-    (error "Cannot adjust opacity of this frame"))
+    (error "cannot adjust opacity of this frame"))
   (let* ((oldalpha (or (frame-parameter frame 'alpha) 100))
          (oldalpha (if (listp oldalpha) (car oldalpha) oldalpha))
          (newalpha (+ incr oldalpha)))
     (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
       (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
 
-(global-set-key (kbd "M-C-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -2)))
-(global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
-(global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
+(global-set-key (kbd "m-c-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -2)))
+(global-set-key (kbd "m-c-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
+(global-set-key (kbd "m-c-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
-;; @Xah_Lee
+;; @xah_lee
 (defun xah-clean-whitespace ()
-  "Delete trailing whitespace, and replace repeated blank lines to just 1.
-Only space and tab is considered whitespace here.
-Works on whole buffer or text selection, respects `narrow-to-region'.
+  "delete trailing whitespace, and replace repeated blank lines to just 1.
+only space and tab is considered whitespace here.
+works on whole buffer or text selection, respects `narrow-to-region'.
 
-URL `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
-Version 2017-09-22"
+url `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
+version 2017-09-22"
   (interactive)
   (let ($begin $end)
     (if (region-active-p)
@@ -224,13 +224,13 @@ Version 2017-09-22"
 
 (add-hook 'before-save-hook 'xah-clean-whitespace)
 
-;; @Xah_Lee
+;; @xah_lee
 (defun xah-clean-empty-lines ()
-  "Replace repeated blank lines to just 1.
-Works on whole buffer or text selection, respects `narrow-to-region'.
+  "replace repeated blank lines to just 1.
+works on whole buffer or text selection, respects `narrow-to-region'.
 
-URL `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
-Version 2017-09-22"
+url `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
+version 2017-09-22"
   (interactive)
   (let ($begin $end)
     (if (region-active-p)
@@ -243,6 +243,21 @@ Version 2017-09-22"
           (goto-char (point-min))
           (while (re-search-forward "\n\n\n+" nil "move")
             (replace-match "\n\n")))))))
+
+;; @me
+(defun jk/org-insert-headline (level)
+  "insert `level' * ahead of current line."
+  (interactive "swhich level: ")
+  (move-beginning-of-line 1)
+  (let ((x 0) (len (string-to-number level)))
+    (while (< x len)
+      (if (= len (+ x 1))
+          (insert "* ")
+        (insert "*")
+        )
+    (setq x (+ x 1)))))
+
+(global-set-key (kbd "C-c C-h") 'jk/org-insert-headline)
 
 (provide 'init-base)
 ;;; init-base.el ends here
