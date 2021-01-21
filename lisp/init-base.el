@@ -245,10 +245,32 @@ version 2017-09-22"
             (replace-match "\n\n")))))))
 
 ;; @me
+(defun jk/org-delete-headline ()
+  "Delete the old headline if existed."
+  (interactive)
+  (setq can-loop t)
+  (while can-loop
+    (beginning-of-line)
+    (setq sp (point))
+    (setq is-headline (re-search-forward "[ *]" nil t))
+    (if is-headline
+        (progn
+          (setq ep (point))
+          (if (= (- ep sp) 1)
+              (delete-char -1)
+            (progn
+              (beginning-of-line)
+              (setq can-loop nil))))
+      (progn
+        (beginning-of-line)
+        (setq can-loop nil))))
+  (if (not can-loop)
+      (message "END")))
+
 (defun jk/org-insert-headline (level)
-  "insert `level' * ahead of current line."
+  "Insert `level' * ahead of current line."
   (interactive "swhich level: ")
-  (move-beginning-of-line 1)
+  (jk/org-delete-headline)
   (let ((x 0) (len (string-to-number level)))
     (while (< x len)
       (if (= len (+ x 1))
