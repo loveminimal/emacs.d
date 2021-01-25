@@ -188,9 +188,9 @@
     (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
       (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
 
-;;(global-set-key (kbd "m-c-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -2)))
-;;(global-set-key (kbd "m-c-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
-;;(global-set-key (kbd "m-c-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
+(global-set-key (kbd "M-C-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -2)))
+(global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
+(global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
 ;; @xah_lee
 (defun xah-clean-whitespace ()
