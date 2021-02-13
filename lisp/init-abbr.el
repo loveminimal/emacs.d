@@ -1,4 +1,4 @@
-;;; init-abbr.el --- Abbreviations.
+;;; init-abbr.el --- Abbreviations. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

@@ -1,4 +1,4 @@
-;;; init-site.el --- Exports org to site.
+;;; init-site.el --- Exports org to site. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

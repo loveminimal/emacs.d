@@ -1,4 +1,4 @@
-;;; init-more.el --- Configurations with extra packages.
+;;; init-more.el --- Configurations with extra packages. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

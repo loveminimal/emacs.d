@@ -1,4 +1,4 @@
-;;; init-webs.el --- Configurations of web develop.
+;;; init-webs.el --- Configurations of web develop. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

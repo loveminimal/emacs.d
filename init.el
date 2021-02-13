@@ -1,4 +1,4 @@
-;;; init.el --- The main entry of Emacs.
+;;; init.el --- The main entry of Emacs. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
