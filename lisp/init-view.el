@@ -1,4 +1,4 @@
-;;; init-view.el --- Theme.
+;;; init-view.el --- Theme. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

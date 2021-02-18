@@ -1,4 +1,4 @@
-;;; init-base.el --- Basic configurations.
+;;; init-base.el --- Basic configurations. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -10,7 +10,7 @@
       ring-bell-function 'ignore)
 
 ;; (set-background-color "honeydew")
-;; (global-hl-line-mode 1)
+(global-hl-line-mode 1)
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
 (setq system-time-locale "C")

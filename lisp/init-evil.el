@@ -1,4 +1,4 @@
-;;; init-evil.org --- Set Emacs as Vim.
+;;; init-evil.org --- Set Emacs as Vim. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

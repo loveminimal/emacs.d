@@ -1,4 +1,4 @@
-;;; init-misc.el --- Stage configurations be unused or temporary.
+;;; init-misc.el --- Stage configurations be unused or temporary. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 (use-package dumb-jump

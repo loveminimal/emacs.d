@@ -1,4 +1,4 @@
-;;; init-upkg.el --- Init use-package.
+;;; init-upkg.el --- Init use-package. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
