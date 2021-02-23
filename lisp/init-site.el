@@ -43,11 +43,11 @@
            :section-numbers nil  ;; org-export-with-section-numbers
            :with-planning t      ;; org-export-with-planning
            :with-priority t      ;; org-export-with-priority ;
-           :with-tags not-in-toc ;; org-export-with-tags
+          ;;  :with-tags not-in-toc ;; org-export-with-tags
            :with-toc t           ;; org-export-with-toc
 
            :html-doctype "html5" ;; org-html-doctype
-           :html-metadata-timestamp-format "%Y-%m-%d" ;; org-html-metadata-timestamp-format
+          ;;  :html-metadata-timestamp-format "%Y-%m-%d" ;; org-html-metadata-timestamp-format
            :html-head-include-default-style nil ;; org-html-head-include-default-style
            :html-head-include-scripts nil ;; org-html-head-include-scripts
            ;; :html-head "<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />\n<link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"  />\n<script src=\"/main.js\">jafslkdjf</script>" ;; org-html-head
