@@ -43,11 +43,11 @@
            :section-numbers nil  ;; org-export-with-section-numbers
            :with-planning t      ;; org-export-with-planning
            :with-priority t      ;; org-export-with-priority ;
-          ;;  :with-tags not-in-toc ;; org-export-with-tags
+           ;;  :with-tags not-in-toc ;; org-export-with-tags
            :with-toc t           ;; org-export-with-toc
 
            :html-doctype "html5" ;; org-html-doctype
-          ;;  :html-metadata-timestamp-format "%Y-%m-%d" ;; org-html-metadata-timestamp-format
+           ;;  :html-metadata-timestamp-format "%Y-%m-%d" ;; org-html-metadata-timestamp-format
            :html-head-include-default-style nil ;; org-html-head-include-default-style
            :html-head-include-scripts nil ;; org-html-head-include-scripts
            :html-head
@@ -58,7 +58,7 @@
            :html-indent t               ;; org-html-indent
            ;; :html-link-home "index.html"	;; org-html-link-home
            ;; :html-link-up "uUP"          ;; org-html-link-up
-           ;; :html-validation-link "<a href=\"http://beian.miit.gov.cn/\">豫ICP备19025929号</a>"	;; org-html-validation-link
+           :html-validation-link "<a href=\"http://beian.miit.gov.cn/\">豫ICP备19025929号</a>"	;; org-html-validation-link
            )
 
           ;; static assets
@@ -66,40 +66,26 @@
            :base-directory "~/site/"
            :base-extension "js"
            :publishing-directory "~/site/public/"
-           :recursive t
+           :recursive nil
            :publishing-function org-publish-attachment
            )
           ("images"
            :base-directory "~/site/images/"
-           :base-extension "jpg\\|gif\\|png\\|svg\\|gif"
+           :base-extension any
            :publishing-directory "~/site/public/images/"
            :recursive t
            :publishing-function org-publish-attachment
            )
-          ("jscss"
+          ("themes"
            :base-directory "~/site/themes/"
-           :base-extension "js\\|css"
+           :base-extension any
            :publishing-directory "~/site/public/themes/"
            :recursive t
            :publishing-function org-publish-attachment
            )
-          ("assets"
-           :base-directory "~/site/assets/"
-           :base-extension "js\\|css\\|mp3\\|jpg\\|gif\\|png\\|svg\\|gif"
-           :publishing-directory "~/site/public/assets/"
-           :recursive t
-           :publishing-function org-publish-attachment
-           )
-          ("webfonts"
-           :base-directory "~/site/themes/webfonts/"
-           :base-extension "eot\\|svg\\|ttf\\|woff\\|woff2"
-           :publishing-directory "~/site/public/themes/webfonts/"
-           :recursive t
-           :publishing-function org-publish-attachment
-           )
 
-          ("website" :components ("orgfiles" "confs" "jscss" "images" "assets" "webfonts"))
-          ("statics" :components ("confs" "jscss" "images" "assets" "webfonts"))
+          ("website" :components ("orgfiles" "confs" "images" "themes"))
+          ("statics" :components ("confs" "images" "themes"))
           )))
 
 (defun save-and-publish-website()
