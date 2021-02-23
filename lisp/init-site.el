@@ -62,6 +62,13 @@
            )
 
           ;; static assets
+          ("confs"
+           :base-directory "~/site/"
+           :base-extension "js"
+           :publishing-directory "~/site/public/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
           ("images"
            :base-directory "~/site/images/"
            :base-extension "jpg\\|gif\\|png\\|svg\\|gif"
@@ -91,8 +98,8 @@
            :publishing-function org-publish-attachment
            )
 
-          ("website" :components ("orgfiles" "jscss" "images" "assets" "webfonts"))
-          ("statics" :components ("jscss" "images" "assets" "webfonts"))
+          ("website" :components ("orgfiles" "confs" "jscss" "images" "assets" "webfonts"))
+          ("statics" :components ("confs" "jscss" "images" "assets" "webfonts"))
           )))
 
 (defun save-and-publish-website()
