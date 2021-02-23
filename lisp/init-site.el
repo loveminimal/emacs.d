@@ -62,20 +62,6 @@
            )
 
           ;; static assets
-          ("jscss"
-           :base-directory "~/site/dist/"
-           :base-extension "js\\|css"
-           :publishing-directory "~/site/public/dist/"
-           :recursive t
-           :publishing-function org-publish-attachment
-           )
-          ("conf"
-           :base-directory "~/site/"
-           :base-extension "js"
-           :publishing-directory "~/site/public/"
-           :recursive nil
-           :publishing-function org-publish-attachment
-           )
           ("images"
            :base-directory "~/site/images/"
            :base-extension "jpg\\|gif\\|png\\|svg\\|gif"
@@ -83,23 +69,30 @@
            :recursive t
            :publishing-function org-publish-attachment
            )
+          ("jscss"
+           :base-directory "~/site/themes/"
+           :base-extension "js\\|css"
+           :publishing-directory "~/site/public/themes/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
           ("assets"
            :base-directory "~/site/assets/"
-           :base-extension "mp3"
+           :base-extension "js\\|css\\|mp3\\|jpg\\|gif\\|png\\|svg\\|gif"
            :publishing-directory "~/site/public/assets/"
            :recursive t
            :publishing-function org-publish-attachment
            )
           ("webfonts"
-           :base-directory "~/site/webfonts/"
+           :base-directory "~/site/themes/webfonts/"
            :base-extension "eot\\|svg\\|ttf\\|woff\\|woff2"
-           :publishing-directory "~/site/public/webfonts/"
+           :publishing-directory "~/site/public/themes/webfonts/"
            :recursive t
            :publishing-function org-publish-attachment
            )
 
-          ("website" :components ("conf" "orgfiles" "jscss" "images" "assets" "webfonts"))
-          ("statics" :components ("conf" "jscss" "images" "assets" "webfonts"))
+          ("website" :components ("orgfiles" "jscss" "images" "assets" "webfonts"))
+          ("statics" :components ("jscss" "images" "assets" "webfonts"))
           )))
 
 (defun save-and-publish-website()
