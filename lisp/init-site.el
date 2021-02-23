@@ -50,7 +50,10 @@
           ;;  :html-metadata-timestamp-format "%Y-%m-%d" ;; org-html-metadata-timestamp-format
            :html-head-include-default-style nil ;; org-html-head-include-default-style
            :html-head-include-scripts nil ;; org-html-head-include-scripts
-           ;; :html-head "<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />\n<link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"  />\n<script src=\"/main.js\">jafslkdjf</script>" ;; org-html-head
+           :html-head
+           "<link rel=\"shortcut icon\" href=\"/images/bg/rose-red.png\" type=\"image/x-icon\" />
+           <link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"  />
+           <script type=\"module\" src=\"/main.js\" defer></script>" ;; org-html-head
            :html-checkbox-type unicode  ;; org-html-checkbox-type
            :html-indent t               ;; org-html-indent
            ;; :html-link-home "index.html"	;; org-html-link-home
