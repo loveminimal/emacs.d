@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-# name: insert header 
+# name: insert header
 # key: ih
 # --
-#+SETUPFILE: ../theme-rose.setup
 #+DATE: ${1:`(format-time-string "<%Y-%m-%d %a %H:%M>" (current-time))`}
 #+TITLE: ${2:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
 

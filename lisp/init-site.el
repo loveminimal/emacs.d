@@ -55,7 +55,7 @@
            <link rel=\"stylesheet\" href=\"/themes/style.css\" type=\"text/css\"  />
            <script type=\"module\" src=\"/themes/main.js\" defer></script>" ;; org-html-head
            :html-checkbox-type unicode  ;; org-html-checkbox-type
-           :html-indent t               ;; org-html-indent
+          ;;  :html-indent t               ;; org-html-indent
            ;; :html-link-home "index.html"	;; org-html-link-home
            ;; :html-link-up "uUP"          ;; org-html-link-up
            :html-validation-link "<a href=\"http://beian.miit.gov.cn/\">豫ICP备19025929号</a>"	;; org-html-validation-link
