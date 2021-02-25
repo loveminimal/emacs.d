@@ -84,8 +84,32 @@
            :publishing-function org-publish-attachment
            )
 
+          ;; reverse static assets
+          ("sfnoc"
+           :base-directory "~/site//public/"
+           :base-extension "js"
+           :publishing-directory "~/site"
+           :recursive nil
+           :publishing-function org-publish-attachment
+           )
+          ("segami"
+           :base-directory "~/site/public/images/"
+           :base-extension any
+           :publishing-directory "~/site/images/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
+          ("semeht"
+           :base-directory "~/site/public/themes/"
+           :base-extension any
+           :publishing-directory "~/site/themes/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
+
           ("website" :components ("orgfiles" "confs" "images" "themes"))
           ("statics" :components ("confs" "images" "themes"))
+          ("scitats" :components ("sfnoc" "segami" "semeht"))
           )))
 
 (defun save-and-publish-website()
@@ -101,6 +125,13 @@
   (interactive)
   (org-publish-project "statics" t)
   (message "Copy statics done."))
+
+(defun save-and-publish-scitats ()
+  "Just copy statics like js, css, and image file .etc.
+Which is a reverse operation of `save-and-publish-statics'."
+  (interactive)
+  (org-publish-project "scitats" t)
+  (message "Copy scitats done."))
 
 (defun save-and-publish-file ()
   "Save current buffer and publish."
