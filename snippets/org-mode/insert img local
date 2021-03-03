@@ -4,7 +4,7 @@
 # --
 #+BEGIN_EXPORT html
 <img
-    src="/images/$1"
+    src="images/$1"
     width="$2"
     height="$3"
     style="$4"
