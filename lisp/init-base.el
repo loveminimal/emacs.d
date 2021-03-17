@@ -116,6 +116,13 @@
   "Quickly open index file."
   (interactive)
   (find-file "~/site/org/index.org"))
+(global-set-key (kbd "<f6>") 'open-home-file)
+
+(defun open-nav-file ()
+  "Quickly open nav file."
+  (interactive)
+  (find-file "~/site/org/nav.org"))
+(global-set-key (kbd "<f5>") 'open-nav-file)
 
 (defun open-gtd-file ()
   "Quickly open wiki file."
@@ -126,6 +133,7 @@
   "Quickly open init file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+(global-set-key (kbd "<f8>") 'open-init-file)
 
 (defun open-config-file (file-name)
   "Quickly open a config file which name is `FILE-NAME'."
