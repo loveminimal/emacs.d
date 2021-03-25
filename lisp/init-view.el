@@ -14,6 +14,7 @@
 (nano-faces)
 (nano-theme)
 
+(setq custom-blue "#718591")
 (if (daemonp)
     (add-hook 'after-make-frame-functions
               (lambda (frame)
