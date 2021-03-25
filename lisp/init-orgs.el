@@ -13,9 +13,9 @@
         org-src-fontify-natively t
         org-hide-block-startup t
         org-tags-column 80)
- :bind ("C-c l" . org-store-link)
- :config
- (add-hook 'org-mode-hook 'org-content))
+  :bind ("C-c l" . org-store-link)
+  :config
+  (add-hook 'org-mode-hook 'org-content))
 
 (use-package ox-md)
 
@@ -138,6 +138,22 @@
 
 (use-package org-agenda
   :bind ("C-c a" . org-agenda))
+
+(use-package org-superstar
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+
+  ;; This is usually the default, but keep in mind it must be nil
+  (setq org-hide-leading-stars nil)
+  ;; This line is necessary.
+  (setq org-superstar-leading-bullet ?\s)
+  ;; If you use Org Indent you also need to add this, otherwise the
+  ;; above has no effect while Indent is enabled.
+  (setq org-indent-mode-turns-on-hiding-stars nil)
+
+  ;; (setq org-superstar-headline-bullets-list '("☰" "☷" "☵" "☱")))
+  (setq org-superstar-headline-bullets-list '("☀" "⚡" "☘" "❄")))
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
