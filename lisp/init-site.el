@@ -178,6 +178,11 @@ Which is a reverse operation of `save-and-publish-statics'."
 (use-package auto-save-and-publish-file-mode
   :hook (org-mode))
 
+(use-package writeroom-mode
+  :ensure t
+  :hook (org-mode)
+  )
+
 (use-package simple-httpd
   :ensure t
   :config

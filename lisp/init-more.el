@@ -182,5 +182,8 @@ Use `swiper' to search for the symbol at point."
 (use-package pinyin-search
   :ensure t)
 
+(use-package cnfonts
+  :ensure t)
+
 (provide 'init-more)
 ;;; init-more.el ends here

@@ -4,8 +4,17 @@
 
 ;; (set-background-color "honeydew")
 
+(require 'nano-faces)
+(require 'nano-colors)
+(require 'nano-theme)
+(require 'nano-help)
+(require 'nano-modeline)
+(nano-faces)
+(nano-theme)
+
 (use-package doom-themes
   :ensure t
+  :disabled
   :config
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
@@ -49,7 +58,7 @@
 
 (use-package powerline
   :ensure t
-  ;; :disabled
+  :disabled
   :config
   ;; (powerline-default-theme)
   ;; (powerline-center-theme)

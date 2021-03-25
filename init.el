@@ -5,6 +5,7 @@
 (setq debug-on-error t)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "nano" user-emacs-directory))
 (defvar macro-file (expand-file-name "macro.el" user-emacs-directory) "A file to record macros.")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
