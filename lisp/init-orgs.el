@@ -150,10 +150,11 @@
   (setq org-superstar-leading-bullet ?\s)
   ;; If you use Org Indent you also need to add this, otherwise the
   ;; above has no effect while Indent is enabled.
-  (setq org-indent-mode-turns-on-hiding-stars nil)
+  ;; (setq org-indent-mode-turns-on-hiding-stars nil)
 
-  ;; (setq org-superstar-headline-bullets-list '("☰" "☷" "☵" "☱")))
-  (setq org-superstar-headline-bullets-list '("☀" "⚡" "☘" "❄")))
+  (setq org-superstar-headline-bullets-list '("☰" "☷" "☵" "☱"))
+  ;; (setq org-superstar-headline-bullets-list '("☀" "⚡" "☘" "❄"))
+  )
 
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
