@@ -48,7 +48,7 @@
 (if *is-win*
     (progn
       (when (member "Roboto Mono" (font-family-list))
-        (set-frame-font "Roboto Mono-10" t t)
+        (set-frame-font "Monaco-10" t t)
         (set-fontset-font t 'han "Microsoft YaHei UI Light-12")
         )
       ;; (when (member "Consolas" (font-family-list))
