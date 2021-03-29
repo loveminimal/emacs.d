@@ -120,13 +120,13 @@
   "Quickly open index file."
   (interactive)
   (find-file "~/site/org/index.org"))
-(global-set-key (kbd "<f6>") 'open-home-file)
+(global-set-key (kbd "<f5>") 'open-home-file)
 
 (defun open-nav-file ()
   "Quickly open nav file."
   (interactive)
   (find-file "~/site/org/nav.org"))
-(global-set-key (kbd "<f5>") 'open-nav-file)
+(global-set-key (kbd "<f6>") 'open-nav-file)
 
 (defun open-gtd-file ()
   "Quickly open wiki file."
