@@ -155,6 +155,15 @@
   (org-open-at-point)
   (delete-other-windows))
 
+(defun set-line-to-list-item ()
+  "Convert current line to a list item."
+  (interactive)
+  (move-beginning-of-line 1)
+  (insert "- ")
+  (forward-line 1))
+(global-set-key (kbd "<f7>") 'set-line-to-list-item)
+(global-set-key (kbd "C-c C-n") 'set-line-to-list-item)
+
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
 (defun sanityinc/newline-at-end-of-line ()
