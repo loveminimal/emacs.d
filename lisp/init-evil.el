@@ -61,6 +61,7 @@
     "fc" 'open-config-file
     "fb" 'open-base-file
     "fh" 'open-home-file
+    "fn" 'open-nav-file
     "fg" 'open-gtd-file
     "fo" 'org-open-at-point-and-delete-other-windows
     "fO" 'org-open-at-point
