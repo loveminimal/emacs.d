@@ -2,8 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-defs)
+
 ;; (set-background-color "honeydew")
-(load-theme 'tsdh-light t)
+(when (not *is-nux*)
+  (load-theme 'tsdh-light t)
+  )
 
 (use-package dashboard
   :ensure t
