@@ -6,6 +6,7 @@
 
 (use-package dashboard
   :ensure t
+  :disabled
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-items '(
@@ -17,6 +18,7 @@
                           )))
 
 (use-package all-the-icons
+  :disabled
   :ensure t)
 
 (use-package monokai-theme
