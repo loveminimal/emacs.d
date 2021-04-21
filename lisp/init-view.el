@@ -16,6 +16,9 @@
                           (registers . 5)
                           )))
 
+(use-package all-the-icons
+  :ensure t)
+
 (use-package monokai-theme
   :ensure t
   :disabled

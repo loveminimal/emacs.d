@@ -23,12 +23,6 @@
 (require 'init-webs)
 (require 'init-misc)
 
-;; Main for using in Terminal
-(when *is-nux*
-  (set-foreground-color "#ccc")
-  (set-face-background 'region "white")
-  )
-
 (add-hook 'after-init-hook
 	  (lambda () (require 'server)
 	    (unless (server-running-p) (server-start))))

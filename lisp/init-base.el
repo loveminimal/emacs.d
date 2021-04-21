@@ -2,30 +2,28 @@
 ;;; Commentary:
 ;;; Code:
 
-;;;;;; Some better settings.
+(require 'init-defs)
 
-(setq
-      inhibit-startup-screen t
+;;;;;; Some Better Settings
+
+(setq inhibit-startup-screen t
       make-backup-files nil
       auto-save-default nil
+      system-time-locale "C"
       ring-bell-function 'ignore)
 
-;; (set-background-color "honeydew")
 (global-hl-line-mode 1)
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
-(setq system-time-locale "C")
 
 (setq-default
  initial-scratch-message (concat ";; Happy hacking, Gnu emacs :)\n\n")
  line-spacing 0.1
  truncate-lines t
+ indent-tabs-mode nil ;; Disable TABs.
  word-wrap t)
 
-;; Permanently force Emacs to indent with spaces, never with TABs
-(setq-default  indent-tabs-mode nil)
-
-;; turn on mouse in console mode
+;; Turn on mouse in console mode
 (xterm-mouse-mode t)
 
 (display-time)
@@ -46,12 +44,8 @@
   (prefer-coding-system 'utf-8))
 
 (when *is-win*
-  ;; (when (member "Monaco" (font-family-list))
-  ;;   (set-frame-font "Monaco-10" t t)
-  ;;   (set-fontset-font t 'han "Microsoft YaHei UI Light-12")
-  ;;   )
-  ;; (when (member "Consolas" (font-family-list))
-  ;;   (set-frame-font "consolas-12" t t))
+  (when (member "Consolas" (font-family-list))
+    (set-frame-font "consolas-12" t t))
   (when (member "Monaco" (font-family-list))
     (set-frame-font "Monaco-10.5" t t))
   (when (member "楷体" (font-family-list))
@@ -63,13 +57,13 @@
     (set-frame-font "Hack-11.5" t ))
   (when (member "WenQuanYi Micro Hei Mono" (font-family-list))
     (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5"))
-  ;; ====== Sans Mono Font ======
-  ;; (set-frame-font "Source Code Pro-11.5" t t)
-  ;; (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5")
   )
 
-;; (set-default-font "DejaVu Sans Mono 11")
-;; (set-default-font "WenQuanYi Micro Hei Mono 11")
+;; Main for using in Terminal
+(when *is-nux*
+  (set-foreground-color "#ccc")
+  (set-face-background 'region "white")
+  )
 
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
@@ -159,6 +153,41 @@
   (forward-line 1))
 (global-set-key (kbd "<f7>") 'set-line-to-list-item)
 (global-set-key (kbd "C-c C-n") 'set-line-to-list-item)
+
+(defun jk/org-delete-headline ()
+  "Delete the old headline if existed."
+  (interactive)
+  (setq can-loop t)
+  (while can-loop
+    (beginning-of-line)
+    (setq sp (point))
+    (setq is-headline (re-search-forward "[ *]" nil t))
+    (if is-headline
+        (progn
+          (setq ep (point))
+          (if (= (- ep sp) 1)
+              (delete-char -1)
+            (progn
+              (beginning-of-line)
+              (setq can-loop nil))))
+      (progn
+        (beginning-of-line)
+        (setq can-loop nil))))
+  (if (not can-loop)
+      (message "END")))
+
+(defun jk/org-insert-headline (level)
+  "Insert LEVEL * ahead of current line."
+  (interactive "swhich level: ")
+  (jk/org-delete-headline)
+  (let ((x 0) (len (string-to-number level)))
+    (while (< x len)
+      (if (= len (+ x 1))
+          (insert "* ")
+        (insert "*")
+        )
+    (setq x (+ x 1)))))
+(global-set-key (kbd "C-c C-h") 'jk/org-insert-headline)
 
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -260,43 +289,6 @@ version 2017-09-22"
           (goto-char (point-min))
           (while (re-search-forward "\n\n\n+" nil "move")
             (replace-match "\n\n")))))))
-
-;; @me
-(defun jk/org-delete-headline ()
-  "Delete the old headline if existed."
-  (interactive)
-  (setq can-loop t)
-  (while can-loop
-    (beginning-of-line)
-    (setq sp (point))
-    (setq is-headline (re-search-forward "[ *]" nil t))
-    (if is-headline
-        (progn
-          (setq ep (point))
-          (if (= (- ep sp) 1)
-              (delete-char -1)
-            (progn
-              (beginning-of-line)
-              (setq can-loop nil))))
-      (progn
-        (beginning-of-line)
-        (setq can-loop nil))))
-  (if (not can-loop)
-      (message "END")))
-
-(defun jk/org-insert-headline (level)
-  "Insert LEVEL * ahead of current line."
-  (interactive "swhich level: ")
-  (jk/org-delete-headline)
-  (let ((x 0) (len (string-to-number level)))
-    (while (< x len)
-      (if (= len (+ x 1))
-          (insert "* ")
-        (insert "*")
-        )
-    (setq x (+ x 1)))))
-
-(global-set-key (kbd "C-c C-h") 'jk/org-insert-headline)
 
 (provide 'init-base)
 ;;; init-base.el ends here
