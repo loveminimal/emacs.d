@@ -4,30 +4,24 @@
 
 (setq debug-on-error t)
 
-;; (set-face-attribute 'default nil
-;;                     :family "Monaco"
-;;                     ;; :height 100
-;;                     )
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "nano" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-defs)
 (require 'init-upkg)
 
-(use-package init-abbr)
+(require 'init-abbr)
 
-(use-package init-base)
-(use-package init-evil)
-(use-package init-view)
-(use-package init-more)
+(require 'init-base)
+(require 'init-evil)
+(require 'init-view)
+(require 'init-more)
 
-(use-package init-orgs)
-(use-package init-site)
+(require 'init-orgs)
+(require 'init-site)
 
-(use-package init-webs)
-(use-package init-misc)
+(require 'init-webs)
+(require 'init-misc)
 
 ;; Main for using in Terminal
 (when *is-nux*

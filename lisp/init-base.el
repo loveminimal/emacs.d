@@ -4,7 +4,8 @@
 
 ;;;;;; Some better settings.
 
-(setq inhibit-startup-screen t
+(setq
+      inhibit-startup-screen t
       make-backup-files nil
       auto-save-default nil
       ring-bell-function 'ignore)
