@@ -3,6 +3,7 @@
 ;;; Code:
 
 ;; (set-background-color "honeydew")
+(load-theme 'tsdh-light t)
 
 (use-package dashboard
   :ensure t
