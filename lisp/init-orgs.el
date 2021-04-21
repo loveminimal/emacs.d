@@ -154,5 +154,11 @@
   ;; (setq org-superstar-headline-bullets-list '("☀" "⚡" "☘" "❄"))
   )
 
+(use-package writeroom-mode
+  :ensure t
+  ;; :disabled
+  :hook (org-mode)
+  )
+
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
