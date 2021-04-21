@@ -5,24 +5,6 @@
 ;; (set-background-color "honeydew")
 
 ;;; ------------------------------------------------------------------
-;; NANO THEMES
-(require 'nano-faces)
-(require 'nano-colors)
-(require 'nano-theme)
-(require 'nano-help)
-(require 'nano-modeline)
-(nano-faces)
-(nano-theme)
-
-(setq custom-blue "#718591")
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (with-selected-frame frame
-                  (set-cursor-color custom-blue))))
-  (set-cursor-color custom-blue))
-
-;;; ------------------------------------------------------------------
 
 (use-package doom-themes
   :ensure t
