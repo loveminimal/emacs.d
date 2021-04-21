@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-defs)
+
 ;; (image-type-available-p 'imagemagick)    ;; t
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 ;; (setq org-image-actual-width 800)
@@ -17,13 +19,12 @@
   :config
   (add-hook 'org-mode-hook 'org-content))
 
-(use-package ox-md)
+(require 'ox-md)
 
 ;; Store new notes at the beginning of a file or entry.
 (setq org-reverse-note-order t)
 
 ;;;;;; GTD -- Personal Management.
-
 ;; Template Expansion
 ;; %  -escapes allow dynamic insertion of content in templates.
 ;; %t - Timestamp, date only
@@ -100,7 +101,6 @@
 ;; '/!' - A timestamp should be recorded when entering/leaving the state
 
 ;; #+TODO: TODO(t) WAIT(w@/!) | DONE(d!) CANCELED(c@)
-
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w@)" "NEXT(n!)" "CALENDAR(c@)" "|" "DONE(D!/!)")
 	(sequence "SOMEDAY(s@)" "REFER(r@)"  "|" "TRASH(T)")
@@ -125,7 +125,6 @@
 ;; TAGS
 ;; 'C-c C-q' (org-set-tags-command) - Enter new tags for the current headline
 ;; 'C-c C-c' (org-set-tags-command) - Same as above when the cursor is in a headline.
-
 (setq org-tag-alist
       '(
         (:startgroup . gtd)

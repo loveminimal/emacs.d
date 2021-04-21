@@ -144,38 +144,6 @@ Use `swiper' to search for the symbol at point."
   (setq pyim-page-length 9)             ;; Set amounts of the candidate words
   )
 
-(use-package rime
-  :ensure t
-  ;; :disabled
-  :custom
-  (default-input-method "rime")
-  :config
-  ;; nil minibuffer message popup posframe
-  ;; (setq rime-show-candidate 'popup)
-  (setq rime-show-candidate 'posframe)
-  ;; Highlight icon
-  (setq mode-line-mule-info '((:eval (rime-lighter))))
-  ;; Temporary EN
-  (setq rime-disable-predicates
-        '(
-          ;; rime-predicate-evil-mode-p
-          ;; rime-predicate-after-alphabet-char-p
-          ;; rime-predicate-prog-in-code-p
-          ;; rime-predicate-punctuation-after-space-cc-p
-          ;; rime-predicate-space-after-cc-p
-          ;; ---------------------------------
-          ;; rime-predicate-after-ascii-char-p
-          ;; rime-predicate-ace-window-p
-          ;; rime-predicate-hydra-p
-          ;; rime-predicate-current-input-punctuation-p
-          ;; rime-predicate-punctuation-after-ascii-p
-          ;; rime-predicate-punctuation-line-begin-p
-          ;; rime-predicate-space-after-ascii-p
-          ;; rime-predicate-current-uppercase-letter-p
-          ;; rime-predicate-tex-math-or-command-p
-          ))
-  )
-
 ;; Toggle input method globally
 (global-set-key (kbd "C-h C-j") 'toggle-input-method)
 
