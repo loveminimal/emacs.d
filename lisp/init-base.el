@@ -28,7 +28,6 @@
 (xterm-mouse-mode t)
 
 (display-time)
-(defvar display-time-24hr-format t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (defalias 'list-buffers 'ibuffer)
@@ -45,32 +44,28 @@
   (set-default-coding-systems 'utf-8)
   (prefer-coding-system 'utf-8))
 
-(if *is-win*
-    (progn
-      ;; (when (member "Monaco" (font-family-list))
-      ;;   (set-frame-font "Monaco-10" t t)
-      ;;   (set-fontset-font t 'han "Microsoft YaHei UI Light-12")
-      ;;   )
-      ;; (when (member "Consolas" (font-family-list))
-      ;;   (set-frame-font "consolas-12" t t))
-      (when (member "Monaco" (font-family-list))
-        (set-frame-font "Monaco-10.5" t t))
-      (when (member "楷体" (font-family-list))
-        (set-fontset-font t 'han "楷体-12"))
-      ;; (when (member "Symbola" (font-family-list))
-      ;;   (set-fontset-font t 'unicode "Symbola" nil 'prepend))
-      ))
+(when *is-win*
+  ;; (when (member "Monaco" (font-family-list))
+  ;;   (set-frame-font "Monaco-10" t t)
+  ;;   (set-fontset-font t 'han "Microsoft YaHei UI Light-12")
+  ;;   )
+  ;; (when (member "Consolas" (font-family-list))
+  ;;   (set-frame-font "consolas-12" t t))
+  (when (member "Monaco" (font-family-list))
+    (set-frame-font "Monaco-10.5" t t))
+  (when (member "楷体" (font-family-list))
+    (set-fontset-font t 'han "楷体-12"))
+  )
 
-(if *is-nux*
-    (progn
-      (when (member "Hack" (font-family-list))
-        (set-frame-font "Hack-11.5" t ))
-      (when (member "WenQuanYi Micro Hei Mono" (font-family-list))
-        (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5"))
-      ;; ====== Sans Mono Font ======
-      ;; (set-frame-font "Source Code Pro-11.5" t t)
-      ;; (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5")
-      ))
+(when *is-nux*
+  (when (member "Hack" (font-family-list))
+    (set-frame-font "Hack-11.5" t ))
+  (when (member "WenQuanYi Micro Hei Mono" (font-family-list))
+    (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5"))
+  ;; ====== Sans Mono Font ======
+  ;; (set-frame-font "Source Code Pro-11.5" t t)
+  ;; (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5")
+  )
 
 ;; (set-default-font "DejaVu Sans Mono 11")
 ;; (set-default-font "WenQuanYi Micro Hei Mono 11")
@@ -175,10 +170,10 @@
 
 ;; @purcell
 (defun delete-this-file ()
-  "delete the current file, and kill the buffer."
+  "Delete the current file, and kill the buffer."
   (interactive)
   (unless (buffer-file-name)
-    (error "no file is currently being edited"))
+    (error "No file is currently being edited?"))
   (when (yes-or-no-p (format "really delete '%s'?"
                              (file-name-nondirectory buffer-file-name)))
     (delete-file (buffer-file-name))
@@ -186,12 +181,12 @@
 
 ;; @purcell
 (defun rename-this-file-and-buffer (new-name)
-  "renames both current buffer and file it's visiting to new-name."
+  "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "snew name: ")
   (let ((name (buffer-name))
         (filename (buffer-file-name)))
     (unless filename
-      (error "buffer '%s' is not visiting a file!" name))
+      (error "Buffer '%s' is not visiting a file!" name))
     (progn
       (when (file-exists-p filename)
         (rename-file filename new-name 1))

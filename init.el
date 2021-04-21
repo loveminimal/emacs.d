@@ -4,15 +4,16 @@
 
 (setq debug-on-error t)
 
+;; (set-face-attribute 'default nil
+;;                     :family "Monaco"
+;;                     ;; :height 100
+;;                     )
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "nano" user-emacs-directory))
-(defvar macro-file (expand-file-name "macro.el" user-emacs-directory) "A file to record macros.")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(defvar *is-mac* (eq system-type 'darwin))
-(defvar *is-win* (eq system-type 'windows-nt))
-(defvar *is-nux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)))
-
+(require 'init-defs)
 (require 'init-upkg)
 
 (use-package init-abbr)
