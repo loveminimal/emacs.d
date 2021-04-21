@@ -180,6 +180,7 @@ Which is a reverse operation of `save-and-publish-statics'."
 
 (use-package writeroom-mode
   :ensure t
+  :disabled
   :hook (org-mode)
   )
 

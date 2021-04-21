@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'init-defs)
-
 ;; (image-type-available-p 'imagemagick)    ;; t
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 ;; (setq org-image-actual-width 800)
@@ -140,6 +138,7 @@
 
 (use-package org-superstar
   :ensure t
+  :disabled
   :config
   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
