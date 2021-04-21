@@ -200,9 +200,9 @@
 
 ;; @purcell
 (defun sanityinc/adjust-opacity (frame incr)
-  "adjust the background opacity of frame by increment incr."
+  "Adjust the background opacity of FRAME by increment INCR."
   (unless (display-graphic-p frame)
-    (error "cannot adjust opacity of this frame"))
+    (error "Cannot adjust opacity of this frame"))
   (let* ((oldalpha (or (frame-parameter frame 'alpha) 100))
          (oldalpha (if (listp oldalpha) (car oldalpha) oldalpha))
          (newalpha (+ incr oldalpha)))
@@ -215,7 +215,7 @@
 
 ;; @xah_lee
 (defun xah-clean-whitespace ()
-  "delete trailing whitespace, and replace repeated blank lines to just 1.
+  "Delete trailing whitespace, and replace repeated blank lines to just 1.
 only space and tab is considered whitespace here.
 works on whole buffer or text selection, respects `narrow-to-region'.
 
@@ -247,7 +247,7 @@ version 2017-09-22"
 
 ;; @xah_lee
 (defun xah-clean-empty-lines ()
-  "replace repeated blank lines to just 1.
+  "Replace repeated blank lines to just 1.
 works on whole buffer or text selection, respects `narrow-to-region'.
 
 url `http://ergoemacs.org/emacs/elisp_compact_empty_lines.html'
@@ -289,7 +289,7 @@ version 2017-09-22"
       (message "END")))
 
 (defun jk/org-insert-headline (level)
-  "Insert `level' * ahead of current line."
+  "Insert LEVEL * ahead of current line."
   (interactive "swhich level: ")
   (jk/org-delete-headline)
   (let ((x 0) (len (string-to-number level)))
