@@ -7,6 +7,7 @@
 ;; (set-background-color "honeydew")
 (when (not *is-nux*)
   (load-theme 'tsdh-light t)
+  (set-cursor-color custom-blue)
   )
 
 (use-package dashboard

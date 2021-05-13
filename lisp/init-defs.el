@@ -11,5 +11,7 @@
 (defvar display-time-24hr-format t "Show time in 24h formats.")
 (defvar org-image-actual-width (/ (display-pixel-width) 3))
 
+(defvar custom-blue "#718591" "Set cursor color.")
+
 (provide 'init-defs)
 ;;; init-defs.el ends here
