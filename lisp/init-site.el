@@ -51,7 +51,7 @@
            :html-head-include-default-style nil ;; org-html-head-include-default-style
            :html-head-include-scripts nil ;; org-html-head-include-scripts
            :html-head
-           "<link rel=\"shortcut icon\" href=\"themes/assets/rose-red.png\" type=\"image/x-icon\" />
+           "<link rel=\"shortcut icon\" href=\"themes/assets/virgo.png\" type=\"image/x-icon\" />
            <link rel=\"stylesheet\" href=\"themes/style.css\" type=\"text/css\"  />
            <script type=\"module\" src=\"themes/main.js\" defer></script>" ;; org-html-head
            :html-checkbox-type unicode  ;; org-html-checkbox-type
