@@ -5,10 +5,12 @@
 (require 'init-defs)
 
 ;;;;;; Switch Git Bash
-(setq explicit-shell-file-name
-      "C:/Program Files/Git/bin/bash.exe")
-(setq shell-file-name explicit-shell-file-name)
-(add-to-list 'exec-path "C:/Program Files/Git/bin")
+(when *is-win*
+  (setq explicit-shell-file-name
+        "C:/Program Files/Git/bin/bash.exe")
+  (setq shell-file-name explicit-shell-file-name)
+  (add-to-list 'exec-path "C:/Program Files/Git/bin")
+  )
 
 ;;;;;; Some Better Settings
 
