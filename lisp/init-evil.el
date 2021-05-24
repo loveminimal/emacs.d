@@ -45,7 +45,7 @@
     "pw" 'save-and-publish-website
     "pf" 'save-and-publish-file
     "ps" 'save-and-publish-statics
-    "pS" 'save-and-publish-scitats
+    "pS" 'save-and-publish-rstatics
     "pb" 'preview-current-buffer-in-browser
     "pd" 'delete-org-and-html
     "pD" 'just-delete-relative-html
