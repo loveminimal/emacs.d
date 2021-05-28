@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: insert drawer
+# key: id
+# --
+
+#+BEGIN_EXPORT html
+<drawer>
+<div class="collapsible">$1</div>
+<div class="content">
+$2
+</div>
+</drawer>
+#+END_EXPORT
