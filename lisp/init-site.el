@@ -86,7 +86,7 @@
 
           ;; reverse static assets
           ("rconfs"
-           :base-directory "~/site//public/"
+           :base-directory "~/site/public/"
            :base-extension "js"
            :publishing-directory "~/site"
            :recursive nil
