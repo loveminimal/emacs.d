@@ -156,8 +156,8 @@
 
 (use-package writeroom-mode
   :ensure t
-  :disabled
-  :hook (org-mode)
+  ;; :disabled
+  ;; :hook (org-mode)
   )
 
 (provide 'init-orgs)
