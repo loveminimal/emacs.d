@@ -156,7 +156,7 @@
 
 (use-package writeroom-mode
   :ensure t
-  ;; :disabled
+  :disabled
   :hook (org-mode)
   )
 
