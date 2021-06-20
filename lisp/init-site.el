@@ -31,6 +31,8 @@
            ;; :complete-function
            :base-extension "org"
            ;; :exclude "PrivatePage.org"     ;; regexp
+           ;; exclude files like "_draft-demo-1.org"
+           :exclude "^_[[:word:]-]*.org"     ;; regexp
            ;; :include
            :recursive t
 
