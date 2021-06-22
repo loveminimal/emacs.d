@@ -82,6 +82,7 @@
 
 ;; Keybindings without extra configuration
 (global-set-key (kbd "C-c C-'") 'set-mark-command)
+(global-set-key (kbd "<f12>") 'save-buffer)
 
 ;;;;;; Some Basic Modes
 
