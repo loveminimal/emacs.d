@@ -9,10 +9,6 @@
 	 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-(use-package iedit
-  :ensure t
-  )
-
 (use-package smex
   :ensure t
   :config (smex-initialize)
@@ -87,21 +83,17 @@ Use `swiper' to search for the symbol at point."
   :ensure t
   :hook (after-init . global-diff-hl-mode))
 
-(use-package magit
-  :ensure t)
+(use-package magit :ensure t)
+(use-package youdao-dictionary :ensure t)
+(use-package ripgrep :ensure t)
+(use-package pinyin-search :ensure t)
+(use-package cnfonts :ensure t)
 
-(use-package youdao-dictionary
-  :ensure t)
+(use-package eldoc :diminish)
 
 (use-package expand-region
   :ensure t
   :bind ("C-=" . er/expand-region))
-
-;; (use-package undo-tree
-;;   :diminish)
-
-(use-package eldoc
-  :diminish)
 
 (use-package command-log-mode
   :ensure t
@@ -115,9 +107,6 @@ Use `swiper' to search for the symbol at point."
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
   :diminish " P")
-
-(use-package ripgrep
-  :ensure t)
 
 (use-package yasnippet
   :ensure t
@@ -143,15 +132,8 @@ Use `swiper' to search for the symbol at point."
   (setq pyim-default-scheme 'quanpin)   ;; Use QuanPin
   (setq pyim-page-length 9)             ;; Set amounts of the candidate words
   )
-
 ;; Toggle input method globally
 (global-set-key (kbd "C-h C-j") 'toggle-input-method)
-
-(use-package pinyin-search
-  :ensure t)
-
-(use-package cnfonts
-  :ensure t)
 
 (provide 'init-more)
 ;;; init-more.el ends here

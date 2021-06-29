@@ -10,23 +10,6 @@
   (set-cursor-color custom-blue)
   )
 
-(use-package dashboard
-  :ensure t
-  :disabled
-  :config
-  (dashboard-setup-startup-hook)
-  (setq dashboard-items '(
-                          (recents  . 5)
-                          (bookmarks . 5)
-                          (projects . 5)
-                          (agenda . 5)
-                          (registers . 5)
-                          )))
-
-(use-package all-the-icons
-  :disabled
-  :ensure t)
-
 (use-package monokai-theme
   :ensure t
   :disabled
@@ -40,14 +23,6 @@
   (load-theme 'solarized-dark t)
   ;; (load-theme 'solarized-light t)
   )
-
-(use-package powerline
-  :ensure t
-  :disabled
-  :config
-  ;; (powerline-default-theme)
-  ;; (powerline-center-theme)
-  (powerline-center-evil-theme))
 
 (use-package dired-sidebar
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))

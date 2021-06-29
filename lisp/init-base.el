@@ -116,19 +116,19 @@
 ;;;;;; Some Basic Functions
 
 (defun open-home-file ()
-  "Quickly open index file."
+  "Quickly open index file of site."
   (interactive)
   (find-file "~/site/org/index.org"))
 (global-set-key (kbd "<f5>") 'open-home-file)
 
 (defun open-nav-file ()
-  "Quickly open nav file."
+  "Quickly open nav file of site."
   (interactive)
   (find-file "~/site/org/nav.org"))
 (global-set-key (kbd "<f6>") 'open-nav-file)
 
 (defun open-gtd-file ()
-  "Quickly open wiki file."
+  "Quickly open gtd file of site."
   (interactive)
   (find-file "~/site/org/gtd.org"))
 
@@ -153,15 +153,6 @@
   (interactive)
   (org-open-at-point)
   (delete-other-windows))
-
-(defun set-line-to-list-item ()
-  "Convert current line to a list item."
-  (interactive)
-  (move-beginning-of-line 1)
-  (insert "- ")
-  (forward-line 1))
-(global-set-key (kbd "<f7>") 'set-line-to-list-item)
-(global-set-key (kbd "C-c C-n") 'set-line-to-list-item)
 
 (defun jk/org-delete-headline ()
   "Delete the old headline if existed."
@@ -196,7 +187,6 @@
         (insert "*")
         )
     (setq x (+ x 1)))))
-(global-set-key (kbd "C-c C-h") 'jk/org-insert-headline)
 
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)

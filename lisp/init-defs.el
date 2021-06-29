@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(defvar macro-file (expand-file-name "macro.el" user-emacs-directory) "Custom macro file.")
+(defvar custom-file (expand-file-name "custom.el" user-emacs-directory) "Self custom file.")
+(defvar macro-file (expand-file-name "macro.el" user-emacs-directory) "Record macro file.")
 
 (defvar *is-mac* (eq system-type 'darwin) "Current system is mac.")
 (defvar *is-win* (eq system-type 'windows-nt) "Current system is windows.")

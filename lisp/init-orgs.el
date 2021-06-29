@@ -2,8 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-defs)
+
 ;; (image-type-available-p 'imagemagick)    ;; t
-(setq org-image-actual-width (/ (display-pixel-width) 3))
+;; (setq org-image-actual-width (/ (display-pixel-width) 3))
 ;; (setq org-image-actual-width 800)
 ;; it's okay now, to exec command like 'org-toggle-inline-images' but not toggle 'iimage-mode'
 
@@ -37,15 +39,7 @@
 
 (use-package org-capture
   :bind ("C-c c" . org-capture)
-  :init
-  ;; (setq org-default-notes-file "~/.gtd/notes.org")
-  (setq org-default-notes-file "~/site/org/notes.org")
-  (defun open-notes-file ()
-    "Quickly open notes."
-    (interactive)
-    (find-file org-default-notes-file))
   :config
-  ;; (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates
         ;; Capital char means that with ANCHOR.
 	'(
@@ -53,18 +47,10 @@
 	   "* %u\n\n%?\n\n"
            :prepend 1
            :empty-lines 1)
-	  ;; ("D" "DIARY" entry (file+headline "~/site/org/diary.org" "日记")
-	  ;;  "* %u\n%a\n\n%?\n\n"
-          ;;  :prepend 1
-          ;;  :empty-lines 1)
 	  ("i" "idea" entry (file+headline "~/site/org/idea.org" "闪念")
 	   "* %U\n\n%?\n\n"
            :prepend 1
            :empty-lines 1)
-	  ;; ("I" "IDEA" entry (file+headline "~/site/org/idea.org" "闪念")
-	  ;;  "* %U\n%a\n\n%?\n\n"
-          ;;  :prepend 1
-          ;;  :empty-lines 1)
 	  ("j" "joker" entry (file+headline "~/site/org/joker.org" "JOKER")
 	   "* %U\n\n%?\n\n"
            :prepend 1
@@ -73,18 +59,10 @@
 	   "*  %?\n%U"
            :prepend 1
            :empty-lines 1)
-	  ;; ("S" "STORY" entry (file+headline "~/site/org/story.org" "故事")
-	  ;;  "*  %?\n%U\n%a"
-          ;;  :prepend 1
-          ;;  :empty-lines 1)
 	  ("w" "wiki" entry (file+headline "~/site/org/wiki.org" "WIKI")
 	   "*  %?\n%U"
            :prepend 1
            :empty-lines 1)
-	  ;; ("W" "WIKI" entry (file+headline "~/site/org/wiki.org" "WIKI")
-	  ;;  "*  %?\n%U\n%a"
-          ;;  :prepend 1
-          ;;  :empty-lines 1)
           ("c" "capture-everything" entry (file+headline "~/site/org/gtd.org" "IBX")
 	   "* TODO  %?\n%U"
            :empty-lines 1)
@@ -135,24 +113,6 @@
 
 (use-package org-agenda
   :bind ("C-c a" . org-agenda))
-
-(use-package org-superstar
-  :ensure t
-  :disabled
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
-
-  ;; This is usually the default, but keep in mind it must be nil
-  (setq org-hide-leading-stars nil)
-  ;; This line is necessary.
-  (setq org-superstar-leading-bullet ?\s)
-  ;; If you use Org Indent you also need to add this, otherwise the
-  ;; above has no effect while Indent is enabled.
-  ;; (setq org-indent-mode-turns-on-hiding-stars nil)
-
-  (setq org-superstar-headline-bullets-list '("☰" "☷" "☵" "☱"))
-  ;; (setq org-superstar-headline-bullets-list '("☀" "⚡" "☘" "❄"))
-  )
 
 (use-package writeroom-mode
   :ensure t

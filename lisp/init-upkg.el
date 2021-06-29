@@ -26,11 +26,8 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package diminish
-  :ensure t)
-
-(use-package delight
-  :ensure t)
+(use-package diminish :ensure t)
+(use-package delight :ensure t)
 
 (provide 'init-upkg)
 ;;; init-upkg.el ends here

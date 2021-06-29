@@ -2,11 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package htmlize
-  :ensure t
-  ;; :config
-  ;; (setq htmlize-output-type 'font)
-  )
+(use-package htmlize :ensure t)
 
 (progn
   "Settings of `org-export'."
@@ -57,10 +53,9 @@
            <link rel=\"stylesheet\" href=\"themes/style.css\" type=\"text/css\"  />
            <script type=\"module\" src=\"themes/main.js\" defer></script>" ;; org-html-head
            :html-checkbox-type unicode  ;; org-html-checkbox-type
-          ;;  :html-indent t               ;; org-html-indent
            ;; :html-link-home "index.html"	;; org-html-link-home
            ;; :html-link-up "uUP"          ;; org-html-link-up
-           :html-validation-link "<a href=\"http://beian.miit.gov.cn/\">豫ICP备19025929号</a>"	;; org-html-validation-link
+           :html-validation-link "<a href=\"http://beian.miit.gov.cn/\">豫ICP备19900901号</a>"	;; org-html-validation-link
            )
 
           ;; static assets
@@ -177,8 +172,7 @@ Which is a reverse operation of `save-and-publish-statics'."
     ;; When the mode is disabled
     (remove-hook 'after-save-hook #'save-and-publish-file :local)))
 
-(use-package auto-save-and-publish-file-mode
-  :hook (org-mode))
+(use-package auto-save-and-publish-file-mode :hook (org-mode))
 
 (use-package simple-httpd
   :ensure t
