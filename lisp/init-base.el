@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'init-defs)
+(require 'init-vars)
 
 ;;;;;; Switch Git Bash
 (when *is-win*
@@ -29,7 +29,8 @@
  line-spacing 0.1
  truncate-lines t
  indent-tabs-mode nil ;; Disable TABs.
- word-wrap t)
+ word-wrap t
+ )
 
 ;; Turn on mouse in console mode
 (xterm-mouse-mode t)
@@ -52,10 +53,11 @@
   (prefer-coding-system 'utf-8))
 
 (when *is-win*
+
   (when (member "Consolas" (font-family-list))
-    (set-frame-font "consolas-12" t t))
+  (set-frame-font "consolas-12" t t))
   (when (member "Monaco" (font-family-list))
-    (set-frame-font "Monaco-10.5" t t))
+  (set-frame-font "Monaco-10.5" t t))
   (when (member "楷体" (font-family-list))
     (set-fontset-font t 'han "楷体-12"))
   )
@@ -97,9 +99,10 @@
 (add-hook 'after-init-hook 'global-auto-revert-mode)
 ;; (add-hook 'after-init-hook 'electric-indent-mode')
 
-(defvar desktop-path (list user-emacs-directory))
-(defvar desktop-auto-save-timeout 600)
-(desktop-save-mode 1)
+;; FUCK U DESKTOP-SAVE-MODE !
+;; (defvar desktop-path (list user-emacs-directory))
+;; (defvar desktop-auto-save-timeout 600)
+;; (desktop-save-mode 1)
 
 (add-hook 'after-init-hook 'show-paren-mode)
 ;; @zilongshanren
@@ -107,8 +110,8 @@
   "Highlight enclosing parens."
   (cond ((looking-at-p "\\s(") (funcall fn))
         (t (save-excursion
-            (ignore-errors (backward-up-list))
-            (funcall fn)))))
+             (ignore-errors (backward-up-list))
+             (funcall fn)))))
 
 ;; (when (fboundp 'global-prettify-symbols-mode)
 ;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
@@ -149,7 +152,7 @@
   (open-config-file "base"))
 
 (defun org-open-at-point-and-delete-other-windows ()
-    "Open link file and just keep the goal file."
+  "Open link file and just keep the goal file."
   (interactive)
   (org-open-at-point)
   (delete-other-windows))
@@ -186,7 +189,7 @@
           (insert "* ")
         (insert "*")
         )
-    (setq x (+ x 1)))))
+      (setq x (+ x 1)))))
 
 ;; @purcell
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -288,6 +291,8 @@ version 2017-09-22"
           (goto-char (point-min))
           (while (re-search-forward "\n\n\n+" nil "move")
             (replace-match "\n\n")))))))
+
+(add-hook 'before-save-hook 'xah-clean-empty-lines)
 
 (provide 'init-base)
 ;;; init-base.el ends here
