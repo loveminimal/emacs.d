@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'init-defs)
+(require 'init-vars)
 
 ;; (set-background-color "honeydew")
 (when (not *is-nux*)

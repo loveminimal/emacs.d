@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'init-defs)
+(require 'init-vars)
 
 ;; (image-type-available-p 'imagemagick)    ;; t
 ;; (setq org-image-actual-width (/ (display-pixel-width) 3))

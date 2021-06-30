@@ -1,4 +1,4 @@
-;;; init-defs.el --- Define global variables and funcs. -*- lexical-binding: t; -*-
+;;; init-vars.el --- Define global variables and funcs. -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -13,5 +13,5 @@
 
 (defvar custom-blue "#718591" "Set cursor color.")
 
-(provide 'init-defs)
-;;; init-defs.el ends here
+(provide 'init-vars)
+;;; init-vars.el ends here
