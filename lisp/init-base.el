@@ -17,7 +17,6 @@
 (setq inhibit-startup-screen t
       make-backup-files nil
       auto-save-default nil
-      system-time-locale "C"
       ring-bell-function 'ignore)
 
 (global-hl-line-mode 1)
@@ -35,7 +34,13 @@
 ;; Turn on mouse in console mode
 (xterm-mouse-mode t)
 
-(display-time)
+(progn
+  "Show time in 24h formats."
+  (setq display-time-24hr-format t)
+  (setq system-time-locale "C")
+  (display-time)
+)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (defalias 'list-buffers 'ibuffer)
@@ -53,7 +58,6 @@
   (prefer-coding-system 'utf-8))
 
 (when *is-win*
-
   (when (member "Consolas" (font-family-list))
   (set-frame-font "consolas-12" t t))
   (when (member "Monaco" (font-family-list))

@@ -8,7 +8,7 @@
 (defvar *is-win* (eq system-type 'windows-nt) "Current system is windows.")
 (defvar *is-nux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)) "Current system is gnu/linux.")
 
-(defvar display-time-24hr-format t "Show time in 24h formats.")
+
 (defvar org-image-actual-width (/ (display-pixel-width) 3))
 
 (defvar custom-blue "#718591" "Set cursor color.")
