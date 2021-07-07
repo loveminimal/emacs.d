@@ -1,11 +1,5 @@
 #+DATE: 2019/03/07 23:41:48
 
-** Byebye Emacs
-
-中文 + Windows = 不爽！Byebye emacs.
-
-[[./preview/byebye.jpg]]
-
 ** Introduction
 
  Here is my emacs' tree.
