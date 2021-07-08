@@ -23,9 +23,9 @@
 (require 'init-webs)
 (require 'init-misc)
 
-(add-hook 'after-init-hook
-	  (lambda () (require 'server)
-	    (unless (server-running-p) (server-start))))
+;; (add-hook 'after-init-hook
+;; 	  (lambda () (require 'server)
+;; 	    (unless (server-running-p) (server-start))))
 
 (when (file-exists-p macro-file)
   (load macro-file))

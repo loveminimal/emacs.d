@@ -76,18 +76,20 @@ Use `swiper' to search for the symbol at point."
 
 (use-package flycheck
   :ensure t
+  :disabled
   :hook (after-init . global-flycheck-mode)
   :diminish " FC")
 
 (use-package diff-hl
   :ensure t
+  :disabled
   :hook (after-init . global-diff-hl-mode))
 
-(use-package magit :ensure t)
+(use-package magit :ensure t :disabled)
 (use-package youdao-dictionary :ensure t)
 (use-package ripgrep :ensure t)
-(use-package pinyin-search :ensure t)
-(use-package cnfonts :ensure t)
+(use-package pinyin-search :ensure t :disabled)
+(use-package cnfonts :ensure t :disabled)
 
 (use-package eldoc :diminish)
 
@@ -97,6 +99,7 @@ Use `swiper' to search for the symbol at point."
 
 (use-package command-log-mode
   :ensure t
+  :disabled
   :hook (after-init . command-log-mode)
   :diminish " cl")
 
