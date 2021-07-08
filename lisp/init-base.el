@@ -58,8 +58,8 @@
   (prefer-coding-system 'utf-8))
 
 (when *is-win*
-  (when (member "Consolas" (font-family-list))
-  (set-frame-font "consolas-12" t t))
+  ;; (when (member "Consolas" (font-family-list))
+  ;; (set-frame-font "consolas-12" t t))
   (when (member "Monaco" (font-family-list))
   (set-frame-font "Monaco-10.5" t t))
   (when (member "楷体" (font-family-list))
@@ -71,12 +71,6 @@
     (set-frame-font "Hack-11.5" t ))
   (when (member "WenQuanYi Micro Hei Mono" (font-family-list))
     (set-fontset-font t 'han "WenQuanYi Micro Hei Mono-13.5"))
-  )
-
-;; Main for using in Terminal
-(when *is-nux*
-  (set-foreground-color "#ccc")
-  (set-face-background 'region "white")
   )
 
 (when (fboundp 'menu-bar-mode)
