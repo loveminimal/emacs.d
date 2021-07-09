@@ -52,6 +52,11 @@ Use `swiper' to search for the symbol at point."
 	      ("C-p" . company-select-previous))
   :diminish " C")
 
+(use-package company-emoji
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-emoji))
+
 (setq hippie-expand-try-functions-list
       '(try-complete-file-name-partially
 	try-complete-file-name
