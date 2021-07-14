@@ -4,7 +4,7 @@
 # --
 
 #+BEGIN_EXPORT html
-<note>
-$0
-</note>
+<div class="jk-note">
+$1
+</div>
 #+END_EXPORT

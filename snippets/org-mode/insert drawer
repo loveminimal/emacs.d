@@ -4,10 +4,10 @@
 # --
 
 #+BEGIN_EXPORT html
-<drawer>
+<div class="jk-drawer">
 <div class="collapsible">$1</div>
 <div class="content">
 $2
 </div>
-</drawer>
+</div>
 #+END_EXPORT
