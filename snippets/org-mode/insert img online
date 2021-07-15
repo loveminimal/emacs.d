@@ -6,10 +6,9 @@
 <img
     src="$1"
     width="$2"
-    height="$3"
-    style="$4"
-    title="$5"
+    style="$3"
+    alt="$4"
 />
 #+END_EXPORT
 
-$6
+$5

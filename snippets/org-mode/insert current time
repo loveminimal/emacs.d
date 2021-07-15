@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: insert current time 
-# key: ic
+# key: ict
 # --
 
 `(format-time-string "%Y-%m-%d %a %H:%M" (current-time))`
