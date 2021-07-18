@@ -299,7 +299,7 @@ version 2017-09-22"
   (xah-clean-whitespace)
   (xah-clean-empty-lines))
 
-(add-hook 'before-save-hook 'jk/clean-whitespace-and-empty-lines)
+;; (add-hook 'before-save-hook 'jk/clean-whitespace-and-empty-lines)
 (global-set-key (kbd "<f10>") 'jk/clean-whitespace-and-empty-lines)
 
 (provide 'init-base)
