@@ -7,8 +7,8 @@
   (clear-abbrev-table global-abbrev-table)
   (define-abbrev-table 'global-abbrev-table
     '(
-      ("ifr" "float: right; margin-left: 8px;")
-      ("ifl" "float: left; margin-right: 8px;")
+      ("frm" "float: right; margin-left: 8px;")
+      ("flm" "float: left; margin-right: 8px;")
 
       ("emr" "✔")
       ("emw" "✘")
