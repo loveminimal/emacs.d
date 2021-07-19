@@ -20,6 +20,10 @@
   (evil-leader/set-key
     "<SPC>" 'smex
 
+    "en" 'new-frame
+    "ee" 'other-frame
+    "ed" 'delete-frame
+
     "//" 'org-sparse-tree
 
     "oo" 'org-export-dispatch
