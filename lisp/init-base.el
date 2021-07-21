@@ -267,8 +267,7 @@ version 2017-09-22"
           (while (equal (char-before) 32) ; char 32 is space
             (delete-char -1))))
       (message "white space cleaned"))))
-
-;; (add-hook 'before-save-hook 'xah-clean-whitespace)
+(add-hook 'before-save-hook 'xah-clean-whitespace)
 
 ;; @xah_lee
 (defun xah-clean-empty-lines ()
@@ -289,8 +288,7 @@ version 2017-09-22"
           (goto-char (point-min))
           (while (re-search-forward "\n\n\n+" nil "move")
             (replace-match "\n\n")))))))
-
-;; (add-hook 'before-save-hook 'xah-clean-empty-lines)
+(add-hook 'before-save-hook 'xah-clean-empty-lines)
 
 ;; @me
 (defun jk/clean-whitespace-and-empty-lines ()
@@ -298,8 +296,6 @@ version 2017-09-22"
   (interactive)
   (xah-clean-whitespace)
   (xah-clean-empty-lines))
-
-;; (add-hook 'before-save-hook 'jk/clean-whitespace-and-empty-lines)
 (global-set-key (kbd "<f10>") 'jk/clean-whitespace-and-empty-lines)
 
 (provide 'init-base)
