@@ -11,10 +11,10 @@
   )
 
 ;; Main for using in Terminal
-(when *is-nux*
-  (set-foreground-color "#ccc")
-  (set-face-background 'region "white")
-  )
+;; (when *is-nux*
+;;   (set-foreground-color "#ccc")
+;;   (set-face-background 'region "white")
+;;   )
 
 (use-package monokai-theme
   :ensure t
