@@ -132,18 +132,19 @@
   "Quickly open gtd file of site."
   (interactive)
   (find-file "~/site/org/gtd.org"))
+(global-set-key (kbd "<f7>") 'open-gtd-file)
 
 (defun open-story-file ()
   "Quickly open story file of site."
   (interactive)
   (find-file "~/site/org/story.org"))
-(global-set-key (kbd "<f9>") 'open-story-file)
+(global-set-key (kbd "<f8>") 'open-story-file)
 
 (defun open-init-file ()
   "Quickly open init file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "<f8>") 'open-init-file)
+(global-set-key (kbd "<f9>") 'open-init-file)
 
 (defun open-config-file (file-name)
   "Quickly open a config file which name is `FILE-NAME'."
