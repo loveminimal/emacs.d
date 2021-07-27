@@ -98,9 +98,9 @@
 ;; (add-hook 'after-init-hook 'electric-indent-mode')
 
 ;; FUCK U DESKTOP-SAVE-MODE !
-;; (defvar desktop-path (list user-emacs-directory))
-;; (defvar desktop-auto-save-timeout 600)
-;; (desktop-save-mode 1)
+(defvar desktop-path (list user-emacs-directory))
+(defvar desktop-auto-save-timeout 600)
+(desktop-save-mode 1)
 
 (add-hook 'after-init-hook 'show-paren-mode)
 ;; @zilongshanren
