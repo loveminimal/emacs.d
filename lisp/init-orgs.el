@@ -4,6 +4,8 @@
 
 (require 'init-vars)
 
+(global-set-key (kbd "<f2>") 'org-edit-special)
+(global-set-key (kbd "<f3>") 'org-edit-src-exit)
 ;; (image-type-available-p 'imagemagick)    ;; t
 (setq org-image-actual-width (/ (display-pixel-width) 3))
 ;; (setq org-image-actual-width 800)
