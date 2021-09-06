@@ -132,13 +132,13 @@
   "Quickly open gtd file of site."
   (interactive)
   (find-file "~/site/org/gtd.org"))
-(global-set-key (kbd "<f7>") 'open-gtd-file)
+;; (global-set-key (kbd "<f7>") 'open-gtd-file)
 
 (defun open-story-file ()
   "Quickly open story file of site."
   (interactive)
   (find-file "~/site/org/story.org"))
-(global-set-key (kbd "<f8>") 'open-story-file)
+;; (global-set-key (kbd "<f8>") 'open-story-file)
 
 (defun open-init-file ()
   "Quickly open init file."
