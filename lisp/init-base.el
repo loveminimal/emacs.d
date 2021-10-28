@@ -31,6 +31,8 @@
  word-wrap t
  )
 
+(global-set-key (kbd "<f2>") 'toggle-truncate-lines)
+
 ;; Turn on mouse in console mode
 (xterm-mouse-mode t)
 
