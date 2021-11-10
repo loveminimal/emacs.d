@@ -21,6 +21,16 @@
       ("rrr" "→")
       ("ddd" "↓")
       ("lll" "←")
+
+      ("bgqt" "☰")
+      ("bgdz" "☱")
+      ("bglh" "☲")
+      ("bgzl" "☳")
+      ("bgxf" "☴")
+      ("bgks" "☵")
+      ("bggs" "☶")
+      ("bgkd" "☷")
+
     ))
   (setq-default abbrev-mode t)
   (setq save-abbrevs nil)
