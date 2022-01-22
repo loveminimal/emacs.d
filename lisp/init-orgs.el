@@ -122,5 +122,13 @@
   ;; :hook (org-mode)
   )
 
+(use-package pangu-spacing
+  :ensure t
+  :config
+   (add-hook 'org-mode-hook
+           '(lambda ()
+              (set (make-local-variable 'pangu-spacing-real-insert-separtor) t)
+              (pangu-spacing-mode 1))))
+
 (provide 'init-orgs)
 ;;; init-orgs.el ends here
