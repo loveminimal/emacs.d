@@ -57,12 +57,16 @@ Use `swiper' to search for the symbol at point."
   :config
   (add-to-list 'company-backends 'company-emoji))
 
-(setq hippie-expand-try-functions-list
-      '(try-complete-file-name-partially
-	try-complete-file-name
-	try-expand-dabbrev
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill))
+;; (setq hippie-expand-try-functions-list
+;;       '(try-complete-file-name-partially
+;; 	try-complete-file-name
+;; 	try-expand-dabbrev
+;; 	try-expand-dabbrev-all-buffers
+;; 	try-expand-dabbrev-from-kill))
+(use-package auto-complete
+  :ensure t
+  :config
+  (ac-config-default))
 
 (use-package rainbow-delimiters
   :ensure t
