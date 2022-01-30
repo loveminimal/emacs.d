@@ -121,7 +121,7 @@
 (defun open-home-file ()
   "Quickly open index file of site."
   (interactive)
-  (find-file "~/site/org/index.org"))
+  (find-file "~/site/org/posts.org"))
 (global-set-key (kbd "<f5>") 'open-home-file)
 
 (defun open-nav-file ()
