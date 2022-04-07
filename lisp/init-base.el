@@ -118,11 +118,11 @@
 
 ;;;;;; Some Basic Functions
 
-(defun open-home-file ()
-  "Quickly open index file of site."
+(defun open-blog-file ()
+  "Quickly open blog file of site."
   (interactive)
-  (find-file "~/site/org/posts.org"))
-(global-set-key (kbd "<f5>") 'open-home-file)
+  (find-file "~/site/org/blog.org"))
+(global-set-key (kbd "<f5>") 'open-blog-file)
 
 (defun open-nav-file ()
   "Quickly open nav file of site."

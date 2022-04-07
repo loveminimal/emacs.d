@@ -5,16 +5,22 @@
 (require 'init-vars)
 
 ;; (set-background-color "honeydew")
-(when (not *is-nux*)
-  (load-theme 'tsdh-light t)
-  (set-cursor-color custom-blue)
-  )
+;; (when (not *is-nux*)
+;;   (load-theme 'tsdh-light t)
+;;   (set-cursor-color custom-blue)
+;;   )
 
 ;; Main for using in Terminal
 ;; (when *is-nux*
 ;;   (set-foreground-color "#ccc")
 ;;   (set-face-background 'region "white")
 ;;   )
+(use-package github-modern-theme
+  :ensure t
+  :config
+  (when (not *is-nux*)
+    (load-theme 'github-modern t)
+    (set-cursor-color custom-blue)))
 
 (use-package monokai-theme
   :ensure t
