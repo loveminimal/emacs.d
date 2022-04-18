@@ -2,7 +2,8 @@
 # name: insert header
 # key: ih
 # --
-#+DATE: ${1:`(format-time-string "<%Y-%m-%d %a %H:%M>" (current-time))`}
-#+TITLE: ${2:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
+#+HTML_HEAD_EXTRA: <meta name="card" content="$1">
+#+DATE: ${2:`(format-time-string "<%Y-%m-%d %a %H:%M>" (current-time))`}
+#+TITLE: ${3:`(mapconcat #'capitalize (split-string (file-name-base (buffer-file-name)) "-") " ")`}
 
-$3
+$4
