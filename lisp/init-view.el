@@ -15,10 +15,10 @@
 ;;   (set-foreground-color "#ccc")
 ;;   (set-face-background 'region "white")
 ;;   )
-(use-package github-modern-theme
-  :ensure t
-  :config
-  (when (not *is-nux*)
+(when (display-graphic-p)
+  (use-package github-modern-theme
+    :ensure t
+    :config
     (load-theme 'github-modern t)
     (set-cursor-color custom-blue)))
 
