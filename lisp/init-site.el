@@ -48,11 +48,12 @@
            ;;  :html-metadata-timestamp-format "%Y-%m-%d" ;; org-html-metadata-timestamp-format
            :html-head-include-default-style nil ;; org-html-head-include-default-style
            :html-head-include-scripts nil ;; org-html-head-include-scripts
+           ;; which be appended by main.js
            ;; <script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js\"></script>
+           ;; <script type=\"text/javascript\" src=\"themes/assets/lib/Valine.min.js\"></script>
            :html-head
            "<link rel=\"shortcut icon\" href=\"themes/favicon.ico\" type=\"image/x-icon\" />
            <link rel=\"stylesheet\" href=\"themes/style.css\" type=\"text/css\"  />
-           <script type=\"text/javascript\" src=\"themes/assets/lib/Valine.min.js\"></script>
            <script type=\"module\" src=\"themes/main.js\" defer></script>" ;; org-html-head
            :html-checkbox-type unicode  ;; org-html-checkbox-type
            ;; :html-link-home "index.html"	;; org-html-link-home
