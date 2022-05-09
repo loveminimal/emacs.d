@@ -140,7 +140,7 @@
   "Quickly open story file of site."
   (interactive)
   (find-file "~/site/org/story.org"))
-;; (global-set-key (kbd "<f8>") 'open-story-file)
+(global-set-key (kbd "<f10>") 'open-story-file)
 
 (defun open-init-file ()
   "Quickly open init file."
@@ -305,7 +305,7 @@ version 2017-09-22"
   (interactive)
   (xah-clean-whitespace)
   (xah-clean-empty-lines))
-(global-set-key (kbd "<f10>") 'jk/clean-whitespace-and-empty-lines)
+;; (global-set-key (kbd "<f10>") 'jk/clean-whitespace-and-empty-lines)
 
 (provide 'init-base)
 ;;; init-base.el ends here
