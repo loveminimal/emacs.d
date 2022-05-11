@@ -15,12 +15,13 @@
 ;;   (set-foreground-color "#ccc")
 ;;   (set-face-background 'region "white")
 ;;   )
-(when (display-graphic-p)
-  (use-package github-modern-theme
-    :ensure t
-    :config
-    (load-theme 'github-modern t)
-    (set-cursor-color custom-blue)))
+
+(use-package github-modern-theme
+  :if (display-graphic-p)
+  :ensure t
+  :config
+  (load-theme 'github-modern t)
+  (set-cursor-color custom-blue))
 
 (use-package monokai-theme
   :ensure t
