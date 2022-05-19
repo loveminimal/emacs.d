@@ -4,7 +4,6 @@
 
 (require 'init-vars)
 
-;; (set-background-color "honeydew")
 (when (display-graphic-p)
   (load-theme 'tsdh-light t))
 
@@ -36,7 +35,9 @@
   )
 
 ;; tip: put it after the theme settings, or it may be covered
-(when (display-graphic-p) (set-cursor-color custom-blue))
+(when (display-graphic-p)
+  ;; (set-background-color "#f3f9f1")
+  (set-cursor-color custom-blue))
 
 (use-package dired-sidebar
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
