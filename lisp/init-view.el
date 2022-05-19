@@ -5,10 +5,8 @@
 (require 'init-vars)
 
 ;; (set-background-color "honeydew")
-;; (when (not *is-nux*)
-;;   (load-theme 'tsdh-light t)
-;;   (set-cursor-color custom-blue)
-;;   )
+(when (display-graphic-p)
+  (load-theme 'tsdh-light t))
 
 ;; Main for using in Terminal
 ;; (when *is-nux*
@@ -19,9 +17,9 @@
 (use-package github-modern-theme
   :if (display-graphic-p)
   :ensure t
+  :disabled
   :config
-  (load-theme 'github-modern t)
-  (set-cursor-color custom-blue))
+  (load-theme 'github-modern t))
 
 (use-package monokai-theme
   :ensure t
@@ -36,6 +34,9 @@
   (load-theme 'solarized-dark t)
   ;; (load-theme 'solarized-light t)
   )
+
+;; tip: put it after the theme settings, or it may be covered
+(when (display-graphic-p) (set-cursor-color custom-blue))
 
 (use-package dired-sidebar
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
