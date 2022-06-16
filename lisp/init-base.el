@@ -122,13 +122,13 @@
   "Quickly open blog file of site."
   (interactive)
   (find-file "~/site/org/blog.org"))
-(global-set-key (kbd "<f5>") 'open-blog-file)
+;; (global-set-key (kbd "<f5>") 'open-blog-file)
 
 (defun open-nav-file ()
   "Quickly open nav file of site."
   (interactive)
   (find-file "~/site/org/nav.org"))
-(global-set-key (kbd "<f6>") 'open-nav-file)
+;; (global-set-key (kbd "<f6>") 'open-nav-file)
 
 (defun open-gtd-file ()
   "Quickly open gtd file of site."
@@ -140,7 +140,7 @@
   "Quickly open story file of site."
   (interactive)
   (find-file "~/site/org/story.org"))
-(global-set-key (kbd "<f10>") 'open-story-file)
+;; (global-set-key (kbd "<f10>") 'open-story-file)
 
 (defun open-init-file ()
   "Quickly open init file."
