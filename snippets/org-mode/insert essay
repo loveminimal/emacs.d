@@ -4,7 +4,9 @@
 # --
 
 #+BEGIN_EXPORT html
-<div class="jk-essay">
+<div class="oh-essay">
 $1
 </div>
 #+END_EXPORT
+
+$2

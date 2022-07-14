@@ -3,12 +3,7 @@
 # key: iil
 # --
 #+BEGIN_EXPORT html
-<img
-    src="images/$1"
-    width="$2"
-    style="$3"
-    alt="$4"
-/>
+<img src="imgs/$1" width="$2" style="float: $3;" />
 #+END_EXPORT
 
-$5
+$4
