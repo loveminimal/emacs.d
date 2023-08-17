@@ -60,12 +60,16 @@
   (prefer-coding-system 'utf-8))
 
 (when *is-win*
+  (when (member "LXGW WenKai Mono" (font-family-list))
+    (set-frame-font "LXGW WenKai Mono-11" t t)
+    (set-fontset-font t 'han "LXGW WenKai Mono-11"))
+
   ;; (when (member "Consolas" (font-family-list))
   ;; (set-frame-font "consolas-12" t t))
-  (when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-10.5" t t))
-  (when (member "楷体" (font-family-list))
-    (set-fontset-font t 'han "楷体-12"))
+  ;; (when (member "Monaco" (font-family-list))
+  ;; (set-frame-font "Code New Roman-11" t t))
+  ;; (when (member "楷体" (font-family-list))
+  ;;   (set-fontset-font t 'han "仓耳今楷03-6763 W03-11"))
   )
 
 (when *is-nux*
