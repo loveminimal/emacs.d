@@ -60,9 +60,10 @@
   (prefer-coding-system 'utf-8))
 
 (when *is-win*
-  (when (member "LXGW WenKai Mono" (font-family-list))
+  ;; (when (member "LXGW WenKai Mono" (font-family-list))
     (set-frame-font "LXGW WenKai Mono-11" t t)
-    (set-fontset-font t 'han "LXGW WenKai Mono-11"))
+    (set-fontset-font t 'han "LXGW WenKai Mono-11")
+    ;; )
 
   ;; (when (member "Consolas" (font-family-list))
   ;; (set-frame-font "consolas-12" t t))
