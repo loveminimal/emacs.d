@@ -54,7 +54,8 @@
 
   (setq dired-sidebar-subtree-line-prefix "__")
   (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t))
+  ;; (setq dired-sidebar-use-custom-font t)
+  )
 
 (use-package ibuffer-sidebar
   :ensure t
