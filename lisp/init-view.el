@@ -4,8 +4,8 @@
 
 (require 'init-vars)
 
-(when (display-graphic-p)
-  (load-theme 'tsdh-light t))
+;; (when (display-graphic-p)
+;;   (load-theme 'tsdh-light t))
 
 ;; Main for using in Terminal
 ;; (when *is-nux*
@@ -22,7 +22,7 @@
 
 (use-package monokai-theme
   :ensure t
-  :disabled
+  ;; :disabled
   :config
   (load-theme 'monokai t))
 
