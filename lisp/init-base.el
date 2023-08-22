@@ -63,6 +63,8 @@
   ;; (when (member "LXGW WenKai Mono" (font-family-list))
     (set-frame-font "LXGW WenKai Mono-11" t t)
     (set-fontset-font t 'han "LXGW WenKai Mono-11")
+    (set-fontset-font t 'cjk-misc (font-spec :family "LXGW WenKai Mono" :size 11))
+    (set-fontset-font t 'emoji (font-spec :family "Segoe UI Emoji" :size 12))
     ;; )
 
   ;; (when (member "Consolas" (font-family-list))
