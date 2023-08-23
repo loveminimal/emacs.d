@@ -59,7 +59,10 @@
 
 (use-package ibuffer-sidebar
   :ensure t
-  :commands (ibuffer-sidebar-toggle-sidebar))
+  :commands (ibuffer-sidebar-toggle-sidebar)
+  :config
+  ;; automatically use evil for ibuffer and dired
+  (setq evil-emacs-state-modes (delq 'ibuffer-mode evil-emacs-state-modes)))
 
 (defun sidebar-toggle ()
   "Toggle both `dired-sidebar' and `ibuffer-sidebar'."
