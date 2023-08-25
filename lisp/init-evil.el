@@ -20,16 +20,12 @@
   (evil-leader/set-key
     "<SPC>" 'smex
 
-    "en" 'new-frame
-    "ee" 'other-frame
-    "ed" 'delete-frame
-
     "//" 'org-sparse-tree
 
     "oo" 'org-export-dispatch
 
-    "aa" 'org-agenda
-    "cc" 'org-capture
+    "oa" 'org-agenda
+    "oc" 'org-capture
     "oj" 'org-todo
     "ot" 'org-set-tags-command
     "os" 'org-schedule
@@ -38,13 +34,7 @@
     "of" 'org-footnote-action
     "or" 'org-refile
 
-    "ms" 'kmacro-start-macro
-    "me" 'kmacro-end-macro
-    "mx" 'kmacro-end-and-call-macro
-    "mn" 'name-last-kbd-macro
-    "mi" 'insert-kbd-macro
-
-    "mmd" 'mc/delete-this-post
+    "mdp" 'mc/delete-this-post
 
     "pw" 'save-and-publish-website
     "pf" 'save-and-publish-file
@@ -62,11 +52,6 @@
     "fp" 'projectile-find-file
     "fP" 'projectile-find-dir
     "fi" 'open-init-file
-    "fc" 'open-config-file
-    "fb" 'open-base-file
-    "fh" 'open-home-file
-    "fn" 'open-nav-file
-    "fg" 'open-gtd-file
     "fo" 'org-open-at-point-and-delete-other-windows
     "fO" 'org-open-at-point
     "fd" 'delete-this-file
@@ -88,9 +73,6 @@
     "jj" 'org-cycle
 
     "ll" 'comment-line
-
-    ;; "mj" 'list-bookmarks
-    ;; "ms" 'bookmark-set
 
     "sa" 'mark-whole-buffer
 

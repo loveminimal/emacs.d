@@ -124,46 +124,11 @@
 ;;   (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 
 ;;;;;; Some Basic Functions
-
-(defun open-blog-file ()
-  "Quickly open blog file of site."
-  (interactive)
-  (find-file "~/site/org/blog.org"))
-;; (global-set-key (kbd "<f5>") 'open-blog-file)
-
-(defun open-nav-file ()
-  "Quickly open nav file of site."
-  (interactive)
-  (find-file "~/site/org/nav.org"))
-;; (global-set-key (kbd "<f6>") 'open-nav-file)
-
-(defun open-gtd-file ()
-  "Quickly open gtd file of site."
-  (interactive)
-  (find-file "~/site/org/gtd.org"))
-;; (global-set-key (kbd "<f7>") 'open-gtd-file)
-
-(defun open-story-file ()
-  "Quickly open story file of site."
-  (interactive)
-  (find-file "~/site/org/story.org"))
-;; (global-set-key (kbd "<f10>") 'open-story-file)
-
 (defun open-init-file ()
   "Quickly open init file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "<f9>") 'open-init-file)
-
-(defun open-config-file (file-name)
-  "Quickly open a config file which name is `FILE-NAME'."
-  (interactive "sWhich config: ")
-  (find-file (concat "~/.emacs.d/lisp/init-" file-name ".el")))
-
-(defun open-base-file ()
-  "Quickly open init file."
-  (interactive)
-  (open-config-file "base"))
 
 (defun org-open-at-point-and-delete-other-windows ()
   "Open link file and just keep the goal file."
