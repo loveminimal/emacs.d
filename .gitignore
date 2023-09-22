@@ -17,7 +17,7 @@
 /network-security.data
 /.session
 /session.*
-/custom.el
+# /custom.el
 *.elc
 CVS
 .svn
@@ -64,3 +64,4 @@ site-lisp/package/
 .cache/
 /forge-database.sqlite
 /ac-comphist.dat
+/org-persist
