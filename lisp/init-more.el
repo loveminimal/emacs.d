@@ -15,6 +15,21 @@
   :bind (("M-x" . smex)
          ("M-X" . smex-major-mode-commands)))
 
+(use-package pinyinlib
+  :ensure t
+  :config
+  (defun ivy--regex-pinyin (str)
+    (ivy--regex (pinyinlib-build-regexp-string str))))
+
+(use-package ivy
+  :ensure t
+  :config
+  ;; 将 ivy--regex-pinyin 设置为 swiper 的正则表达式构建函数
+  (add-to-list 'ivy-re-builders-alist '(swiper . ivy--regex-pinyin))
+  ;; 可选：如果你想要全局使用拼音搜索，可以添加以下配置
+  (setq ivy-re-builders-alist
+        '((t . ivy--regex-pinyin))))
+
 (use-package swiper
   :ensure t
   :init
