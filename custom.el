@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-download sort-tab abc-mode quelpa-use-package quelpa youdao-dictionary yasnippet writeroom-mode which-key web-mode use-package-chords switch-window swiper smex simple-httpd ripgrep rainbow-delimiters projectile pangu-spacing move-dup monokai-theme markdown-mode ido-vertical-mode ibuffer-sidebar htmlize expand-region evil-surround evil-leader emmet-mode edit-indirect dired-sidebar diminish delight company-emoji auto-complete)))
+   '(elpy org-download sort-tab abc-mode quelpa-use-package quelpa youdao-dictionary yasnippet writeroom-mode which-key web-mode use-package-chords switch-window swiper smex simple-httpd ripgrep rainbow-delimiters projectile pangu-spacing move-dup monokai-theme markdown-mode ido-vertical-mode ibuffer-sidebar htmlize expand-region evil-surround evil-leader emmet-mode edit-indirect dired-sidebar diminish delight company-emoji auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
