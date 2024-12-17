@@ -65,3 +65,5 @@ site-lisp/package/
 /forge-database.sqlite
 /ac-comphist.dat
 /org-persist
+/elpy
+/eln-cache
