@@ -2,10 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package elpy
-  :ensure t
-  :init
-  (elpy-enable))
+;; (use-package elpy
+;;   :ensure t
+;;   :init
+;;   (elpy-enable))
 
 (use-package markdown-mode
   :ensure t
